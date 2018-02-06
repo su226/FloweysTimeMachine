@@ -1,4 +1,0 @@
-# Toriel
-- Ruins kill count must be high enough
-# Snowdin X Left mode
-- line 76 must be 4
