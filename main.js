@@ -1,87 +1,87 @@
 var items = [
-    "Empty",
-    "Monster Candy",
-    "Croquet Roll",
-    "Stick",
-    "Bandage",
-    "Rock Candy",
-    "Pumpkin Rings",
-    "Spider Donut",
-    "Stoic Onion",
-    "Ghost Fruit",
-    "Spider Cider",
-    "Butterscotch Pie",
-    "Faded Ribbon",
-    "Toy Knife",
-    "Tough Glove",
-    "Manly Bandana",
-    "Snowman Piece",
-    "Nice Cream",
-    "Puppydough Icecream",
-    "Bisicle",
-    "Unisicle",
-    "Cinnamon Bun",
-    "Temmie Flakes",
-    "Abandoned Quiche",
-    "Old Tutu",
-    "Ballet Shoes",
-    "Punch Card",
-    "Annoying Dog",
-    "Dog Salad",
-    "Dog Residue (1)",
-    "Dog Residue (2)",
-    "Dog Residue (3)",
-    "Dog Residue (4)",
-    "Dog Residue (5)",
-    "Dog Residue (6)",
-    "Astronaut Food",
-    "Instant Noodles",
-    "Crab Apple",
-    "Hot Dog...?",
-    "Hot Cat",
-    "Glamburger",
-    "Sea Tea",
-    "Starfait",
-    "Legendary Hero",
-    "Cloudy Glasses",
-    "Torn Notebook",
-    "Stained Apron",
-    "Burnt Pan",
-    "Cowboy hat",
-    "Empty Gun",
-    "Heart Locket",
-    "Worn Dagger",
-    "Real Knife",
-    "The Locket",
-    "Bad Memory",
-    "Dream",
-    "Undyne's Letter",
-    "Undyne Letter EX",
-    "Potato Chisps",
-    "Junk Food",
-    "Mystery Key",
-    "Face Steak",
-    "Hush Puppy",
-    "Snail Pie",
-    "temy armor",
-    "<invalid>"
+    "空",
+    "怪物糖果",
+    "Croquet Roll",//TODO
+    "木棍",
+    "绷带",
+    "石头糖",
+    "南瓜环",
+    "蜘蛛甜甜圈",
+    "坚忍的洋葱",
+    "幽灵果实",
+    "蜘蛛果酒",
+    "奶油糖肉桂派",
+    "褪色缎带",
+    "玩具刀",
+    "牢固的手套",
+    "兄贵头巾",
+    "一份雪人",
+    "好冰棒",
+    "狗型冰棒",
+    "Bisicle",//TODO
+    "Unisicle",//TODO
+    "肉桂面包",
+    "提米薄片",
+    "遗弃的乳蛋饼",
+    "旧芭蕾短裙",
+    "芭蕾舞鞋",
+    "打孔的卡片",
+    "烦人的狗",
+    "狗沙拉",
+    "狗剩1",
+    "狗剩2",
+    "狗剩3",
+    "狗剩4",
+    "狗剩5",
+    "狗剩6",
+    "太空食物",
+    "方便面",
+    "蟹果",
+    "热狗...?",
+    "热猫",
+    "魅力汉堡",
+    "海茶",
+    "新星巴菲",
+    "传说英雄",
+    "云雾眼镜",
+    "破损的笔记本",
+    "脏围裙",
+    "烧焦的平底锅",
+    "牛仔帽",
+    "空枪",
+    "心形吊坠",
+    "生锈的匕首",
+    "真刀",
+    "吊坠",
+    "不好的回忆",
+    "梦想",
+    "安黛因的信",
+    "安黛因的信EX",
+    "薯豆片",
+    "垃圾食物",
+    "神秘钥匙",
+    "脸形牛排",
+    "安静的狗",
+    "蜗牛派",
+    "提米盔甲",
+    "<无效>"
 ];
 
 var cellOpts = {
-    "0": "Empty",
-    "201": "Say Hello",
-    "202": "Puzzle Help",
-    "203": "About Yourself",
-    "204": "Call Her \"Mom\"",
-    "205": "Flirt",
-    "206": "Toriel's Phone",
-    "210": "Papyrus's Phone",
-    "220": "Dimensional Box A",
-    "221": "Dimensional Box B"
+    "0":   "空",
+    "201": "打招呼",
+    "202": "谜题帮助",
+    "203": "介绍自己",
+    "204": "叫她\"妈妈\"",
+    "205": "调情",
+    "206": "托丽尔的电话",
+    "210": "帕帕瑞斯的电话",
+    "220": "维度盒子A",
+    "221": "维度盒子B"
 };
 
 var weaponAts = {
-    "3": 0, // stick
+    "3": 0, // 木棍
     "13": 3,
     "16": 5,
     "52": 99,
@@ -93,104 +93,104 @@ var weaponAts = {
 };
 
 var ArmorDfs = {
-    "4": 0, // bandage
-    "12": 3, // faded ribbon
-    "15": 7, // manly bandana
-    "44": 5, // clouded glasses
-    "46": 11, // stained apron
-    "50": 15, // heart locket
-    "53": 99, // The Locket
-    "64": 20 // temy armor
+    "4": 0, // 绷带
+    "12": 3, // 褪色缎带
+    "15": 7, // 兄贵头巾
+    "44": 5, // 云雾眼镜
+    "46": 11, // 脏围裙
+    "50": 15, // 心形吊坠
+    "53": 99, // 吊坠
+    "64": 20 // 提米护甲
 };
 
 var rooms = {
-    "4": "Ruins - Starting point",
-    "5": "Ruins - Flowey spot",
-    "6": "Ruins - Entrance [SAVE]",
-    "7": "Ruins - Toriel stepping tile puzzle",
-    "8": "Ruins - Switch puzzle",
-    "9": "Ruins - Dummy room",
-    "10": "Ruins - Spike puzzle",
-    "11": "Ruins - Long corridor",
-    "12": "Ruins - Leaf Pile [SAVE]",
-    "13": "Ruins - Candy pillar",
-    "14": "Ruins - Mandatory fall trapdoor",
-    "15": "Ruins - First stone pushing puzzle",
-    "16": "Ruins - Trapdoor corridor puzzle",
-    "17": "Ruins - Talkback rock",
-    "18": "Ruins - Mouse Hole [SAVE]",
-    "19": "Ruins - Napstablook",
-    "20": "Ruins - Spider Bake Sale",
-    "21": "Ruins - 2 frogs",
-    "22": "Ruins - Switch hidden under trapdoor puzzle",
-    "23": "Ruins - 3 Pillars room 1",
-    "24": "Ruins - 3 Pillars room 2",
-    "25": "Ruins - 3 Pillars room 3",
-    "26": "Ruins - 3 Pillars room 4",
-    "27": "Ruins - Pillars room pit",
-    "28": "Ruins - 3-way fork",
-    "29": "Ruins - Toriel gossip frog",
-    "30": "Ruins - Toy knife room",
-    "31": "Ruins - Home [SAVE]",
-    "32": "Toriel's House: Entrance",
-    "33": "Toriel's House: Reading room",
-    "34": "Toriel's House: Corridor",
-    "35": "Toriel's House: Toriel's Room",
-    "36": "Toriel's House: Your Room",
-    "37": "Toriel's House: Kitchen",
-    "38": "Toriel's Basement 1",
-    "39": "Toriel's Basement 2",
-    "40": "Toriel's Basement 3",
-    "41": "Toriel's Basement: Toriel Boss Battle",
-    "42": "Toriel's Basement: Corridor to Flowey",
-    "43": "Toriel's Basement: Flowey",
-    "44": "Snowdin - Ruin exit",
-    "45": "Snowdin - Dark forest path",
-    "46": "Snowdin - Box Road [SAVE]",
-    "47": "Snowdin - Fishing rod",
-    "48": "Snowdin - Papyrus' Sentry Station",
-    "49": "Snowdin - Doggo",
-    "50": "Snowdin - Compass sign",
-    "51": "Snowdin - Snowman",
-    "52": "Snowdin - Electricity Maze",
-    "53": "Snowdin - Snow golf",
-    "54": "Snowdin - 2 guard dog houses",
-    "55": "Snowdin - Monster Kidz Word Search",
-    "56": "Snowdin - Spaghetti [SAVE]",
-    "57": "Snowdin - Warning: Dog Marriage",
-    "58": "Snowdin - XO puzzle 1",
-    "59": "Snowdin - XO puzzle 2",
-    "60": "Snowdin - Color tile puzzle",
-    "61": "Snowdin - Dog House [SAVE]",
-    "62": "Snowdin - Snow Papyrus & Sans",
-    "63": "Snowdin - Sliding XO puzzle",
-    "64": "Snowdin - Teleporting Sans",
-    "65": "Snowdin - Ice Cave entrance",
-    "66": "Snowdin - Snow poffs (Greater Dog)",
-    "67": "Snowdin - Gauntlet of Deadly Terror",
-    "68": "Snowdin - Town [SAVE]",
-    "69": "Snowdin Town: Ice haul wolf",
-    "70": "Snowdin Town: Boat harbor",
-    "71": "Snowdin Town: Inn lobby",
-    "73": "Snowdin Town: Grillby's",
-    "74": "Snowdin Town: Library",
-    "81": "Snowdin - Papyrus Battle",
-    "82": "Waterfall - Entrance",
-    "83": "Waterfall - Checkpoint [SAVE]",
-    "84": "Waterfall - Falling rocks",
-    "86": "Waterfall - Hallway [SAVE]",
-    "87": "Waterfall - Lily pad bridge",
-    "88": "Waterfall - Lily pad vertical bridge",
-    "90": "Waterfall - Telescope",
-    "91": "Waterfall - Boat plank",
-    "92": "Waterfall - Undyne Spear dodging 1",
-    "93": "Waterfall - Bush after spear dodging",
-    "94": "Waterfall - Crystal [SAVE]",
-    "95": "Waterfall - Sans Telescope",
-    "96": "Waterfall - Nice Cream Stand",
-    "97": "Waterfall - Split Pathway",
-    "98": "Waterfall - Ballet shoes",
-    "99": "Waterfall - Duck",
+    "4":  "遗迹 - 初始点",
+    "5":  "遗迹 - 小花地点",
+    "6":  "遗迹 - 入口 [存档点]",
+    "7":  "遗迹 - 托丽尔踩砖块谜题",
+    "8":  "遗迹 - 开关谜题",
+    "9":  "遗迹 - 假人房间",
+    "10": "遗迹 - 尖刺谜题",
+    "11": "遗迹 - 长廊",
+    "12": "遗迹 - 树叶堆 [存档点]",
+    "13": "遗迹 - 糖果柱子",
+    "14": "遗迹 - 必定摔落陷阱门",
+    "15": "遗迹 - 推石头谜题1",
+    "16": "遗迹 - 陷阱门走廊谜题",
+    "17": "遗迹 - 说话的石头",
+    "18": "遗迹 - 老鼠洞 [存档点]",
+    "19": "遗迹 - 幽灵纳普斯特",
+    "20": "遗迹 - 蜘蛛烘焙铺",
+    "21": "遗迹 - 2只青蛙",
+    "22": "遗迹 - 开关下的陷阱门",
+    "23": "遗迹 - 3个柱子房间1",
+    "24": "遗迹 - 3个柱子房间2",
+    "25": "遗迹 - 3个柱子房间3",
+    "26": "遗迹 - 3个柱子房间4",
+    "27": "遗迹 - 柱子房间下面的坑",
+    "28": "遗迹 - 三岔路口",
+    "29": "遗迹 - 讲托丽尔闲话的青蛙",
+    "30": "遗迹 - 玩具刀房间",
+    "31": "遗迹 - 家 [存档点]",
+    "32": "托丽尔的家 - 入口",
+    "33": "托丽尔的家 - 阅读房间",
+    "34": "托丽尔的家 - 长廊",
+    "35": "托丽尔的家 - 托丽尔的房间",
+    "36": "托丽尔的家 - 你的房间",
+    "37": "托丽尔的家 - 厨房",
+    "38": "托丽尔的地下室1",
+    "39": "托丽尔的地下室2",
+    "40": "托丽尔的地下室3",
+    "41": "托丽尔的地下室 - 托丽尔战斗",
+    "42": "托丽尔的地下室 - 通往小花的长廊",
+    "43": "托丽尔的地下室 - 小花",
+    "44": "雪町 - 遗迹出口",
+    "45": "雪町 - 黑森林小路",
+    "46": "雪町 - Box Road [存档点]",//TODO
+    "47": "雪町 - 鱼竿",
+    "48": "雪町 - 帕帕瑞斯岗哨",
+    "49": "雪町 - Doggo",//TODO
+    "50": "雪町 - 指南针图标",
+    "51": "雪町 - 雪人",
+    "52": "雪町 - 高压电迷宫",
+    "53": "雪町 - 雪地高尔夫",
+    "54": "雪町 - 狗夫妇的房子",
+    "55": "雪町 - 怪物小孩找单词",
+    "56": "雪町 - 意大利面 [存档点]",
+    "57": "雪町 - 狗夫妇",
+    "58": "雪町 - XO谜题1",
+    "59": "雪町 - XO谜题2",
+    "60": "雪町 - 彩砖谜题",
+    "61": "雪町 - 狗屋 [存档点]",
+    "62": "雪町 - 雪人帕帕瑞斯和衫斯",
+    "63": "雪町 - 滑动XO谜题",
+    "64": "雪町 - 传送的衫斯",
+    "65": "雪町 - 冰穴入口",
+    "66": "雪町 - 雪堆(大犬汪)",
+    "67": "雪町 - 致命的恐怖挑战",
+    "68": "雪町 - 城镇 [存档点]",
+    "69": "雪镇 - 冰把狼",//TODO
+    "70": "雪镇 - 船港",
+    "71": "雪镇 - 宾馆大厅",
+    "73": "雪镇 - 烤尔比",
+    "74": "雪镇 - 图书馆",
+    "81": "雪町 - 帕帕瑞斯战斗",
+    "82":  "瀑布 - 入口",
+    "83":  "瀑布 - 检查点 [存档点]",
+    "84":  "瀑布 - 掉下的石头",
+    "86":  "瀑布 - 长廊 [存档点]",
+    "87":  "Waterfall - Lily pad bridge",
+    "88":  "Waterfall - Lily pad vertical bridge",
+    "90":  "Waterfall - Telescope",
+    "91":  "Waterfall - Boat plank",
+    "92":  "Waterfall - Undyne Spear dodging 1",
+    "93":  "Waterfall - Bush after spear dodging",
+    "94":  "Waterfall - Crystal [SAVE]",
+    "95":  "Waterfall - Sans Telescope",
+    "96":  "Waterfall - Nice Cream Stand",
+    "97":  "Waterfall - Split Pathway",
+    "98":  "Waterfall - Ballet shoes",
+    "99":  "Waterfall - Duck",
     "100": "Waterfall - Onionsan",
     "101": "Waterfall - Artifact hub",
     "102": "Waterfall - Piano",
@@ -323,7 +323,7 @@ var rooms = {
     "235": "Throne Room [SAVE]",
     "236": "The End [SAVE]",
     "237": "Barrier",
-    "241": "Outside",
+    "241": "外面[未使用]",
     "242": "Laboratory Elevator",
     "243": "True Lab - Elevator",
     "244": "True Lab - Elevator Entrance",
@@ -346,108 +346,108 @@ var rooms = {
     "261": "True Lab - Elevator 2",
     "262": "True Lab - Power room corridor",
     "263": "True Lab - Power room",
-    "265": "Snowdin - Ice Cave 1",
-    "331": "Asriel room"
+    "265": "雪町 - 冰穴",
+    "331": "艾斯利尔的房间[未使用]"
 };
 
 var floweyStates = {
-    "0": "None (Initial state)",
-    "1": "Light blue (Initiated fight)",
-    "2": "Orange",
-    "3": "Blue",
-    "4": "Purple",
-    "5": "Green",
-    "6": "Yellow",
-    "7": "None (Finished fight)",
+    "0": "无 (初始状态)",
+    "1": "浅蓝 (战斗开始)",
+    "2": "橙",
+    "3": "蓝",
+    "4": "紫",
+    "5": "绿",
+    "6": "黄",
+    "7": "无 (战斗完成)",
 };
 
 var torielStates = {
-    "0": "Initial state",
-    "3": "Unknown",
-    "4": "Killed",
-    "5": "Spared"
+    "0": "初始状态",
+    "3": "未知",
+    "4": "被杀死",
+    "5": "被饶恕"
 };
 
 var comedianStates = {
-    "0": "Initial state",
-    "1": "Unknown",
-    "2": "Killed"
+    "0": "初始状态",
+    "1": "未知",
+    "2": "被杀死"
 };
 
 var doggoStates = {
-    "0": "Initial state",
-    "1": "Killed",
-    "2": "Played fetch (Spared)"
+    "0": "初始状态",
+    "1": "被杀死",
+    "2": "被饶恕"
 };
 
 var dogamyDogaressaStates = {
-    "0": "Initial state",
-    "1": "Killed",
-    "2": "Played fetch (Spared)"
+    "0": "初始状态",
+    "1": "被杀死",
+    "2": "被饶恕"
 };
 
 var greaterDogStates = {
-    "0": "Initial state",
-    "1": "Killed",
-    "2": "Played fetch (Spared)",
-    "3": "Ignored"
+    "0": "初始状态",
+    "1": "被杀死",
+    "2": "被饶恕",
+    "3": "被忽略"
 };
 
 var papyrusStates = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 var plotValues = {
-    "2": "Didn't fight Papyrus",
-    "101": "Fought Papyrus",
-    "119": "Unknown",
-    "164": "Hotlands genocide",
-    "199": "Unknown",
-    "999": "Pacifist epilogue"
+    "2": "没有与帕帕瑞斯战斗",
+    "101": "已与帕帕瑞斯战斗",
+    "119": "未知",
+    "164": "热地屠杀",
+    "199": "未知",
+    "999": "真和平结局"
 };
 
 var trainingDummyStates = {
-    "0": "Initial state",
-    "1": "Killed",
-    "2": "Talked to",
-    "3": "Tired of your shenanigans"
+    "0": "初始状态",
+    "1": "被杀死",
+    "2": "被谈话",
+    "3": "试了你的意大利面"
 };
 
 var shyrenStates = {
-    "0": "Initial state",
-    "1": "Killed",
-    "2": "Unknown"
+    "0": "初始状态",
+    "1": "被杀死",
+    "2": "未知"
 };
 
 var madDummyStates = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 var undyneStates1 = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 var undyneStates2 = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 var broGuardsStates = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 var mettatonStates = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 var muffetStates = {
-    "0": "Initial state",
-    "1": "Killed"
+    "0": "初始状态",
+    "1": "被杀死"
 };
 
 function parseIniFromText(text) {
@@ -470,19 +470,19 @@ function parseIniFromText(text) {
             }
         } else { // Otherwise, it is assumed to be an assignment
             if (section === null) {
-                throw "Assignment outside of a section";
+                throw "小节以外的配置项";
             }
             var eq = line.indexOf("=");
             if (eq === -1) {
-                throw "Expected '='";
+                throw "期望 '='";
             }
             var lquot = line.indexOf('"');
             if (lquot === -1) {
-                throw "Expected '\"'";
+                throw "期望 '\"'";
             }
             var rquot = line.slice(lquot + 1).indexOf('"') + lquot + 1;
             if (rquot === -1) {
-                throw "Unterminated value string";
+                throw "未结束的字符串";
             }
             var value = line.slice(lquot + 1, rquot);
             var key = line.slice(0, eq);
@@ -552,7 +552,7 @@ function loadIniFromFile(file, closure) {
         try {
             closure(parseIniFromText(text));
         } catch (err) {
-            window.alert("Error parsing undertale.ini: " + err);
+            window.alert("解析undertale.ini失败: " + err);
         }
     };
     reader.readAsText(file);
@@ -607,6 +607,23 @@ function updatePersistentDataForm(iniobj) {
     if (iniobj.fun) {
         document.getElementById("ini-fun").value = parseInt(iniobj.fun.trim());
     }
+    if (iniobj.Sans){
+        document.getElementById("ini-sans-deaths").value = parseInt(iniobj.Sans.F.trim());
+    }
+    if (iniobj.Toriel) {
+        if (parseInt(iniobj.Toriel.TK.trim()) === 1) {
+            document.getElementById("ini-killed-toriel").checked = true;
+        } else {
+            document.getElementById("ini-killed-toriel").checked = false;
+        }
+    }
+    if (iniobj.Papyrus){
+        if (parseInt(iniobj.Papyrus.PS.trim()) === 1){
+            document.getElementById("ini-spared-papyrus").checked = true;
+        } else {
+            document.getElementById("ini-spared-papyrus").checked = false;
+        }
+    }
 }
 
 // Update an ini object from the persistent data form.
@@ -655,6 +672,31 @@ function updateIniFromForm(ini) {
     var fun = parseInt(document.getElementById("ini-fun").value);
     if (fun) {
         ini.General.fun = fun;
+    }
+    var timesDiedSans = parseInt(document.getElementById("ini-sans-deaths").value);
+    if (timesDiedSans){
+        if (!ini.Sans){
+            ini.Sans={};
+        }
+        if (ini.Sans){
+            ini.Sans.F = timesDiedSans;
+        }
+    }
+    if (document.getElementById("ini-killed-toriel").checked) {
+        if (!ini.Toriel) {
+            ini.Toriel = {};
+        }
+        if (ini.Toriel) {
+            ini.Toriel.TK = "1";
+        }
+    }
+    if (document.getElementById("ini-spared-papyrus").checked){
+        if (!ini.Papyrus) {
+            ini.Papyrus = {};
+        }
+        if (ini.Papyrus) {
+            ini.Papyrus.PS = "1";
+        }
     }
 }
 
@@ -805,7 +847,7 @@ function saveIniToFile(ini) {
             string += key + "=\"" + ini[section][key] + "\"\r\n";
         }
     }
-    var blob = new Blob([string], {type: "text/plain;charset=utf-8"});
+    var blob = new Blob([string], {type: "text/plain"});
     saveAs(blob, "undertale.ini", true);
     flowey_laugh_once();
 }
@@ -816,7 +858,7 @@ function saveSaveValuesToFile(values) {
     for (var i = 0; i < values.length; i++) {
         string += values[i] + "\r\n";
     }
-    var blob = new Blob([string], {type: "application/octet-stream"});
+    var blob = new Blob([string], {type: "text/plain"});
     saveAs(blob, "file0", true);
     flowey_laugh_once();
 }
@@ -900,10 +942,11 @@ function start() {
     var iniLoadButton = document.getElementById("ini-loadbutton");
     iniLoadButton.addEventListener("click", function() {
         if (!iniFile) {
-            window.alert("You need to choose a file first!");
+            window.alert("请选择一个文件！");
             return;
         }
         loadIniFromFile(iniFile, function(iniobj) {
+            console.log(iniobj);
             updatePersistentDataForm(iniobj);
             ini = iniobj;
         });
@@ -911,7 +954,7 @@ function start() {
     var file0LoadButton = document.getElementById("sav-loadbutton");
     file0LoadButton.addEventListener("click", function() {
         if (!saveFile) {
-            window.alert("You need to choose a file first!");
+            window.alert("请选择一个文件！");
             return;
         }
         loadSaveFromFile(saveFile, function(lines) {
@@ -930,12 +973,12 @@ function start() {
         saveSaveValuesToFile(saveLines);
     }, false);
     document.getElementById("savesi2").addEventListener("click", function() {
-        var blob = new Blob([], {type: "application/octet-stream"});
+        var blob = new Blob([], {type: "text/plain"});
         saveAs(blob, "system_information_962", true);
         flowey_laugh_once();
     }, false);
     document.getElementById("savesi3").addEventListener("click", function() {
-        var blob = new Blob([], {type: "application/octet-stream"});
+        var blob = new Blob([], {type: "text/plain"});
         saveAs(blob, "system_information_963", true);
         flowey_laugh_once();
     }, false);
@@ -969,9 +1012,9 @@ function start() {
         localStorage.setItem("userPresets",JSON.stringify(presets));
     }
     document.getElementById("userpresetnew").addEventListener("click", function() {
-        var name = window.prompt("Enter the name for your new preset");
+        var name = window.prompt("输入配置名称");
         if (name === null || name === "") {
-            window.alert("You did not enter a valid name, preset not created.");
+            window.alert("无效名称，未创建配置!");
         } else {
             saveUserPreset(name);
             var presetSelect = document.getElementById("userpresetselect");
@@ -991,7 +1034,7 @@ function start() {
         if (name !== null && name !== "") {
             saveUserPreset(name);
         } else {
-            window.alert("You need to select a valid preset first!");
+            window.alert("请选择一个有效的配置！");
         }
     }, false);
     document.getElementById("userpresetload").addEventListener("click", function() {
@@ -1005,7 +1048,7 @@ function start() {
             updateSaveDataForm(saveLines);
             updatePersistentDataForm(ini);
         } else {
-            window.alert("You need to select a valid preset first!");
+            window.alert("请选择一个有效的配置！");
         }
     }, false);
     document.getElementById("userpresetdelete").addEventListener("click", function() {
@@ -1040,13 +1083,28 @@ function start() {
         saveUserPreset(name);
         var preset = presets[name];
         var string = "presets[\"" + name + "\"] = " + JSON.stringify(preset) + ";";
-        var blob = new Blob([string], {type: "application/octet-stream"});
+        var blob = new Blob([string], {type: "application/x-javascript"});
         saveAs(blob, name + ".js", true);
     }, false);
     document.getElementById("floweyimg").addEventListener("click", function() {
         document.getElementById("floweyimg").src = "res/flowey_wink.png";
         localStorage.setItem("laughed", false);
     }, false);
+    function addClickSound(list){
+        for(var i=0;i<list.length;i++){
+            list[i].addEventListener("click",function(){
+                if(!document.getElementById("mute").checked) {
+                    var audio = new Audio("res/menuselect.ogg");
+                    audio.play()
+                }
+            })
+        }
+    }
+    addClickSound(document.getElementsByTagName("a"));
+    addClickSound(document.getElementsByTagName("button"));
+    addClickSound(document.getElementsByTagName("input"));
+    addClickSound(document.getElementsByTagName("select"));
+    addClickSound([document.getElementById("floweyimg")])
 }
 
 document.addEventListener("DOMContentLoaded", start);
