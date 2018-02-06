@@ -1,11 +1,221 @@
 <!doctype html>
 
-<html lang="en" manifest="manifest.appcache">
+<html lang="zh-cmn-Hans" manifest="manifest.appcache">
     <head>
-        <meta charset="utf-8" />
-        <meta name="description" content="A save editor for Undertale." />
-        <meta name="keywords" content="Undertale,save,editor" />
-        <title>Flowey's Time Machine</title>
+        <meta charset='utf-8'>
+        <meta name="description" content="Undertale存档编辑器 汉化版" />
+        <meta name="keywords" content="Undertale,存档,编辑器,汉化" />
+        <meta name="author" content="su226, su.226@qq.com"/>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="screen-orientation" content="portrait">
+        <meta name="full-screen" content="yes">
+        <meta name="browsermode" content="application">
+        <meta name="x5-orientation" content="portrait">
+        <meta name="x5-fullscreen" content="true">
+        <meta name="x5-page-mode" content="app">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="renderer" content="webkit">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="msapplication-TileColor" content="#000"/>
+        <meta name="msapplication-TileImage" content="res/tile.png"/>
+        <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>小花的时间机器(存档编辑器)</title>
+    </head>
+    <body>
+        <a href="https://github.com/crumblingstatue/FloweysTimeMachine" id="forkme"><img src="./res/forkme.png" alt="在Github上克隆"></a>
+        <div>
+            <img src="res/flowey_nice.png" alt="" id="floweyimg" style="float:left" />
+            <h1>小<span title="Fa">花</span>的时间机器<sup>zh-CN</sup></h1>
+            Undertale存档编辑器
+            <a href="help.html" target="_blank">帮助</a>
+            <a href="about.html" target="_blank">关于</a>
+            <div style="clear:both"></div>
+        </div>
+        <h2>配置</h2>
+        <div id="builtinpreset">
+            <label> 内置配置 </label>
+            <select id="builtinpresetselect"> </select>
+        </div>
+        <input type="button" id="builtinpresetload" value="加载" />
+        <br>
+        <div id="builtinpreset">
+            <label> 你的配置 </label>
+            <select id="userpresetselect"> </select>
+        </div>
+        <input type="button" id="userpresetload" value="加载" disabled />
+        <input type="button" id="userpresetsave" value="保存" disabled />
+        <input type="button" id="userpresetnew" value="新建" />
+        <input type="button" id="userpresetdelete" value="删除" disabled />
+        <input type="button" id="userpresetexport" value="保存并导出" disabled />
+        <br>
+        <label> 静音 </label><input type="checkbox" id="mute" />
+        <h2> 永久性数据 </h2>
+        <p>多次游玩时都会记录的数据</p>
+        <form>
+            <div>
+                <fieldset>
+                    <legend> undertale.ini </legend>
+                    <input type="file" id="ini-file" />
+                    <div>
+                        <input id="ini-loadbutton" type="button" value="加载" disabled />
+                        <input type="button" id="ini-savebutton" value="保存" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend> 通用 </legend>
+                    <label> 名称 </label> <input id="ini-name" type="text" />
+                    <label> 位置 </label> <select id="ini-location"> </select>
+                    <label> 击杀 </label> <input id="ini-kills" type="text" />
+                    <label> LOVE </label> <input id="ini-love" type="text" />
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend> 精污花 </legend>
+                    <label> 困在小花的世界中 </label> <input type="checkbox" id="ini-omega-flowey-trapped" />
+                    <label> 下一个攻击方式 </label> <select id="ini-omega-flowey-soul"></select>
+                    <label> 死亡次数 </label> <input type="text" id="ini-omega-flowey-deaths" />
+                </fieldset>
+                <fieldset>
+                    <legend> Sans </legend>
+                    <label> 死亡次数 </label>
+                    <input type="text" id="ini-sans-deaths" />
+                </fieldset>
+                <fieldset>
+                    <legend> Toriel </legend>
+                    <label> 杀死了Toriel </label>
+                    <input type="checkbox" id="ini-killed-toriel" />
+                </fieldset>
+                <fieldset>
+                    <legend> Papyrus </legend>
+                    <label> 饶恕了Papyrus </label>
+                    <input type="checkbox" id="ini-spared-papyrus" />
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend> GE污染 </legend>
+                    <label> system_information_962 <sup title="当此文件存在时，世界将处在GE线通关后的'被删除'的状态">[?]</sup></label>
+                    <input type="button" id="savesi2" value="保存" />
+                    <label> system_information_963 <sup title="当此文件存在时，你'出售'了你的灵魂来赎回整个世界">[?]</sup></label>
+                    <input type="button" id="savesi3" value="保存" />
+                </fieldset>
+                <fieldset>
+                    <legend> 其他 </legend>
+                    <label> 跟踪了全部特别感谢 </label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
+                    <label> "欢乐"值 </label> <input type="text" id="ini-fun" />
+                </fieldset>
+            </div>
+        </form>
+        <h2> 存档数据 </h2>
+        <p>这是存档时会被保存的数据</p>
+        <form>
+            <div>
+                <fieldset>
+                    <legend> file0 </legend>
+                    <input type="file" id="sav-file" />
+                    <div>
+                        <input id="sav-loadbutton" type="button" value="加载" disabled />
+                        <input type="button" id="sav-savebutton" value="保存" />
+                    </div>
+                </fieldset>
+                <fieldset>
+                <legend>通用</legend>
+                <label>名称</label> <input type="text" id="sav-name" />
+                <label>地点</label> <select id="sav-location"> </select>
+                <label>死亡次数</label> <input type="text" id="sav-kills" />
+                <label>击杀次数</label> <input type="text" id="sav-unkkills" />
+                </fieldset>
+                <fieldset>
+                <legend>状态</legend>
+                <label>LOVE</label> <input type="text" id="sav-love" />
+                <label>生命</label> <input type="text" id="sav-hp" />
+                <label>EXP</label> <input type="text" id="sav-exp" />
+                <label>金币</label> <input type="text" id="sav-gold" />
+                <label>攻击力</label> <input type="text" id="sav-at" />
+                <label>武器攻击力</label> <input type="text" id="sav-weaponat" />
+                <label>防御力</label> <input type="text" id="sav-df" />
+                <label>防具防御力</label> <input type="text" id="sav-armordf" />
+                </fieldset>
+            </div>
+            <div>
+            <fieldset>
+                <legend>穿戴</legend>
+                <label>武器</label> <select id="sav-weapon"> </select>
+                <label>防具</label> <select id="sav-armor"> </select>
+            </fieldset>
+            <fieldset>
+                <legend>物品栏</legend>
+                <select id="sav-invslot1"> </select>
+                <select id="sav-invslot2"> </select>
+                <select id="sav-invslot3"> </select>
+                <select id="sav-invslot4"> </select>
+                <select id="sav-invslot5"> </select>
+                <select id="sav-invslot6"> </select>
+                <select id="sav-invslot7"> </select>
+                <select id="sav-invslot8"> </select>
+            </fieldset>
+            <fieldset>
+                <legend>电话</legend>
+                <label> 你有电话 </label> <input id="sav-havecell" type="checkbox" />
+                <select id="sav-cellslot1"> </select>
+                <select id="sav-cellslot2"> </select>
+                <select id="sav-cellslot3"> </select>
+                <select id="sav-cellslot4"> </select>
+                <select id="sav-cellslot5"> </select>
+                <select id="sav-cellslot6"> </select>
+                <select id="sav-cellslot7"> </select>
+                <select id="sav-cellslot8"> </select>
+            </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend> 遗迹 </legend>
+                    <label>击杀次数</label> <input type="text" id="sav-ruinskills" />
+                    <label>训练假人状态</label> <select id="sav-trainingdummystate"> </select>
+                    <label>托丽尔状态</label> <select id="sav-torielstate"> </select>
+                </fieldset>
+                <fieldset>
+                    <legend> 雪町 </legend>
+                    <label>击杀次数</label> <input type="text" id="sav-snowdinkills" />
+                    <label>Doggo状态</label> <select id="sav-doggostate"> </select>
+                    <label>狗夫妇状态</label> <select id="sav-dogamydogaressastate"> </select>
+                    <label>大犬汪状态</label> <select id="sav-greaterdogstate"> </select>
+                    <label>Comedian状态</label> <select id="sav-comedianstate"> </select>
+                    <label>帕帕瑞斯状态</label> <select id="sav-papyrusstate"> </select>
+                </fieldset>
+                <fieldset>
+                    <legend> 瀑布 </legend>
+                    <label>击杀次数</label> <input type="text" id="sav-waterfallkills" />
+                    <label>塞壬状态</label> <select id="sav-shyrenstate"> </select>
+                    <label>愤怒假人状态</label> <select id="sav-maddummystate"> </select>
+                    <label>安黛因状态1</label> <select id="sav-undynestate1"> </select>
+                    <label>安黛因状态2</label> <select id="sav-undynestate2"> </select>
+                </fieldset>
+                <fieldset>
+                    <legend> 热地 </legend>
+                    <label>击杀次数</label> <input type="text" id="sav-hotlandkills" />
+                    <label>皇家守卫状态</label> <select id="sav-broguardsstate"> </select>
+                    <label>玛菲特状态</label> <select id="sav-muffetstate"> </select>
+                    <label>镁塔顿状态</label> <select id="sav-mettatonstate"> </select>
+                </fieldset>
+            </div>
+            <div>
+                <fieldset>
+                    <legend> 完美结局 </legend>
+                    <label> 离开了真实验室(能得到完美结局) </label> <input id="sav-exitedtruelab" type="checkbox" />
+                    <label> 击败艾斯利尔(完美结局完成) </label> <input id="sav-defeatedasriel" type="checkbox" />
+                </fieldset>
+                <fieldset>
+                    <legend> 其他 </legend>
+                    <label> "情节" 值 </label> <select id="sav-plotvalue"> </select>
+                    <label> "欢乐" 值 </label> <input type="text" id="sav-fun" />
+                </fieldset>
+            </div>
+        </form>
+        <!-- script -->
         <script src="lib/FileSaver.min.js"></script>
         <script src="presets/presets.js"></script>
         <script src="presets/ruins-start.js"></script>
@@ -16,166 +226,6 @@
         <script src="presets/Omega%20Flowey.js"></script>
         <script src="presets/True%20Pacifist%20Ending.js"></script>
         <script src="main.js"></script>
-        <link rel="stylesheet" type="text/css" href="style.css" />
-    </head>
-    <body>
-        <a href="https://github.com/crumblingstatue/FloweysTimeMachine"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
-        <h1><img src="res/flowey_nice.png" alt="" id="floweyimg" />Flowey's Time Machine</h1>
-        <p>
-            <a href="help.html" target="_blank"> Help </a>
-        </p>
-        <label> Built-in Presets </label><select id="builtinpresetselect"> </select>
-        <input type="button" id="builtinpresetload" value="Load" />
-        <label> Your presets </label><select id="userpresetselect"> </select>
-        <input type="button" id="userpresetload" value="Load" disabled />
-        <input type="button" id="userpresetsave" value="Save" disabled />
-        <input type="button" id="userpresetnew" value="New" />
-        <input type="button" id="userpresetdelete" value="Delete" disabled />
-        <input type="button" id="userpresetexport" value="Save and Export" disabled />
-        <label> Mute </label><input type="checkbox" id="mute" />
-        <h2> Persistent Data </h2>
-        <p>
-            Things that Undertale remembers throughout multiple playthroughs.
-        </p>
-        <form>
-            <div>
-                <fieldset>
-                    <legend> undertale.ini </legend>
-                    <input type="file" id="ini-file" />
-                    <div>
-                        <input id="ini-loadbutton" type="button" value="Load" disabled />
-                        <input type="button" id="ini-savebutton" value="Save" />
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend> General </legend>
-                    <label> Name </label> <input id="ini-name" type="text" />
-                    <label> Location </label> <select id="ini-location"> </select>
-                    <label> Kills </label> <input id="ini-kills" type="text" />
-                    <label> LOVE </label> <input id="ini-love" type="text" />
-                </fieldset>
-            </div>
-            <fieldset>
-                <legend> Post-Genocide </legend>
-                <label> system_information_962 <sup title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run.">[?]</sup> </label> <input type="button" id="savesi2" value="Save" />
-                <label> system_information_963 <sup title="When this file is present, you have 'sold' your soul to get the world back after a genocide run.">[?]</sup> </label> <input type="button" id="savesi3" value="Save" />
-            </fieldset>
-            <fieldset>
-                <legend> Omega Flowey </legend>
-                <label> Trapped in Flowey's World </label> <input type="checkbox" id="ini-omega-flowey-trapped" />
-                <label> Upcoming soul fight: </label> <select id="ini-omega-flowey-soul"></select>
-                <label> How many times you died </label> <input type="text" id="ini-omega-flowey-deaths" />
-            </fieldset>
-            <fieldset>
-                <legend> Other </legend>
-                <label> Dodged all of the special thanks </label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
-                <label> "Fun" value </label> <input type="text" id="ini-fun" />
-            </fieldset>
-        </form>
-        <h2> SAVE Data </h2>
-        <p>
-            This is what gets SAVED at SAVE points.
-        </p>
-        <form>
-            <div>
-                <fieldset>
-                    <legend> file0 </legend>
-                    <input type="file" id="sav-file" />
-                    <div>
-                        <input id="sav-loadbutton" type="button" value="Load" disabled />
-                        <input type="button" id="sav-savebutton" value="Save" />
-                    </div>
-                </fieldset>
-                <fieldset>
-                <legend>General</legend>
-                <label>Name</label> <input type="text" id="sav-name" />
-                <label>Location</label> <select id="sav-location"> </select>
-                <label>Kills</label> <input type="text" id="sav-kills" />
-                <label>??? kill count </label> <input type="text" id="sav-unkkills" />
-                </fieldset>
-                <fieldset>
-                <legend>Stats</legend>
-                <label>LOVE</label> <input type="text" id="sav-love" />
-                <label>HP</label> <input type="text" id="sav-hp" />
-                <label>EXP</label> <input type="text" id="sav-exp" />
-                <label>GOLD</label> <input type="text" id="sav-gold" />
-                <label>AT</label> <input type="text" id="sav-at" />
-                <label>Weapon AT</label> <input type="text" id="sav-weaponat" />
-                <label>DF</label> <input type="text" id="sav-df" />
-                <label>Armor DF</label> <input type="text" id="sav-armordf" />
-                </fieldset>
-            </div>
-            <div>
-            <fieldset>
-                <legend>Equipment</legend>
-                <label>Weapon</label> <select id="sav-weapon"> </select>
-                <label>Armor</label> <select id="sav-armor"> </select>
-            </fieldset>
-            <fieldset>
-                <legend>Inventory</legend>
-                <label>Slot 1</label> <select id="sav-invslot1"> </select>
-                <label>Slot 2</label> <select id="sav-invslot2"> </select>
-                <label>Slot 3</label> <select id="sav-invslot3"> </select>
-                <label>Slot 4</label> <select id="sav-invslot4"> </select>
-                <label>Slot 5</label> <select id="sav-invslot5"> </select>
-                <label>Slot 6</label> <select id="sav-invslot6"> </select>
-                <label>Slot 7</label> <select id="sav-invslot7"> </select>
-                <label>Slot 8</label> <select id="sav-invslot8"> </select>
-            </fieldset>
-            <fieldset>
-                <legend>Cellphone</legend>
-                <label> You have cellphone </label> <input id="sav-havecell" type="checkbox" />
-                <label>Slot 1</label> <select id="sav-cellslot1"> </select>
-                <label>Slot 2</label> <select id="sav-cellslot2"> </select>
-                <label>Slot 3</label> <select id="sav-cellslot3"> </select>
-                <label>Slot 4</label> <select id="sav-cellslot4"> </select>
-                <label>Slot 5</label> <select id="sav-cellslot5"> </select>
-                <label>Slot 6</label> <select id="sav-cellslot6"> </select>
-                <label>Slot 7</label> <select id="sav-cellslot7"> </select>
-                <label>Slot 8</label> <select id="sav-cellslot8"> </select>
-            </fieldset>
-            </div>
-            <div>
-                <fieldset>
-                    <legend> Ruins </legend>
-                    <label> Kill count </label> <input type="text" id="sav-ruinskills" />
-                    <label>Training Dummy State</label> <select id="sav-trainingdummystate"> </select>
-                    <label>Toriel State</label> <select id="sav-torielstate"> </select>
-                </fieldset>
-                <fieldset>
-                    <legend> Snowdin </legend>
-                    <label>Kill count</label> <input type="text" id="sav-snowdinkills" />
-                    <label>Doggo State</label> <select id="sav-doggostate"> </select>
-                    <label>Dogamy & Dogaressa State</label> <select id="sav-dogamydogaressastate"> </select>
-                    <label>Greater Dog State</label> <select id="sav-greaterdogstate"> </select>
-                    <label>Comedian State</label> <select id="sav-comedianstate"> </select>
-                    <label>Papyrus State</label> <select id="sav-papyrusstate"> </select>
-                </fieldset>
-                <fieldset>
-                    <legend> Waterfall </legend>
-                    <label>Kill count</label> <input type="text" id="sav-waterfallkills" />
-                    <label>Shyren State</label> <select id="sav-shyrenstate"> </select>
-                    <label>Mad Dummy State</label> <select id="sav-maddummystate"> </select>
-                    <label>Undyne State 1</label> <select id="sav-undynestate1"> </select>
-                    <label>Undyne State 2</label> <select id="sav-undynestate2"> </select>
-                </fieldset>
-                <fieldset>
-                    <legend> Hotland </legend>
-                    <label>Kill count</label> <input type="text" id="sav-hotlandkills" />
-                    <label>Bro Guards State</label> <select id="sav-broguardsstate"> </select>
-                    <label>Muffet State</label> <select id="sav-muffetstate"> </select>
-                    <label>Mettaton State</label> <select id="sav-mettatonstate"> </select>
-                </fieldset>
-            </div>
-            <div>
-                <fieldset>
-                  <legend> Other </legend>
-                  <label> True lab exited (can get true ending) </label> <input id="sav-exitedtruelab" type="checkbox" />
-                  <label> Defeated Asriel (true pacifist finished) </label> <input id="sav-defeatedasriel" type="checkbox" />
-                  <label> "Plot" value </label> <select id="sav-plotvalue"> </select>
-                  <label> "Fun" value </label> <input type="text" id="sav-fun" />
-                </fieldset>
-            </div>
-        </form>
+        <!-- /script -->
     </body>
 </html>
