@@ -1,65 +1,88 @@
 <!doctype html>
 
-<html lang="en">
+<html lang="zh-cmn-Hans">
     <head>
-        <title> Flowey's Time Machine - Help </title>
+        <meta charset='utf-8'>
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="screen-orientation" content="portrait">
+        <meta name="full-screen" content="yes">
+        <meta name="browsermode" content="application">
+        <meta name="x5-orientation" content="portrait">
+        <meta name="x5-fullscreen" content="true">
+        <meta name="x5-page-mode" content="app">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+        <meta name="renderer" content="webkit">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="style.css" />
+        <title>小花的时间机器(存档编辑器) - 帮助</title>
     </head>
     <body>
-        <h1> Help </h1>
-        <h2> Using external tool </h2>
-        If you wish to temporarily try out a save,
-        you can use the third party tool <a href="https://github.com/LEGOlord208/UndertaleSandbox">UndertaleSandbox</a>.
-        Please note that we are in <b>no way</b> related to them, or any of their actions.
+        <h1> 帮助 </h1>
+        <h2> 外部工具 </h2>
+        如果你希望临时尝试新的存档，你可以使用第三方工具
+        <a href="https://github.com/LEGOlord208/UndertaleSandbox">UndertaleSandbox</a>.
+        请注意我们与他们或者是他们的活动<b>没有</b>关系.
         
-        If you wish to learn the manual way of installing, carry on with the tutorial!
-        <h2> Getting Started </h2>
+        如果你希望学习手动安装,跟着教程走!
+        <h2> 入门 </h2>
         <p>
-            First, you must find your Undertale save folder.
+            首先,你必须找到你的存档目录.
         </p>
         <p>
-            This is usually <code>C:/users/YourUsername/Local Settings/Application Data/UNDERTALE</code>,
-            but it might be different for you, who knows.
+            这通常在<code id="save">(正在识别你的系统...)</code>,
+            但是你的可能不一样,谁知道呢?
         </p>
         <p>
-            It should contain at least a file called <code>undertale.ini</code>
-            and a file called <code>file0</code>, unless you haven't saved your game yet, or the
-            save was deleted.
+            它至少应该包含<code>undertale.ini</code>以及<code>file0</code>除非你没有存档,或者把它们删除了.
         </p>
-        <h2> Loading </h2>
+        <h2> 加载 </h2>
         <p>
-            Once you have found where your existing save data is, you can load it into
-            Flowey's time machine to edit it.
+            当你找到了你的存档文件之后,你就可以用小花的时间机器打开然后编辑它了.
         </p>
         <p>
-            You don't have to load an existing save though, you can select a preset instead at the top,
-            or use the default preset which is set by default.
+            如果你没有加载存档,你可以在页面顶部选择一个预设来替代,
+            或者是使用默认设置好的配置.
         </p>
-        <h2> Editing </h2>
+        <h2> 编辑 </h2>
         <p>
-            Just edit the various fields to your liking. Some fields have a [?] next to them, you can
-            hover over that with the mouse to get some information about the field.
+            只要更改各种各样的编辑框就好,有一些的旁边会有一个<sup title="不是我╭(╯^╰)╮">[?]</sup>,将鼠标移到上面即可获得帮助.
         </p>
-        <h2> Saving </h2>
+        <h2> 保存 </h2>
         <p>
-            Once you have edited the data to your liking, you can save it using the save button.
-            Just overwrite your existing file0 and undertale.ini.
+            如果你已经按照你想要的修改了文件,用保存按钮存档.
+            只要覆盖<code>undertale.ini</code>以及<code>file0</code>即可.
         </p>
-        <h2> Undoing genocide erased world / selling your soul </h2>
+        <h2> 清除GE污染 </h2>
         <p>
-            If you erased your world, you should see a file called <code>system_information_962</code>.
-        </p>
-        <p>
-            If you sold your soul, you should also see a file called <code>system_information_963</code>.
+            如果你清除了世界,你应该看到文件<code>system_information_962</code>.
         </p>
         <p>
-            Just delete these files using your file manager.
+            如果你出卖了你的灵魂,你应该看到文件<code>system_information_963</code>.
         </p>
         <p>
-            If you are using the Steam version of the game, these files might be backed up and restored by
-            the game on startup.
-            In that case, you should delete the Steam data for UNDERTALE in addition to the system_ files,
-            but I have no information on how to do this.
+            删除这两个文件即可.
         </p>
+        <p>
+            如果你使用Steam版本,这些文件随着游戏启动可能被备份并且恢复.
+            在那种情况,你应该删除Undertale的Steam云存档,但是我没有做这个的办法.
+        </p>
+        <script>
+            var pf=navigator.platform; 
+            var ua=navigator.userAgent;
+            var save=document.getElementById("save");
+            if(pf=="Win32" || pf == "Windows"){
+                save.innerText="C:/users/你的用户名/Local Settings/Application Data/UNDERTALE";
+            }else if(pf=="Mac68K" || pf=="MacPPC" || pf=="MacInter" || pf=="Macintosh"){
+                save.innerText="未知";
+            }else if(ua.indexOf("Android")>-1){
+                save.innerText="/data/user/0/com.mrpowergamerbr.UndertaleWrapper/files(修改需要ROOT权限)";
+            }else if(pf.indexOf("Linux")>-1){
+                save.innerText="~/.config/UNDERTALE";
+            }else{
+                save.innerText="Undertale目前只支持Windows,Mac,Linux和Android";
+            }
+        </script>
     </body>
 </html>

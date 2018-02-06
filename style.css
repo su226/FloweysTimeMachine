@@ -1,14 +1,111 @@
 body {
+    font-family: sans-serif;
     background-color: black;
     color: white;
 }
-
+h1 {
+    margin-bottom: 0
+}
+a {
+    color: lightblue;
+}
 form {
     display: flex;
     flex-wrap: wrap;
 }
-
-form fieldset {
-    display: flex;
+form > *{
+	flex-grow: 1;
+}
+form > div{
+	display: flex;
+	flex-direction: column;
+}
+select, input:not([type="button"]):not([type="checkbox"]):not([type="file"]) {
+    background: none;
+    border: none;
+    color: white;
+    border-bottom: 2px solid white;
+    padding: 5px;
+}
+select {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+}
+button, [type="button"] {
+    margin-top: 5px;
+    padding: 5px 32px;
+    background: none;
+    color: orange;
+    border: 2px solid orange;
+    border-radius: 0;
+}
+button:disabled, [type="button"]:disabled {
+    color: gray;
+    border: 2px solid gray;
+}
+button:not(:disabled):hover, [type="button"]:not(:disabled):hover {
+    content: ' ';
+    background: url("res/determinate.png") no-repeat 8px center;
+}
+input+label, select+label {
+    margin-top: 5px;
+}
+option{
+	color: black;
+}
+#forkme {
+    position: fixed;
+    top: 0;
+    right: 0;
+    border: 0;
+    z-index: 9999;
+}
+fieldset{
+	display: flex;
     flex-direction: column;
+	background: black;
+}
+fieldset :not(legend){
+	width: 100%;
+}
+legend{
+	line-height: 1.5em;
+}
+h2+p{
+	margin-top: -16px;
+}
+*,
+:before,
+:after{
+	box-sizing: border-box;
+}
+#userpreset,
+#builtinpreset {
+	display: inline-block;
+}
+#userpresetselect,
+#builtinpresetselect {
+	min-width: 160px;
+}
+@media (max-width:767px){
+	form{
+		display: block;
+	}
+	fleidset{
+		width: 100%;
+	}
+	#userpreset,
+	#builtinpreset {
+		display: flex;
+	}
+	#userpresetselect,
+	#builtinpresetselect {
+		flex-grow: 1;
+		min-width: 0;
+	}
+	#forkme {
+		display: none;
+	}
 }
