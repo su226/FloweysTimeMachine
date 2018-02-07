@@ -3,12 +3,27 @@ CACHE MANIFEST
 # Version: 5
 
 index.html
+help.html
+about.html
 main.js
 style.css
 lib/FileSaver.min.js
+res/flowey_laugh.mp3
 res/flowey_evil.png
+res/flowey_nice.png
+res/flowey_wink.png
+res/determinate.png
+res/menuselect.ogg
+res/forkme.png
+res/favicon.ico
 presets/presets.js
 presets/ruins-start.js
+presets/Asgore (normal).js
+presets/Asgore (true ending).js
+presets/Omega Flowey.js
+presets/sans-battle.js
+presets/True Pacifist Ending.js
+presets/Undyne The Undying.js
 
 NETWORK:
 *
