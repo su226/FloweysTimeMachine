@@ -22,11 +22,17 @@
         <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <title>小花的时间机器(存档编辑器)</title>
+        <style>
+            todo-mark:before{
+                content: " [ ! ] ";
+                color: red;
+            }
+        </style>
     </head>
     <body>
-        <a href="https://github.com/crumblingstatue/FloweysTimeMachine" id="forkme"><img src="./res/forkme.png" alt="在Github上克隆"></a>
-        <div>
-            <img src="res/flowey_nice.png" alt="" id="floweyimg" style="float:left" />
+        <a href="https://github.com/su226/FloweysTimeMachine" id="forkme"><img src="./res/forkme.png" alt="在Github上克隆"></a>
+        <div id="title">
+            <img src="res/flowey_nice.png" alt="" id="floweyimg"/>
             <h1>小<span title="Fa">花</span>的时间机器<sup>zh-CN</sup></h1>
             Undertale存档编辑器
             <a href="help.html" target="_blank">帮助</a>
@@ -40,7 +46,7 @@
         </div>
         <input type="button" id="builtinpresetload" value="加载" />
         <br>
-        <div id="builtinpreset">
+        <div id="userpreset">
             <label> 你的配置 </label>
             <select id="userpresetselect"> </select>
         </div>
@@ -49,8 +55,9 @@
         <input type="button" id="userpresetnew" value="新建" />
         <input type="button" id="userpresetdelete" value="删除" disabled />
         <input type="button" id="userpresetexport" value="保存并导出" disabled />
-        <br>
-        <label> 静音 </label><input type="checkbox" id="mute" />
+        <div>
+        	<label> 静音 </label><input type="checkbox" id="mute" />
+        </div>
         <h2> 永久性数据 </h2>
         <p>多次游玩时都会记录的数据</p>
         <form>
@@ -58,9 +65,9 @@
                 <fieldset>
                     <legend> undertale.ini </legend>
                     <input type="file" id="ini-file" />
-                    <div>
-                        <input id="ini-loadbutton" type="button" value="加载" disabled />
-                        <input type="button" id="ini-savebutton" value="保存" />
+                    <div style="display:flex">
+                        <input id="ini-loadbutton" type="button" value="加载" style="flex:1" disabled />
+                        <input id="ini-savebutton" type="button" value="保存" style="flex:1;margin-left:10px"/>
                     </div>
                 </fieldset>
                 <fieldset>
@@ -68,30 +75,41 @@
                     <label> 名称 </label> <input id="ini-name" type="text" />
                     <label> 位置 </label> <select id="ini-location"> </select>
                     <label> 击杀 </label> <input id="ini-kills" type="text" />
+                    <label> 死亡<todo-mark></todo-mark> </label> <input id="ini-flowey-met" type="text" />
                     <label> LOVE </label> <input id="ini-love" type="text" />
                 </fieldset>
             </div>
             <div>
                 <fieldset>
-                    <legend> 精污花 </legend>
-                    <label> 困在小花的世界中 </label> <input type="checkbox" id="ini-omega-flowey-trapped" />
-                    <label> 下一个攻击方式 </label> <select id="ini-omega-flowey-soul"></select>
-                    <label> 死亡次数 </label> <input type="text" id="ini-omega-flowey-deaths" />
-                </fieldset>
-                <fieldset>
-                    <legend> Sans </legend>
-                    <label> 死亡次数 </label>
-                    <input type="text" id="ini-sans-deaths" />
+                    <legend> 小花 </legend>
+                    <label> 遇见小花次数<todo-mark></todo-mark> </label> <input type="text" id="ini-flowey-met" />
                 </fieldset>
                 <fieldset>
                     <legend> Toriel </legend>
                     <label> 杀死了Toriel </label>
                     <input type="checkbox" id="ini-killed-toriel" />
+                    <label> 饶恕了Toriel<todo-mark></todo-mark> </label>
+                    <input type="checkbox" id="ini-spared-toriel" />
+                </fieldset>
+                <fieldset>
+                    <legend> Sans </legend>
+                    <label> 遇见sans<todo-mark></todo-mark> </label> <input type="checkbox" id="ini-sans-met" />
+                    <label> 死亡次数 </label>
+                    <input type="text" id="ini-sans-deaths" />
                 </fieldset>
                 <fieldset>
                     <legend> Papyrus </legend>
+                    <label> 遇见Papyrus<todo-mark></todo-mark> </label> <input type="checkbox" id="ini-papyrus-met" />
+                    <label> 杀死了Papyrus<todo-mark></todo-mark> </label>
+                    <input type="checkbox" id="ini-killed-papyrus" />
                     <label> 饶恕了Papyrus </label>
                     <input type="checkbox" id="ini-spared-papyrus" />
+                </fieldset>
+                <fieldset>
+                    <legend> 魔花 </legend>
+                    <label> 困在小花的世界中 </label> <input type="checkbox" id="ini-omega-flowey-trapped" />
+                    <label> 下一个攻击方式 </label> <select id="ini-omega-flowey-soul"></select>
+                    <label> 死亡次数 </label> <input type="text" id="ini-omega-flowey-deaths" />
                 </fieldset>
             </div>
             <div>
@@ -105,6 +123,7 @@
                 <fieldset>
                     <legend> 其他 </legend>
                     <label> 跟踪了全部特别感谢 </label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
+                    <label> 离开了结界(和平线游戏结束)<todo-mark></todo-mark> </label> <input type="checkbox" id="ini-exit-barrier" />
                     <label> "欢乐"值 </label> <input type="text" id="ini-fun" />
                 </fieldset>
             </div>
@@ -116,22 +135,22 @@
                 <fieldset>
                     <legend> file0 </legend>
                     <input type="file" id="sav-file" />
-                    <div>
-                        <input id="sav-loadbutton" type="button" value="加载" disabled />
-                        <input type="button" id="sav-savebutton" value="保存" />
+                    <div style="display:flex">
+                        <input id="sav-loadbutton" type="button" value="加载" style="flex:1" disabled />
+                        <input id="sav-savebutton" type="button" value="保存" style="flex:1;margin-left:10px" />
                     </div>
                 </fieldset>
                 <fieldset>
                 <legend>通用</legend>
                 <label>名称</label> <input type="text" id="sav-name" />
                 <label>地点</label> <select id="sav-location"> </select>
-                <label>死亡次数</label> <input type="text" id="sav-kills" />
-                <label>击杀次数</label> <input type="text" id="sav-unkkills" />
+                <label>死亡</label> <input type="text" id="sav-unkkills" />
+                <label>击杀</label> <input type="text" id="sav-kills" />
                 </fieldset>
                 <fieldset>
                 <legend>状态</legend>
-                <label>LOVE</label> <input type="text" id="sav-love" />
                 <label>生命</label> <input type="text" id="sav-hp" />
+                <label>LOVE</label> <input type="text" id="sav-love" />
                 <label>EXP</label> <input type="text" id="sav-exp" />
                 <label>金币</label> <input type="text" id="sav-gold" />
                 <label>攻击力</label> <input type="text" id="sav-at" />
