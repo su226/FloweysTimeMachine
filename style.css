@@ -67,7 +67,7 @@ fieldset{
     flex-direction: column;
 	background: black;
 }
-fieldset :not(legend){
+fieldset > :not(legend){
 	width: 100%;
 }
 legend{
@@ -108,4 +108,17 @@ h2+p{
 	#forkme {
 		display: none;
 	}
+}
+input{
+    border-radius: 0;
+}
+#title{
+    padding-left: 94px;
+    min-height: 100px;
+    position: relative;
+}
+#floweyimg{
+    position: absolute;
+    top: 0;
+    left: 0;
 }
