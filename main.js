@@ -20,7 +20,7 @@ var items = [
     "狗型冰棒",
     "情侣冰棒",
     "光棍冰棒",
-    "肉桂面包",
+    "肉桂兔包",
     "提米薄片",
     "遗弃的乳蛋饼",
     "旧芭蕾短裙",
@@ -68,7 +68,7 @@ var items = [
 ];
 
 var cellOpts = {
-    "0":   "空",
+    "0":   "<空>",
     "201": "打招呼",
     "202": "谜题帮助",
     "203": "介绍自己",
@@ -301,51 +301,52 @@ var rooms = {
     "212": "Hotland - Core Final Elevator Entrance",
     "214": "Hotland - Elevator L1",
     "215": "Hotland - Core Final Elevator",
-    "216": "Castle Elevator [SAVE]",
-    "217": "Castle - Another Elevator",
-    "218": "Castle - Dark Path",
-    "219": "New Home [SAVE]",
-    "220": "New Home - Entrance",
-    "221": "New Home - Reading Room",
-    "222": "New Home - Corridor",
-    "223": "New Home - Asgore's Room",
-    "224": "New Home - Your Room",
-    "225": "New Home - Kitchen",
-    "226": "New Home - Basement 1",
-    "227": "New Home - Basement 2",
-    "228": "New Home - Basement 3",
-    "229": "New Home - Basement 4",
-    "230": "New Home - Elevator",
-    "231": "Last Corridor [SAVE]",
-    "232": "Throne Entrance [SAVE]",
-    "233": "Throne Entrance - Stairs Down",
-    "234": "Throne Entrance - Coffins",
-    "235": "Throne Room [SAVE]",
-    "236": "The End [SAVE]",
-    "237": "Barrier",
+    "216": "城堡电梯 [存档点]",
+    "217": "城堡 - 另一个电梯",
+    "218": "城堡 - 暗黑小路",
+    "219": "新家 [存档点]",
+    "220": "新家 - 入口",
+    "221": "新家 - 读书室",
+    "222": "新家 - 走廊",
+    "223": "新家 - Asgore的房间",
+    "224": "新家 - 你的房间",
+    "225": "新家 - 厨房",
+    "226": "新家 - 地下室1",
+    "227": "新家 - 地下室2",
+    "228": "新家 - 地下室3",
+    "229": "新家 - 地下室4",
+    "230": "新家 - 电梯",
+    "231": "审判长廊 [存档点]",
+    "232": "王座入口 [存档点]",
+    "233": "王座入口 - 向下楼梯",
+    "234": "王座入口 - 棺材",
+    "235": "王座 [存档点]",
+    "236": "结束 [存档点]",
+    "237": "屏障",
     "241": "外面[未使用]",
-    "242": "Laboratory Elevator",
-    "243": "True Lab - Elevator",
-    "244": "True Lab - Elevator Entrance",
-    "245": "True Lab - South Corridor",
-    "246": "True Laboratory [SAVE]",
-    "247": "True Lab - West Corridor 1",
-    "248": "True Lab - West Sinks",
-    "249": "True Lab - West red key slot",
-    "250": "True Lab - North Corridor 1",
-    "251": "True Lab - Bedroom [SAVE]",
-    "252": "True Lab - Northeast Corridor",
-    "253": "True Lab - Northeast blue key slot",
-    "254": "True Lab - North Corridor 2",
-    "255": "True Lab - Green key",
-    "256": "True Lab - Northwest skull",
-    "257": "True Lab - Yellow Key Slot + TV",
-    "258": "True Lab - Northwest refrigerators",
-    "259": "True Lab - Green Key Slot",
-    "260": "True Lab - Fans",
-    "261": "True Lab - Elevator 2",
-    "262": "True Lab - Power room corridor",
-    "263": "True Lab - Power room",
+    "242": "实验室电梯",
+    "243": "真实验室 - 电梯",
+    "244": "真实验室 - 电梯入口",
+    "245": "真实验室 - 南部长廊",
+    "246": "真实验室 [存档点]",
+    "247": "真实验室 - 西部长廊1",
+    "248": "真实验室 - 西部水槽",
+    "249": "真实验室 - 西部红色钥匙孔",
+    "250": "真实验室 - 北部长廊1",
+    "251": "真实验室 - 卧室 [存档点]",
+    "252": "真实验室 - 东北长廊",
+    "253": "真实验室 - 东北蓝色钥匙孔",
+    "254": "真实验室 - 北部长廊2",
+    "255": "真实验室 - 绿色钥匙",
+    "256": "真实验室 - 西北头颅",
+    "257": "真实验室 - 黄色钥匙孔+电视",
+    "258": "真实验室 - 西北冰箱",
+    "259": "真实验室 - 绿钥匙孔",
+    "260": "真实验室 - 风扇",
+    "261": "真实验室 - 电梯2",
+    "262": "真实验室 - 供电房长廊",
+    "263": "真实验室 - 供电房",
+    "264": "W. D. Gaster",
     "265": "雪町 - 冰穴",
     "331": "艾斯利尔的房间[未使用]"
 };
@@ -360,6 +361,12 @@ var floweyStates = {
     "6": "黄",
     "7": "无 (战斗完成)",
 };
+
+var torielPrefer={
+    "0": "未知",
+    "1": "奶油糖",
+    "2": "肉桂"
+}
 
 var torielStates = {
     "0": "初始状态",
@@ -572,10 +579,48 @@ function loadSaveFromFile(file, closure) {
 // Update the persistent data form from an ini object.
 function updatePersistentDataForm(iniobj) {
     "use strict";
-    document.getElementById("ini-name").value = iniobj.General.Name;
-    document.getElementById("ini-location").value = parseInt(iniobj.General.Room.trim());
-    document.getElementById("ini-kills").value = parseInt(iniobj.General.Kills.trim());
-    document.getElementById("ini-love").value = parseInt(iniobj.General.Love.trim());
+    if (iniobj.General){
+        document.getElementById("ini-name").value = iniobj.General.Name;
+        if(iniobj.General.Room){
+            document.getElementById("ini-location").value = parseInt(iniobj.General.Room.trim());
+        }else{
+            document.getElementById("ini-location").value = 4;
+        }
+        if(iniobj.General.Kills){
+            document.getElementById("ini-kills").value = parseInt(iniobj.General.Kills.trim());
+        }else{
+            document.getElementById("ini-kills").value = 0;
+        }
+        if(iniobj.General.Gameover){
+            document.getElementById("ini-dies").value = parseInt(iniobj.General.Gameover.trim());
+        }else{
+            document.getElementById("ini-dies").value = 0;
+        }
+        if(iniobj.General.Love){
+            document.getElementById("ini-love").value = parseInt(iniobj.General.Love.trim());
+        }else{
+            document.getElementById("ini-love").value = 0;
+        }
+    } else {
+        document.getElementById("ini-name").value = "Marty";
+        document.getElementById("ini-location").value = 4;
+        document.getElementById("ini-kills").value = 0;
+        document.getElementById("ini-dies").value = 0;
+        document.getElementById("ini-love").value = 0;
+    }
+    if (iniobj.Flowey) {
+        if(iniobj.Flowey.Met1){
+            if (parseInt(iniobj.Flowey.Met1.trim()) === 1) {
+                document.getElementById("ini-flowey-met").checked = true;
+            } else {
+                document.getElementById("ini-flowey-met").checked = false;
+            }
+        }else{
+            document.getElementById("ini-flowey-met").checked = false;
+        }
+    }else{
+        document.getElementById("ini-flowey-met").checked = false;
+    }
     if (iniobj.FFFFF) {
         if (iniobj.FFFFF.F) {
             if (parseInt(iniobj.FFFFF.F.trim()) === 1) {
@@ -583,15 +628,23 @@ function updatePersistentDataForm(iniobj) {
             } else {
                 document.getElementById("ini-omega-flowey-trapped").checked = false;
             }
+        } else {
+            document.getElementById("ini-omega-flowey-trapped").checked = false;
         }
         if (iniobj.FFFFF.P) {
             document.getElementById("ini-omega-flowey-soul").value = parseInt(iniobj.FFFFF.P.trim());
+        } else {
+            document.getElementById("ini-omega-flowey-soul").value = 0;
         }
         if (iniobj.FFFFF.D) {
             document.getElementById("ini-omega-flowey-deaths").value = parseInt(iniobj.FFFFF.D.trim());
+        } else {
+            document.getElementById("ini-omega-flowey-deaths").value = 0;
         }
     } else {
         document.getElementById("ini-omega-flowey-trapped").checked = false;
+        document.getElementById("ini-omega-flowey-soul").value = 0;
+        document.getElementById("ini-omega-flowey-deaths").value = 0;
     }
     if (iniobj.reset) {
         if (iniobj.reset.s_key) {
@@ -600,6 +653,8 @@ function updatePersistentDataForm(iniobj) {
             } else {
                 document.getElementById("ini-dodged-all-special-thanks").checked = false;
             }
+        } else {
+            document.getElementById("ini-dodged-all-special-thanks").checked = false;
         }
     } else {
         document.getElementById("ini-dodged-all-special-thanks").checked = false;
@@ -608,21 +663,94 @@ function updatePersistentDataForm(iniobj) {
         document.getElementById("ini-fun").value = parseInt(iniobj.fun.trim());
     }
     if (iniobj.Sans){
-        document.getElementById("ini-sans-deaths").value = parseInt(iniobj.Sans.F.trim());
+        if (iniobj.Sans.F) {
+            document.getElementById("ini-sans-deaths").value = parseInt(iniobj.Sans.F.trim());
+        }
+        if (iniobj.Sans.M1) {
+            if (parseInt(iniobj.Sans.M1.trim()) === 1) {
+                document.getElementById("ini-sans-met").checked = true;
+            } else {
+                document.getElementById("ini-sans-met").checked = false;
+            }
+        }
+    } else {
+        document.getElementById("ini-sans-deaths").value = 0;
+        document.getElementById("ini-sans-met").checked = false;
     }
     if (iniobj.Toriel) {
-        if (parseInt(iniobj.Toriel.TK.trim()) === 1) {
-            document.getElementById("ini-killed-toriel").checked = true;
+        if (iniobj.Toriel.Bscotch) {
+            document.getElementById("ini-toriel-prefer").value = parseInt(iniobj.Toriel.Bscotch.trim());
+        } else {
+            document.getElementById("ini-toriel-prefer").value = 0;
+        }
+        if (iniobj.Toriel.TS) {
+            if (parseInt(iniobj.Toriel.TS.trim()) === 1) {
+                document.getElementById("ini-spared-toriel").checked = true;
+            } else {
+                document.getElementById("ini-spared-toriel").checked = false;
+            }
+        } else {
+            document.getElementById("ini-spared-toriel").checked = false;
+        }
+        if (iniobj.Toriel.TK) {
+            if (parseInt(iniobj.Toriel.TK.trim()) === 1) {
+                document.getElementById("ini-killed-toriel").checked = true;
+            } else {
+                document.getElementById("ini-killed-toriel").checked = false;
+            }
         } else {
             document.getElementById("ini-killed-toriel").checked = false;
         }
+    } else {
+        document.getElementById("ini-toriel-prefer").value = 0;
+        document.getElementById("ini-spared-toriel").checked = false;
+        document.getElementById("ini-killed-toriel").checked = false;
     }
     if (iniobj.Papyrus){
-        if (parseInt(iniobj.Papyrus.PS.trim()) === 1){
-            document.getElementById("ini-spared-papyrus").checked = true;
+        if (iniobj.Papyrus.M1) {
+            if (parseInt(iniobj.Papyrus.M1.trim()) === 1) {
+                document.getElementById("ini-papyrus-met").checked = true;
+            } else {
+                document.getElementById("ini-papyrus-met").checked = false;
+            }
+        } else {
+            document.getElementById("ini-papyrus-met").checked = false;
+        }
+        if (iniobj.Papyrus.PS){
+            if (parseInt(iniobj.Papyrus.PS.trim()) === 1){
+                document.getElementById("ini-spared-papyrus").checked = true;
+            } else {
+                document.getElementById("ini-spared-papyrus").checked = false;
+            }
         } else {
             document.getElementById("ini-spared-papyrus").checked = false;
         }
+        if (iniobj.Papyrus.PK){
+            if (parseInt(iniobj.Papyrus.PK.trim()) === 1){
+                document.getElementById("ini-killed-papyrus").checked = true;
+            } else {
+                document.getElementById("ini-killed-papyrus").checked = false;
+            }
+        } else {
+            document.getElementById("ini-killed-papyrus").checked = false;
+        }
+    } else {
+        document.getElementById("ini-papyrus-met").checked = false;
+        document.getElementById("ini-spared-papyrus").checked = false;
+        document.getElementById("ini-killed-papyrus").checked = false;
+    }
+    if (iniobj.EndF){
+        if (iniobj.EndF.EndF){
+            if (parseInt(iniobj.EndF.EndF.trim()) === 1){
+                document.getElementById("ini-exit-barrier").checked = true;
+            } else {
+                document.getElementById("ini-exit-barrier").checked = false;
+            }
+        } else {
+            document.getElementById("ini-exit-barrier").checked = false;
+        }
+    } else {
+        document.getElementById("ini-exit-barrier").checked = false;
     }
 }
 
@@ -673,6 +801,14 @@ function updateIniFromForm(ini) {
     if (fun) {
         ini.General.fun = fun;
     }
+    if (document.getElementById("ini-sans-met").checked) {
+        if (!ini.Sans) {
+            ini.Sans = {};
+        }
+        if (ini.Sans) {
+            ini.Sans.M1 = "1";
+        }
+    }
     var timesDiedSans = parseInt(document.getElementById("ini-sans-deaths").value);
     if (timesDiedSans){
         if (!ini.Sans){
@@ -680,6 +816,21 @@ function updateIniFromForm(ini) {
         }
         if (ini.Sans){
             ini.Sans.F = timesDiedSans;
+        }
+    }
+    var torielPrefer = parseInt(document.getElementById("ini-toriel-prefer").value);
+    if (torielPrefer) {
+        if (!ini.Toriel) {
+            ini.Toriel = {};
+        }
+        ini.Toriel.Bscotch = torielPrefer;
+    }
+    if (document.getElementById("ini-spared-toriel").checked) {
+        if (!ini.Toriel) {
+            ini.Toriel = {};
+        }
+        if (ini.Toriel) {
+            ini.Toriel.TS = "1";
         }
     }
     if (document.getElementById("ini-killed-toriel").checked) {
@@ -690,12 +841,28 @@ function updateIniFromForm(ini) {
             ini.Toriel.TK = "1";
         }
     }
+    if (document.getElementById("ini-papyrus-met").checked) {
+        if (!ini.Papyrus) {
+            ini.Papyrus = {};
+        }
+        if (ini.Papyrus) {
+            ini.Papyrus.M1 = "1";
+        }
+    }
     if (document.getElementById("ini-spared-papyrus").checked){
         if (!ini.Papyrus) {
             ini.Papyrus = {};
         }
         if (ini.Papyrus) {
             ini.Papyrus.PS = "1";
+        }
+    }
+    if (document.getElementById("ini-killed-papyrus").checked){
+        if (!ini.Papyrus) {
+            ini.Papyrus = {};
+        }
+        if (ini.Papyrus) {
+            ini.Papyrus.PK = "1";
         }
     }
 }
@@ -901,6 +1068,7 @@ function start() {
     loadSelectFromObj("sav-location", rooms);
     loadSelectFromObj("ini-location", rooms);
     loadSelectFromObj("ini-omega-flowey-soul", floweyStates);
+    loadSelectFromObj("ini-toriel-prefer", torielPrefer)
     loadSelectFromObj("sav-torielstate", torielStates);
     loadSelectFromObj("sav-comedianstate", comedianStates);
     loadSelectFromObj("sav-doggostate", doggoStates);
@@ -946,7 +1114,6 @@ function start() {
             return;
         }
         loadIniFromFile(iniFile, function(iniobj) {
-            console.log(iniobj);
             updatePersistentDataForm(iniobj);
             ini = iniobj;
         });

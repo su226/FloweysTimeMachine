@@ -22,18 +22,12 @@
         <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
         <link rel="stylesheet" type="text/css" href="style.css" />
         <title>小花的时间机器(存档编辑器)</title>
-        <style>
-            todo-mark:before{
-                content: " [ ! ] ";
-                color: red;
-            }
-        </style>
     </head>
     <body>
         <a href="https://github.com/su226/FloweysTimeMachine" id="forkme"><img src="./res/forkme.png" alt="在Github上克隆"></a>
         <div id="title">
             <img src="res/flowey_nice.png" alt="" id="floweyimg"/>
-            <h1>小<span title="Fa">花</span>的时间机器<sup>zh-CN</sup></h1>
+            <h1>小花的时间机器<sup>zh-CN</sup></h1>
             Undertale存档编辑器
             <a href="help.html" target="_blank">帮助</a>
             <a href="about.html" target="_blank">关于</a>
@@ -61,7 +55,7 @@
         <h2> 永久性数据 </h2>
         <p>多次游玩时都会记录的数据</p>
         <form>
-            <div>
+            <div>t
                 <fieldset>
                     <legend> undertale.ini </legend>
                     <input type="file" id="ini-file" />
@@ -75,32 +69,35 @@
                     <label> 名称 </label> <input id="ini-name" type="text" />
                     <label> 位置 </label> <select id="ini-location"> </select>
                     <label> 击杀 </label> <input id="ini-kills" type="text" />
-                    <label> 死亡<todo-mark></todo-mark> </label> <input id="ini-flowey-met" type="text" />
+                    <label> 死亡 </label> <input id="ini-dies" type="text" />
                     <label> LOVE </label> <input id="ini-love" type="text" />
                 </fieldset>
             </div>
             <div>
                 <fieldset>
                     <legend> 小花 </legend>
-                    <label> 遇见小花次数<todo-mark></todo-mark> </label> <input type="text" id="ini-flowey-met" />
+                    <label> 遇见小花 </label>
+                    <input type="checkbox" id="ini-flowey-met" />
                 </fieldset>
                 <fieldset>
                     <legend> Toriel </legend>
+                    <label> 你更喜欢 </label>
+                    <select id="ini-toriel-prefer"> </select>
                     <label> 杀死了Toriel </label>
                     <input type="checkbox" id="ini-killed-toriel" />
-                    <label> 饶恕了Toriel<todo-mark></todo-mark> </label>
+                    <label> 饶恕了Toriel </label>
                     <input type="checkbox" id="ini-spared-toriel" />
                 </fieldset>
                 <fieldset>
                     <legend> Sans </legend>
-                    <label> 遇见sans<todo-mark></todo-mark> </label> <input type="checkbox" id="ini-sans-met" />
+                    <label> 遇见sans </label> <input type="checkbox" id="ini-sans-met" />
                     <label> 死亡次数 </label>
                     <input type="text" id="ini-sans-deaths" />
                 </fieldset>
                 <fieldset>
                     <legend> Papyrus </legend>
-                    <label> 遇见Papyrus<todo-mark></todo-mark> </label> <input type="checkbox" id="ini-papyrus-met" />
-                    <label> 杀死了Papyrus<todo-mark></todo-mark> </label>
+                    <label> 遇见Papyrus </label> <input type="checkbox" id="ini-papyrus-met" />
+                    <label> 杀死了Papyrus </label>
                     <input type="checkbox" id="ini-killed-papyrus" />
                     <label> 饶恕了Papyrus </label>
                     <input type="checkbox" id="ini-spared-papyrus" />
@@ -123,7 +120,7 @@
                 <fieldset>
                     <legend> 其他 </legend>
                     <label> 跟踪了全部特别感谢 </label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
-                    <label> 离开了结界(和平线游戏结束)<todo-mark></todo-mark> </label> <input type="checkbox" id="ini-exit-barrier" />
+                    <label> 离开了结界(和平线游戏结束) </label> <input type="checkbox" id="ini-exit-barrier" />
                     <label> "欢乐"值 </label> <input type="text" id="ini-fun" />
                 </fieldset>
             </div>
