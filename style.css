@@ -109,7 +109,8 @@ h2+p{
 		display: none;
 	}
 }
-input{
+input,
+select{
     border-radius: 0;
 }
 #title{
