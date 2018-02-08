@@ -11,6 +11,7 @@ Flowey's Time Machine的汉化版
 (对应\[Sans\]\[Papyrus\]\[Flowey\]和\[Toriel\]四个章节)
 - 增加了修改时间的功能
 算法为(分钟数\*60+秒钟数)\*30
+- 增加了维度盒子的修改功能
 - 地点增加了 W. D. Gaster(ID为264)
 - 修改??? kill count(???击杀次数)为死亡次数
 - 界面修改(个人恶趣味,更像UT了)
@@ -18,4 +19,3 @@ Flowey's Time Machine的汉化版
 
 ## TODO
 - 汉化地名,物品名,怪物名(不知道怎么汉化)
-- 增加维度盒子的修改
