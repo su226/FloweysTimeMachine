@@ -601,12 +601,21 @@ function updatePersistentDataForm(iniobj) {
         }else{
             document.getElementById("ini-love").value = 0;
         }
+        if(iniobj.General.Time){
+            document.getElementById("ini-time-minute").value =   parseInt(iniobj.General.Time.trim()/30/60);
+            document.getElementById("ini-time-second").value = Math.round(iniobj.General.Time.trim()/30%60);
+        }else{
+            document.getElementById("ini-time-minute").value = 0;
+            document.getElementById("ini-time-second").value = 0;
+        }
     } else {
         document.getElementById("ini-name").value = undefined;
         document.getElementById("ini-location").value = 4;
         document.getElementById("ini-kills").value = 0;
         document.getElementById("ini-dies").value = 0;
         document.getElementById("ini-love").value = 0;
+        document.getElementById("ini-time-minute").value = 0;
+        document.getElementById("ini-time-second").value = 0;
     }
     if (iniobj.Flowey) {
         if(iniobj.Flowey.Met1){
@@ -757,10 +766,16 @@ function updatePersistentDataForm(iniobj) {
 // Update an ini object from the persistent data form.
 function updateIniFromForm(ini) {
     "use strict";
+    if (!ini.FFFFF) {
+        ini.FFFFF = {};
+    }
     ini.General.Name = document.getElementById("ini-name").value;
     ini.General.Room = document.getElementById("ini-location").value;
     ini.General.Kills = document.getElementById("ini-kills").value;
     ini.General.Love = document.getElementById("ini-love").value;
+    ini.General.Time = (document.getElementById("ini-time-minute").value*60+
+                        document.getElementById("ini-time-second").value*1)*30;
+    console.log(ini.General.Time)
     if (document.getElementById("ini-omega-flowey-trapped").checked) {
         if (!ini.FFFFF) {
             ini.FFFFF = {};
@@ -881,6 +896,8 @@ function updateSelection(id, values, index, list) {
 function updateSaveDataForm(values) {
     "use strict";
     document.getElementById("sav-name").value = values[0];
+    document.getElementById("sav-time-minute").value =   parseInt(values[548]/30/60);
+    document.getElementById("sav-time-second").value = Math.round(values[548]/30%60);
     document.getElementById("sav-kills").value = values[11];
     document.getElementById("sav-love").value = values[1];
     document.getElementById("sav-hp").value = values[2];
@@ -939,6 +956,8 @@ function updateSaveDataForm(values) {
 function updateSaveValuesFromForm(values) {
     "use strict";
     values[0] = document.getElementById("sav-name").value;
+    values[548] = (document.getElementById("sav-time-minute").value*60+
+                   document.getElementById("sav-time-second").value*1)*30;
     values[1] = document.getElementById("sav-love").value;
     values[2] = document.getElementById("sav-hp").value;
     values[4] = document.getElementById("sav-at").value;
