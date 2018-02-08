@@ -7,8 +7,11 @@ Flowey's Time Machine的汉化版
 
 ## 具体更改
 - 汉化(部分选项未汉化，以后再说)
-- 增加了11个选项
-- 地点增加了 W. D. Gaster
+- 增加了undertale.ini中的怪物相关选项
+(对应\[Sans\]\[Papyrus\]\[Flowey\]和\[Toriel\]四个章节)
+- 增加了修改时间的功能
+算法为(分钟数\*60+秒钟数)\*30
+- 地点增加了 W. D. Gaster(ID为264)
 - 修改??? kill count(???击杀次数)为死亡次数
 - 界面修改(个人恶趣味,更像UT了)
 - 适应移动端(android有UT的移植版)
