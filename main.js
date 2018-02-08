@@ -602,7 +602,7 @@ function updatePersistentDataForm(iniobj) {
             document.getElementById("ini-love").value = 0;
         }
     } else {
-        document.getElementById("ini-name").value = "Marty";
+        document.getElementById("ini-name").value = undefined;
         document.getElementById("ini-location").value = 4;
         document.getElementById("ini-kills").value = 0;
         document.getElementById("ini-dies").value = 0;
