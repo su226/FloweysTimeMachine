@@ -525,6 +525,10 @@ function insert_inv_lists() {
         for (var j = 1; j <= 8; j++) {
             insert("sav-invslot" + j, i);
         }
+        for (j=1;j<=10;j++){
+            insert("sav-dimaslot"+j, i);
+            insert("sav-dimbslot"+j, i);
+        }
         insert("sav-weapon", i);
         insert("sav-armor", i);
     }
@@ -880,6 +884,14 @@ function updateIniFromForm(ini) {
             ini.Papyrus.PK = "1";
         }
     }
+    if(document.getElementById("ini-exit-barrier").checked){
+    	if (!ini.EndF) {
+            ini.EndF = {};
+        }
+        if (ini.EndF) {
+            ini.EndF.EndF = 1;
+        }
+    }
 }
 
 function updateSelection(id, values, index, list) {
@@ -910,6 +922,10 @@ function updateSaveDataForm(values) {
     for (var i = 0; i < 8; i++) {
         updateSelection("sav-invslot" + (i + 1), values, 12 + (i * 2), items);
         updateSelection("sav-cellslot" + (i + 1), values, 13 + (i * 2), cellOpts);
+    }
+    for (i = 0; i<10; i++){
+        updateSelection("sav-dimaslot"+(i + 1), values, 330 + i, items);
+        updateSelection("sav-dimbslot"+(i + 1), values, 342 + i, items);
     }
     updateSelection("sav-weapon", values, 28, items);
     updateSelection("sav-armor", values, 29, items);
@@ -983,6 +999,10 @@ function updateSaveValuesFromForm(values) {
     values[25] = document.getElementById("sav-cellslot7").value;
     values[26] = document.getElementById("sav-invslot8").value;
     values[27] = document.getElementById("sav-cellslot8").value;
+    for(var i=0;i<10;i++){
+        values[330+i] = document.getElementById("sav-dimaslot"+(i+1)).value;
+        values[342+i] = document.getElementById("sav-dimbslot"+(i+1)).value;
+    }
     values[28] = document.getElementById("sav-weapon").value;
     values[29] = document.getElementById("sav-armor").value;
     values[44] = document.getElementById("sav-trainingdummystate").value;
