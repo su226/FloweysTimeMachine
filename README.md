@@ -8,8 +8,10 @@ Flowey's Time Machine的汉化版
 ## 具体更改
 - 汉化(部分选项未汉化，以后再说)
 - 增加了undertale.ini中的怪物相关选项
+
 (对应\[Sans\]\[Papyrus\]\[Flowey\]和\[Toriel\]四个章节)
 - 增加了修改时间的功能
+
 算法为(分钟数\*60+秒钟数)\*30
 - 增加了维度盒子的修改功能
 - 地点增加了 W. D. Gaster(ID为264)
