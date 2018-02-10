@@ -169,8 +169,8 @@ var rooms = {
     "66": "雪町 - 雪堆(大犬汪)",
     "67": "雪町 - 致命的恐怖挑战",
     "68": "雪町 - 城镇 [存档点]",
-    "69": "雪镇 - 冰把狼",//TODO
-    "70": "雪镇 - 船港",
+    "69": "雪镇 - 扔冰的狼",
+    "70": "雪镇 - 船坞",
     "71": "雪镇 - 宾馆大厅",
     "73": "雪镇 - 烤尔比",
     "74": "雪镇 - 图书馆",
@@ -179,128 +179,128 @@ var rooms = {
     "83":  "瀑布 - 检查点 [存档点]",
     "84":  "瀑布 - 掉下的石头",
     "86":  "瀑布 - 长廊 [存档点]",
-    "87":  "Waterfall - Lily pad bridge",
-    "88":  "Waterfall - Lily pad vertical bridge",
-    "90":  "Waterfall - Telescope",
-    "91":  "Waterfall - Boat plank",
-    "92":  "Waterfall - Undyne Spear dodging 1",
-    "93":  "Waterfall - Bush after spear dodging",
-    "94":  "Waterfall - Crystal [SAVE]",
-    "95":  "Waterfall - Sans Telescope",
-    "96":  "Waterfall - Nice Cream Stand",
-    "97":  "Waterfall - Split Pathway",
-    "98":  "Waterfall - Ballet shoes",
-    "99":  "Waterfall - Duck",
-    "100": "Waterfall - Onionsan",
-    "101": "Waterfall - Artifact hub",
-    "102": "Waterfall - Piano",
-    "103": "Waterfall - Legendary Artifact",
-    "104": "Waterfall - Rainy Statue",
-    "105": "Waterfall - Umbrellas",
-    "106": "Waterfall - Rainy Path 1",
-    "107": "Waterfall - Rainy Path 2",
-    "108": "Waterfall - Palace View",
-    "109": "Waterfall - Umbrella ledge",
-    "110": "Waterfall - Bridge [SAVE]",
-    "111": "Waterfall - Bridge spear dodge",
-    "112": "Waterfall - Bridge fall",
-    "113": "Waterfall - Trash Zone Flower bed",
-    "114": "Waterfall - Trash Zone [SAVE]",
-    "115": "Waterfall - Training Dummy revenge",
-    "116": "Waterfall - Quiet Area [SAVE]",
-    "117": "Waterfall - Undyne's house entrance",
-    "119": "Waterfall - Twin Ghost houses",
-    "124": "Waterfall - Turtle shop",
-    "125": "Waterfall - River boat",
-    "126": "Waterfall - 2 waterfalls",
-    "127": "Waterfall - Mushroom maze",
-    "128": "Waterfall - Temmie Village [SAVE]",
-    "129": "Waterfall - Lamp maze",
-    "130": "Waterfall - Behind you",
-    "131": "Waterfall - More flowers",
-    "132": "Waterfall - Cave bridge",
-    "133": "Waterfall - Cave exit",
-    "134": "Waterfall - Undyne area",
-    "135": "Waterfall - Undyne area + 1",
-    "136": "Waterfall - Hotland Welcome",
-    "137": "Hotland - Entrance",
-    "138": "Hotland - Water tank",
-    "139": "Hotland - Laboratory Entrance [SAVE]",
-    "140": "Hotland - River boat",
-    "141": "Hotland - Laboratory Hub",
-    "142": "Hotland - Laboratory Upper Floor",
-    "143": "Hotland - Laboratory Exit",
-    "144": "Hotland - Treadmills 1",
-    "145": "Hotland - Magma Chamber [SAVE]",
-    "146": "Hotland - Burnt Pan",
-    "147": "Hotland - Lasers 1",
-    "148": "Hotland - Puzzle Gate 1",
-    "149": "Hotland - Left Boz Puzzle Entrance",
-    "150": "Hotland - Left Box Puzzle",
-    "151": "Hotland - Right Box Puzzle Entrance",
-    "152": "Hotland - Right Box Puzzle",
-    "153": "Hotland - Arrow bridge",
-    "154": "Hotland - Kitchen",
-    "155": "Hotland - Core View [SAVE]",
-    "156": "Hotland - Elevator R1",
-    "157": "Hotland - Elevator R2",
-    "158": "Hotland - Hot Dog Stand",
-    "159": "Hotland - Art Club Entrance",
-    "160": "Hotland - Art Club",
-    "161": "Hotland - Stained Apron",
-    "162": "Hotland - Treadmill switch puzzle",
-    "163": "Hotland - Arrow puzzle",
-    "164": "Hotland - Bad Opinion Zone [SAVE]",
-    "165": "Hotland - Bro guards",
-    "166": "Hotland - Bombastic News report",
-    "167": "Hotland - Upper Core View",
-    "168": "Hotland - Elevator L2",
-    "169": "Hotland - Elevator L3",
-    "170": "Hotland - Spider Bake Sale",
-    "171": "Hotland - F3 Puzzle Gate",
-    "172": "Hotland - F3 South Puzzle Entrance",
-    "173": "Hotland - F3 South Puzzle",
-    "174": "Hotland - F3 North Puzzle Entrance",
-    "175": "Hotland - F3 North Puzzle",
-    "176": "Hotland - Spider Entrance [SAVE]",
-    "177": "Hotland - Spider Room",
-    "178": "Hotland - Mettaton Poster",
-    "179": "Hotland - Theater Stage",
-    "180": "Hotland - Colored Tile Maze 2",
-    "181": "Hotland - Nice Cream Stand",
-    "182": "Hotland - Hotel Entrance",
-    "183": "Hotland - Hotel Lobby [SAVE]",
-    "184": "Hotland - Hotel Restaurant",
-    "185": "Hotland - Hotel Cordidor",
-    "186": "Hotland - Hotel Alley",
-    "187": "Hotland - Elevator R3",
-    "188": "Hotland - Core Entrance",
-    "189": "Hotland - Core Elevator",
-    "190": "Hotland - Core Pit",
-    "191": "Hotland - Core North of Elavator",
-    "192": "Hotland - Core Wrong order lasers",
-    "193": "Hotland - Core Crossroads",
-    "194": "Hotland - Core Dead End",
-    "195": "Hotland - Core Power Laser Puzzle",
-    "196": "Hotland - Core Branch [SAVE]",
-    "197": "Hotland - Core Ice Deposit",
-    "198": "Hotland - Core West Puzzle Entrance",
-    "199": "Hotland - Core West Puzzle Entrance + 1",
-    "200": "Hotland - Core West Puzzle Entrance + 2",
-    "202": "Hotland - Core End - 3",
-    "201": "Hotland - South of 100G Trash Can",
-    "203": "Hotland - Core End - 4",
-    "204": "Hotland - Core Get Lost",
-    "205": "Hotland - Core West Puzzle",
-    "206": "Hotland - Core Glamburger Trash Can",
-    "207": "Hotland - Core 100G Trash Can",
-    "208": "Hotland - Core Battle Bridge",
-    "209": "Hotland - Core End - 1",
-    "210": "Hotland - Core End [SAVE]",
-    "211": "Hotland - Core Mettaton Room",
-    "212": "Hotland - Core Final Elevator Entrance",
-    "214": "Hotland - Elevator L1",
-    "215": "Hotland - Core Final Elevator",
+    "87":  "瀑布 - 连叶桥",
+    "88":  "瀑布 - 莲叶竖桥",
+    "90":  "瀑布 - 望远镜",
+    "91":  "瀑布 - 船板",
+    "92":  "瀑布 - 躲避安黛因的矛1",
+    "93":  "瀑布 - 躲矛之后的草丛",
+    "94":  "瀑布 - 水晶 [存档点]",
+    "95":  "瀑布 - Sans望远镜",
+    "96":  "瀑布 - 好冰棒摊贩",
+    "97":  "瀑布 - 分裂路口",
+    "98":  "瀑布 - 芭蕾舞鞋",
+    "99":  "瀑布 - 鸭子",
+    "100": "瀑布 - 洋葱桑",
+    "101": "瀑布 - 艺术中心",
+    "102": "瀑布 - 钢琴",
+    "103": "瀑布 - 神器",
+    "104": "瀑布 - 下雨的雕像",
+    "105": "瀑布 - 伞",
+    "106": "瀑布 - 下雨的小路1",
+    "107": "瀑布 - 下雨的小路2",
+    "108": "瀑布 - 宫殿风景",
+    "109": "瀑布 - 伞架",
+    "110": "瀑布 - 桥 [存档点]",
+    "111": "瀑布 - 桥上躲矛",
+    "112": "瀑布 - 从桥掉下",
+    "113": "瀑布 - 垃圾区花床",
+    "114": "瀑布 - 垃圾区 [存档点]",
+    "115": "瀑布 - 训练假人的复仇",//为什么我输入"复"就会导致fcitx崩溃
+    "116": "瀑布 - 安静区域 [存档点]",
+    "117": "瀑布 - 安黛因房子的入口",
+    "119": "瀑布 - 两间幽灵的房子",
+    "124": "瀑布 - 乌龟商店",
+    "125": "瀑布 - 船坞",
+    "126": "瀑布 - 2个瀑布",
+    "127": "瀑布 - 蘑菇谜题",
+    "128": "瀑布 - 提米村庄 [存档点]",
+    "129": "瀑布 - 灯谜题",
+    "130": "瀑布 - 在你后面",
+    "131": "瀑布 - 更多花",
+    "132": "瀑布 - 洞穴桥梁",
+    "133": "瀑布 - 洞穴出口",
+    "134": "瀑布 - 安黛因区域1",
+    "135": "瀑布 - 安黛因区域2",
+    "136": "瀑布 - 热地欢迎提示",
+    "137": "热地 - 入口",
+    "138": "热地 - 饮水机",
+    "139": "热地 - 实验室入口 [存档点]",
+    "140": "热地 - 船坞",
+    "141": "热地 - 实验室1楼",
+    "142": "热地 - 实验室2楼",
+    "143": "热地 - 实验室出口",
+    "144": "热地 - 传送带1",
+    "145": "热地 - 岩浆房间 [存档点]",
+    "146": "热地 - 烧焦的平底锅",
+    "147": "热地 - 激光1",
+    "148": "热地 - 谜题门1",
+    "149": "热地 - 左部谜题入口",
+    "150": "热地 - 左部谜题",
+    "151": "热地 - 右部谜题入口",
+    "152": "热地 - 右部谜题",
+    "153": "热地 - 箭头桥",
+    "154": "热地 - 厨房",
+    "155": "热地 - 核心景象 [存档点]",
+    "156": "热地 - 电梯 R1",
+    "157": "热地 - 电梯 R2",
+    "158": "热地 - 热狗摊贩",
+    "159": "热地 - 艺术中心入口",
+    "160": "热地 - 艺术中心",
+    "161": "热地 - 脏围裙",
+    "162": "热地 - 传送带开关谜题",
+    "163": "热地 - 剑谜题",
+    "164": "热地 - 坏选择区域 [存档点]",
+    "165": "热地 - 皇家守卫",
+    "166": "热地 - 炸弹新闻报道",
+    "167": "热地 - 上层核心景象",
+    "168": "热地 - 电梯 L2",
+    "169": "热地 - 电梯 L3",
+    "170": "热地 - 蜘蛛烘焙铺",
+    "171": "热地 - 谜题门2",
+    "172": "热地 - 南部谜题入口",
+    "173": "热地 - 南部谜题",
+    "174": "热地 - 北部谜题",
+    "175": "热地 - 北部谜题入口",
+    "176": "热地 - 蜘蛛入口 [存档点]",
+    "177": "热地 - 蜘蛛房间",
+    "178": "热地 - 镁塔顿海报",
+    "179": "热地 - 剧台",
+    "180": "热地 - 彩砖谜题2",
+    "181": "热地 - 好冰棒摊贩",
+    "182": "热地 - 旅馆入口",
+    "183": "热地 - 旅馆大厅 [存档点]",
+    "184": "热地 - 旅馆餐厅",
+    "185": "热地 - 旅馆长廊",
+    "186": "热地 - 旅馆房间",
+    "187": "热地 - 电梯 R3",
+    "188": "核心 - 入口",
+    "189": "核心 - 电梯",
+    "190": "核心 - 陷阱",
+    "192": "核心 - 错误顺序激光",
+    "191": "核心 - 电梯北部",
+    "193": "核心 - 十字路口",
+    "194": "核心 - 死路(晚安骑士)",
+    "195": "核心 - 激光电源谜题",
+    "196": "核心 - 核心分支 [存档点]",
+    "197": "核心 - 堆积的冰块",
+    "198": "核心 - 西部谜题入口1",
+    "199": "核心 - 西部谜题入口2",
+    "200": "核心 - 西部谜题入口3",
+    "202": "核心 - 末尾3",
+    "201": "核心 - 南部100G垃圾桶",
+    "203": "核心 - 末尾4",
+    "204": "核心 - 迷路",
+    "205": "核心 - 西部谜题",
+    "206": "核心 - 魅力汉堡垃圾桶",
+    "207": "核心 - 100G垃圾桶",
+    "208": "核心 - 战斗桥",
+    "209": "核心 - 末尾1",
+    "210": "核心 - 核心末尾 [存档点]",
+    "211": "核心 - 镁塔顿房间",
+    "212": "核心 - 最后一个电梯入口",
+    "214": "热地 - 电梯 L1",
+    "215": "核心 - 最后一个电梯",
     "216": "城堡电梯 [存档点]",
     "217": "城堡 - 另一个电梯",
     "218": "城堡 - 暗黑小路",
@@ -366,7 +366,7 @@ var torielPrefer={
     "0": "未知",
     "1": "奶油糖",
     "2": "肉桂"
-}
+};
 
 var torielStates = {
     "0": "初始状态",
@@ -457,6 +457,21 @@ var muffetStates = {
     "1": "被杀死"
 };
 
+var iniErrors = {
+  outOfSection:"小节以外的配置项",
+  exceptEqual:"期望 '='",
+  exceptSlash:"期望 '\"'",
+  unclosedString:"未结束的字符串"
+}
+
+var alertText = {
+  errorParseIni:"解析undertale.ini失败: ",
+  selectFile:"请选择一个文件!",
+  enterName:"输入配置名称",
+  invaindName:"无效名称，未创建配置!",
+  selectConfig:"请选择一个有效的配置！"
+}
+
 function parseIniFromText(text) {
     "use strict";
     var lines = text.match(/[^\r\n]+/g);
@@ -477,19 +492,19 @@ function parseIniFromText(text) {
             }
         } else { // Otherwise, it is assumed to be an assignment
             if (section === null) {
-                throw "小节以外的配置项";
+                throw iniErrors.outOfSection;
             }
             var eq = line.indexOf("=");
             if (eq === -1) {
-                throw "期望 '='";
+                throw alertText.exceptEqual;
             }
             var lquot = line.indexOf('"');
             if (lquot === -1) {
-                throw "期望 '\"'";
+                throw iniErrors.exceptSlash;
             }
             var rquot = line.slice(lquot + 1).indexOf('"') + lquot + 1;
             if (rquot === -1) {
-                throw "未结束的字符串";
+                throw iniErrors.unclosedString;
             }
             var value = line.slice(lquot + 1, rquot);
             var key = line.slice(0, eq);
@@ -544,7 +559,7 @@ function insert_cell_lists() {
 function loadSelectFromObj(selectId, obj) {
     "use strict";
     var select = document.getElementById(selectId);
-
+    select.innerText="";
     for (var key in obj) {
         var newOption = document.createElement("option");
         newOption.setAttribute("value", key);
@@ -563,7 +578,7 @@ function loadIniFromFile(file, closure) {
         try {
             closure(parseIniFromText(text));
         } catch (err) {
-            window.alert("解析undertale.ini失败: " + err);
+            window.alert(alertText.errorParseIni + err);
         }
     };
     reader.readAsText(file);
@@ -1080,7 +1095,16 @@ function loadPresetSelect() {
     }
 }
 
-function start() {
+function start(){
+  if(typeof(beginChange) === "function"){
+    beginChange(doConfig);
+  }else{
+    console.warn("Muitl-language module is NOT loaded");
+    doConfig();
+  }
+}
+
+function doConfig() {
     "use strict";
     var userPresets = localStorage.getItem("userPresets");
     if (userPresets === null) {
@@ -1149,7 +1173,7 @@ function start() {
     var iniLoadButton = document.getElementById("ini-loadbutton");
     iniLoadButton.addEventListener("click", function() {
         if (!iniFile) {
-            window.alert("请选择一个文件！");
+            window.alert(alertText.selectFile);
             return;
         }
         loadIniFromFile(iniFile, function(iniobj) {
@@ -1160,7 +1184,7 @@ function start() {
     var file0LoadButton = document.getElementById("sav-loadbutton");
     file0LoadButton.addEventListener("click", function() {
         if (!saveFile) {
-            window.alert("请选择一个文件！");
+            window.alert(alertText.selectFile);
             return;
         }
         loadSaveFromFile(saveFile, function(lines) {
@@ -1218,9 +1242,11 @@ function start() {
         localStorage.setItem("userPresets",JSON.stringify(presets));
     }
     document.getElementById("userpresetnew").addEventListener("click", function() {
-        var name = window.prompt("输入配置名称");
-        if (name === null || name === "") {
-            window.alert("无效名称，未创建配置!");
+        var name = window.prompt(alertText.enterName);
+        if (name === null){
+          return;
+        }else if (name === "") {
+            window.alert(alertText.invaindName);
         } else {
             saveUserPreset(name);
             var presetSelect = document.getElementById("userpresetselect");
@@ -1240,7 +1266,7 @@ function start() {
         if (name !== null && name !== "") {
             saveUserPreset(name);
         } else {
-            window.alert("请选择一个有效的配置！");
+            window.alert(alertText.selectConfig);
         }
     }, false);
     document.getElementById("userpresetload").addEventListener("click", function() {
@@ -1254,7 +1280,7 @@ function start() {
             updateSaveDataForm(saveLines);
             updatePersistentDataForm(ini);
         } else {
-            window.alert("请选择一个有效的配置！");
+            window.alert(alertText.selectConfig);
         }
     }, false);
     document.getElementById("userpresetdelete").addEventListener("click", function() {
@@ -1310,7 +1336,7 @@ function start() {
     addClickSound(document.getElementsByTagName("button"));
     addClickSound(document.getElementsByTagName("input"));
     addClickSound(document.getElementsByTagName("select"));
-    addClickSound([document.getElementById("floweyimg")])
+    addClickSound([document.getElementById("floweyimg")]);
 }
 
 document.addEventListener("DOMContentLoaded", start);
