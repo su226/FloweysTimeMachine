@@ -21,57 +21,57 @@
     <meta name="msapplication-TileImage" content="res/tile.png"/>
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title data-langable="pagetitle">小花的时间机器(存档编辑器)</title>
+    <title data-langable="pagetitle">Flowey's Time Machine</title>
   </head>
   <body>
     <a href="https://github.com/su226/FloweysTimeMachine" id="forkme"><img src="./res/forkme.png" alt="在Github上克隆" data-langable="forkme"></a>
     <div id="title">
       <img src="res/flowey_nice.png" alt="" id="floweyimg"/>
-      <h1><span data-langable="contenttitle">小花的时间机器</span><sup id="currentlang" data-langable>en_US</sup></h1>
-      <span data-langable="note">Undertale存档编辑器</span>
-      <a href="help.html" target="_blank" data-langable="helplink">帮助</a>
-      <a href="about.html" target="_blank" data-langable="aboutlink">关于</a>
+      <h1><span data-langable="contenttitle">Flowey's Time Machine</span><sup id="currentlang"></sup></h1>
+      <span data-langable="note">Undertale SAVE editor</span>
+      <a href="help.html" target="_blank" data-langable="helplink">Help</a>
+      <a href="about.html" target="_blank" data-langable="aboutlink">About</a>
       <div style="clear:both"></div>
     </div>
-    <h2 data-langable="configtitle">配置</h2>
+    <h2 data-langable="configtitle">Config</h2>
     <div id="builtinpreset">
-      <label data-langable="builtinpresets"> 内置配置 </label>
+      <label data-langable="builtinpresets"> Built-in presets</label>
       <select id="builtinpresetselect"> </select>
     </div>
-    <input type="button" id="builtinpresetload" value="加载" />
+    <input type="button" id="builtinpresetload" value="Load" />
     <br>
     <div id="userpreset">
-      <label data-langable="userpresets"> 你的配置 </label>
+      <label data-langable="userpresets"> User presets</label>
       <select id="userpresetselect"> </select>
     </div>
-    <input type="button" id="userpresetload" value="加载" disabled />
-    <input type="button" id="userpresetsave" value="保存" disabled />
-    <input type="button" id="userpresetnew" value="新建" />
-    <input type="button" id="userpresetdelete" value="删除" disabled />
-    <input type="button" id="userpresetexport" value="保存并导出" disabled />
+    <input type="button" id="userpresetload" value="Load" disabled />
+    <input type="button" id="userpresetsave" value="Save" disabled />
+    <input type="button" id="userpresetnew" value="New" />
+    <input type="button" id="userpresetdelete" value="Delete" disabled />
+    <input type="button" id="userpresetexport" value="Save & Export" disabled />
     <div>
-    	<label data-langable="mute"> 静音 </label><input type="checkbox" id="mute" />
+    	<label data-langable="mute"> Mute</label><input type="checkbox" id="mute" />
     </div>
-    <h2 data-langable="inititle"> 永久性数据 </h2>
-    <p data-langable="ininote">多次游玩时都会记录的数据</p>
+    <h2 data-langable="inititle"> Persistent Data </h2>
+    <p data-langable="ininote"> Things that Undertale remembers throughout multiple playthroughs. </p>
     <form>
       <div>
         <fieldset>
-          <legend> undertale.ini </legend>
+          <legend>undertale.ini</legend>
           <input type="file" id="ini-file" />
           <div style="display:flex">
-            <input id="ini-loadbutton" type="button" value="加载" style="flex:1" disabled data-langable="iniloadbutton"/>
-            <input id="ini-savebutton" type="button" value="保存" style="flex:1;margin-left:10px" data-langable="inisavebutton"/>
+            <input id="ini-loadbutton" type="button" value="Load" style="flex:1" disabled data-langable="iniloadbutton"/>
+            <input id="ini-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" data-langable="inisavebutton"/>
           </div>
         </fieldset>
         <fieldset>
-          <legend data-langable="general"> 通用 </legend>
-          <label data-langable="name"> 名称 </label> <input id="ini-name" type="text" />
-          <label data-langable="location"> 位置 </label> <select id="ini-location"> </select>
-          <label data-langable="kills"> 击杀 </label> <input id="ini-kills" type="text" />
-          <label data-langable="deaths"> 死亡 </label> <input id="ini-dies" type="text" />
-          <label> LOVE </label> <input id="ini-love" type="text" />
-          <label data-langable="time"> 时间 </label>
+          <legend data-langable="general"> General</legend>
+          <label data-langable="name"> Name</label> <input id="ini-name" type="text" />
+          <label data-langable="location"> Location</label> <select id="ini-location"> </select>
+          <label data-langable="kills"> Kills</label> <input id="ini-kills" type="text" />
+          <label data-langable="deaths"> Deaths</label> <input id="ini-dies" type="text" />
+          <label>LOVE</label> <input id="ini-love" type="text" />
+          <label data-langable="time"> Time</label>
           <div style="display:flex">
           <input id="ini-time-minute" type="text" style="width:0;flex-grow:1;text-align:center" />
           :
@@ -81,75 +81,75 @@
       </div>
       <div>
         <fieldset>
-          <legend data-langable="flowey"> 小花 </legend>
-          <label data-langable="metflowey"> 遇见小花 </label>
+          <legend data-langable="flowey"> Flowey</legend>
+          <label data-langable="metflowey"> Met Flowey</label>
           <input type="checkbox" id="ini-flowey-met" />
         </fieldset>
         <fieldset>
-          <legend data-langable="toriel"> Toriel </legend>
-          <label data-langable="prefer"> 你更喜欢 </label>
+          <legend data-langable="toriel"> Toriel</legend>
+          <label data-langable="prefer"> You prefer</label>
           <select id="ini-toriel-prefer"> </select>
-          <label data-langable="killedtoriel"> 杀死了Toriel </label>
+          <label data-langable="killedtoriel"> Killed Toriel</label>
           <input type="checkbox" id="ini-killed-toriel" />
-          <label data-langable="sparedtoriel"> 饶恕了Toriel </label>
+          <label data-langable="sparedtoriel"> Spared Toriel</label>
           <input type="checkbox" id="ini-spared-toriel" />
         </fieldset>
         <fieldset>
-          <legend data-langable="sans"> Sans </legend>
-          <label data-langable="metsans"> 遇见sans </label> <input type="checkbox" id="ini-sans-met" />
-          <label data-langable="deathsfull"> 死亡次数 </label>
+          <legend data-langable="sans"> Sans</legend>
+          <label data-langable="metsans"> Met Sans</label> <input type="checkbox" id="ini-sans-met" />
+          <label data-langable="deathsfull"> Death Count</label>
           <input type="text" id="ini-sans-deaths" />
         </fieldset>
         <fieldset>
-          <legend data-langable="papyrus"> Papyrus </legend>
-          <label data-langable="deathsfull"> 遇见Papyrus </label> <input type="checkbox" id="ini-papyrus-met" />
-          <label> 杀死了Papyrus </label>
+          <legend data-langable="papyrus"> Papyrus</legend>
+          <label data-langable="deathsfull"> Met Papyrus</label> <input type="checkbox" id="ini-papyrus-met" />
+          <label>Killed Papyrus</label>
           <input type="checkbox" id="ini-killed-papyrus" />
-          <label> 饶恕了Papyrus </label>
+          <label>Spared Papyrus</label>
           <input type="checkbox" id="ini-spared-papyrus" />
         </fieldset>
         <fieldset>
-          <legend> 魔花 </legend>
-          <label> 困在小花的世界中 </label> <input type="checkbox" id="ini-omega-flowey-trapped" />
-          <label> 下一个攻击方式 </label> <select id="ini-omega-flowey-soul"></select>
-          <label> 死亡次数 </label> <input type="text" id="ini-omega-flowey-deaths" />
+          <legend>Omega Flowey</legend>
+          <label>Trapped in Flowey's world</label> <input type="checkbox" id="ini-omega-flowey-trapped" />
+          <label>Next Attack</label> <select id="ini-omega-flowey-soul"></select>
+          <label>Deaths</label> <input type="text" id="ini-omega-flowey-deaths" />
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend> GE污染 </legend>
-          <label> system_information_962 <sup title="当此文件存在时，世界将处在GE线通关后的'被删除'的状态">[?]</sup></label>
+          <legend>Genocide Ending Polluction</legend>
+          <label>system_information_962<sup title="当此文件存在时，世界将处在GE线通关后的'被删除'的状态">[?]</sup></label>
           <input type="button" id="savesi2" value="保存" />
-          <label> system_information_963 <sup title="当此文件存在时，你'出售'了你的灵魂来赎回整个世界">[?]</sup></label>
+          <label>system_information_963<sup title="当此文件存在时，你'出售'了你的灵魂来赎回整个世界">[?]</sup></label>
           <input type="button" id="savesi3" value="保存" />
         </fieldset>
         <fieldset>
-          <legend> 其他 </legend>
-          <label> 跟踪了全部特别感谢 </label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
-          <label> 离开了结界(和平线游戏结束) </label> <input type="checkbox" id="ini-exit-barrier" />
-          <label> "欢乐"值 </label> <input type="text" id="ini-fun" />
+          <legend>Other</legend>
+          <label>Dodged all of the special thanks</label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
+          <label>Exited barriel (Peace ending finished)</label> <input type="checkbox" id="ini-exit-barrier" />
+          <label>"Fun" value</label> <input type="text" id="ini-fun" />
         </fieldset>
       </div>
     </form>
-    <h2> 存档数据 </h2>
-    <p>这是存档时会被保存的数据</p>
+    <h2> SAVE Data </h2>
+    <p>This is what gets SAVED at SAVE points.</p>
     <form>
       <div>
         <fieldset>
-          <legend> file0 </legend>
+          <legend>file0</legend>
           <input type="file" id="sav-file" />
           <div style="display:flex">
-            <input id="sav-loadbutton" type="button" value="加载" style="flex:1" disabled />
-            <input id="sav-savebutton" type="button" value="保存" style="flex:1;margin-left:10px" />
+            <input id="sav-loadbutton" type="button" value="Load" style="flex:1" disabled />
+            <input id="sav-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" />
           </div>
         </fieldset>
         <fieldset>
-        <legend>通用</legend>
-        <label>名称</label> <input type="text" id="sav-name" />
-        <label>地点</label> <select id="sav-location"> </select>
-        <label>死亡</label> <input type="text" id="sav-unkkills" />
-        <label>击杀</label> <input type="text" id="sav-kills" />
-        <label> 时间 </label>
+        <legend>General</legend>
+        <label>Name</label> <input type="text" id="sav-name" />
+        <label>Location</label> <select id="sav-location"> </select>
+        <label>Deaths</label> <input type="text" id="sav-unkkills" />
+        <label>Kills</label> <input type="text" id="sav-kills" />
+        <label>Time</label>
           <div style="display:flex">
           <input id="sav-time-minute" type="text" style="width:0;flex-grow:1;text-align:center" />
           :
@@ -157,25 +157,25 @@
           </div>
         </fieldset>
         <fieldset>
-        <legend>状态</legend>
-        <label>生命</label> <input type="text" id="sav-hp" />
+        <legend>States</legend>
+        <label>Health</label> <input type="text" id="sav-hp" />
         <label>LOVE</label> <input type="text" id="sav-love" />
         <label>EXP</label> <input type="text" id="sav-exp" />
-        <label>金币</label> <input type="text" id="sav-gold" />
-        <label>攻击力</label> <input type="text" id="sav-at" />
-        <label>武器攻击力</label> <input type="text" id="sav-weaponat" />
-        <label>防御力</label> <input type="text" id="sav-df" />
-        <label>防具防御力</label> <input type="text" id="sav-armordf" />
+        <label>Gold</label> <input type="text" id="sav-gold" />
+        <label>AT</label> <input type="text" id="sav-at" />
+        <label>Weapon AT</label> <input type="text" id="sav-weaponat" />
+        <label>DF</label> <input type="text" id="sav-df" />
+        <label>Armor DF</label> <input type="text" id="sav-armordf" />
         </fieldset>
       </div>
       <div>
       <fieldset>
-        <legend>穿戴</legend>
-        <label>武器</label> <select id="sav-weapon"> </select>
-        <label>防具</label> <select id="sav-armor"> </select>
+        <legend>Equipment</legend>
+        <label>Weapon</label> <select id="sav-weapon"> </select>
+        <label>Armor</label> <select id="sav-armor"> </select>
       </fieldset>
       <fieldset>
-        <legend>物品栏</legend>
+        <legend>Inventory</legend>
         <select id="sav-invslot1"> </select>
         <select id="sav-invslot2"> </select>
         <select id="sav-invslot3"> </select>
@@ -186,8 +186,8 @@
         <select id="sav-invslot8"> </select>
       </fieldset>
       <fieldset>
-        <legend>电话</legend>
-        <label> 你有电话 </label> <input id="sav-havecell" type="checkbox" />
+        <legend>Cellphone</legend>
+        <label>You have cellphone</label> <input id="sav-havecell" type="checkbox" />
         <select id="sav-cellslot1"> </select>
         <select id="sav-cellslot2"> </select>
         <select id="sav-cellslot3"> </select>
@@ -198,7 +198,7 @@
         <select id="sav-cellslot8"> </select>
       </fieldset>
       <fieldset>
-        <legend>维度盒子A</legend>
+        <legend>Dimension Box A</legend>
         <select id="sav-dimaslot1"> </select>
         <select id="sav-dimaslot2"> </select>
         <select id="sav-dimaslot3"> </select>
@@ -211,7 +211,7 @@
         <select id="sav-dimaslot10"> </select>
       </fieldset>
       <fieldset>
-        <legend>维度盒子B</legend>
+        <legend>Dimension Box B</legend>
         <select id="sav-dimbslot1"> </select>
         <select id="sav-dimbslot2"> </select>
         <select id="sav-dimbslot3"> </select>
@@ -226,46 +226,46 @@
       </div>
       <div>
         <fieldset>
-          <legend> 遗迹 </legend>
-          <label>击杀次数</label> <input type="text" id="sav-ruinskills" />
-          <label>训练假人状态</label> <select id="sav-trainingdummystate"> </select>
-          <label>托丽尔状态</label> <select id="sav-torielstate"> </select>
+          <legend>Ruins</legend>
+          <label>Kills</label> <input type="text" id="sav-ruinskills" />
+          <label>Training Dummy State</label> <select id="sav-trainingdummystate"> </select>
+          <label>Toriel State</label> <select id="sav-torielstate"> </select>
         </fieldset>
         <fieldset>
-          <legend> 雪町 </legend>
-          <label>击杀次数</label> <input type="text" id="sav-snowdinkills" />
-          <label>Doggo状态</label> <select id="sav-doggostate"> </select>
-          <label>狗夫妇状态</label> <select id="sav-dogamydogaressastate"> </select>
-          <label>大犬汪状态</label> <select id="sav-greaterdogstate"> </select>
-          <label>Comedian状态</label> <select id="sav-comedianstate"> </select>
-          <label>帕帕瑞斯状态</label> <select id="sav-papyrusstate"> </select>
+          <legend>Snowdin</legend>
+          <label>Kills</label> <input type="text" id="sav-snowdinkills" />
+          <label>Doggo State</label> <select id="sav-doggostate"> </select>
+          <label>Dogamy & Dogaressa State</label> <select id="sav-dogamydogaressastate"> </select>
+          <label>Greater Dog State</label> <select id="sav-greaterdogstate"> </select>
+          <label>Comedian State</label> <select id="sav-comedianstate"> </select>
+          <label>Papyrus State</label> <select id="sav-papyrusstate"> </select>
         </fieldset>
         <fieldset>
-          <legend> 瀑布 </legend>
-          <label>击杀次数</label> <input type="text" id="sav-waterfallkills" />
-          <label>塞壬状态</label> <select id="sav-shyrenstate"> </select>
-          <label>愤怒假人状态</label> <select id="sav-maddummystate"> </select>
-          <label>安黛因状态1</label> <select id="sav-undynestate1"> </select>
-          <label>安黛因状态2</label> <select id="sav-undynestate2"> </select>
+          <legend>Waterfall</legend>
+          <label>Kills</label> <input type="text" id="sav-waterfallkills" />
+          <label>Shyren State</label> <select id="sav-shyrenstate"> </select>
+          <label>Mad Dummy State</label> <select id="sav-maddummystate"> </select>
+          <label>Undyne State 1</label> <select id="sav-undynestate1"> </select>
+          <label>Undyne State 2</label> <select id="sav-undynestate2"> </select>
         </fieldset>
         <fieldset>
-          <legend> 热地 </legend>
-          <label>击杀次数</label> <input type="text" id="sav-hotlandkills" />
-          <label>皇家守卫状态</label> <select id="sav-broguardsstate"> </select>
-          <label>玛菲特状态</label> <select id="sav-muffetstate"> </select>
-          <label>镁塔顿状态</label> <select id="sav-mettatonstate"> </select>
+          <legend>Hotland</legend>
+          <label>Kills</label> <input type="text" id="sav-hotlandkills" />
+          <label>Bro Guards State</label> <select id="sav-broguardsstate"> </select>
+          <label>Muffet State</label> <select id="sav-muffetstate"> </select>
+          <label>Mettaton State</label> <select id="sav-mettatonstate"> </select>
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend> 完美结局 </legend>
-          <label> 离开了真实验室(能得到完美结局) </label> <input id="sav-exitedtruelab" type="checkbox" />
-          <label> 击败艾斯利尔(完美结局完成) </label> <input id="sav-defeatedasriel" type="checkbox" />
+          <legend>True Ending</legend>
+          <label>True lab exited (can get true ending)</label> <input id="sav-exitedtruelab" type="checkbox" />
+          <label>Defeated Asriel (true pacifist finished) </label> <input id="sav-defeatedasriel" type="checkbox" />
         </fieldset>
         <fieldset>
-          <legend> 其他 </legend>
-          <label> "情节" 值 </label> <select id="sav-plotvalue"> </select>
-          <label> "欢乐" 值 </label> <input type="text" id="sav-fun" />
+          <legend>Other</legend>
+          <label>"Plot" Value</label> <select id="sav-plotvalue"> </select>
+          <label>"Fun" Value</label> <input type="text" id="sav-fun" />
         </fieldset>
       </div>
     </form>
@@ -280,6 +280,7 @@
     <script src="presets/Omega%20Flowey.js"></script>
     <script src="presets/True%20Pacifist%20Ending.js"></script>
     <script src="langswitcher.js"></script>
+    <script src="alllangs.js"></script>
     <script id="langloader"></script>
     <script src="main.js"></script>
     <!-- /script -->

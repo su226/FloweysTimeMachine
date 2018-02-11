@@ -1,3 +1,7 @@
+translates = {
+  
+}
+
 newItems = [
   "<空>",
   "怪物糖果",

@@ -24,18 +24,26 @@ var newAlertText = {};
 
 function changeLanguage(){
   for(;;){
-    var lang=window.prompt("Enter new language code(such as 'zh_CN')\nFor list please enter list\nChange to 'en_US' please just press OK");
+    var lang=window.prompt("Enter new language code(such as 'zh_CN')\nFor list please enter list\nChange to '"+defaultLang+"' please just press OK");
     if (lang===null){
       return;
     }else if(lang==="list"){
-      window.alert("Language list is still Work-In-Progress");
+      window.alert("Available languages:\n"+availableLangs.toString());
       continue;
     }else if(lang===""){
-      window.alert("Language set to en_US\nRefresh to use new language");
+      localStorage.setItem("language","");
+      window.alert("Language set to "+defaultLang+"\nRefresh to use new language");
     }else{
-      window.alert("Language set to "+lang+"\nRefresh to use new language");
+      for(var i in availableLangs){
+        if(availableLangs[i]===lang){
+          localStorage.setItem("language",lang);
+          window.alert("Language set to "+lang+"\nRefresh to use new language");
+          return;
+        }
+      }
+      window.alert("Language is NOT available!");
+      continue;
     }
-    localStorage.setItem("language",lang);
     return;
   }
 }
@@ -47,19 +55,43 @@ function beginChange(callback){
     lang="";
   }
   if(lang!==""){
+    var langAvailable=false;
+    for(var i in availableLangs){
+      if(availableLangs[i]===lang){
+        localStorage.setItem("language",lang);
+        langAvailable=true;
+        break;
+      }
+    }
+    if(!langAvailable){
+      localStorage.setItem("language","");
+      lang="";
+      console.warn("Language",lang,"is NOT available! Changed to",defaultLang);
+      console.info("Please Refresh");
+    }
     console.info("Using language",lang);
-    document.getElementById("langloader").src="langs/"+lang+".js";
-    doHTMLchange();
-    doObjectChange();
+    var langloader=document.getElementById("langloader");
+    langloader.src="langs/"+lang+".js";
+    langloader.addEventListener("load",doChange);
   }else{
-    console.info("Using default language");
+    console.info("Using default language",defaultLang);
+    doChange();
   }
-  var langChanger=document.getElementById("currentlang")
-  langChanger.innerText=lang;
-  langChanger.title="Change Language";
-  langChanger.addEventListener("click",changeLanguage);
-  if(typeof(callback)==="function"){
-    callback();
+  function doChange(){
+    if(lang!==""){
+      doHTMLchange();
+      doObjectChange();
+    }
+    var langChanger=document.getElementById("currentlang")
+    langChanger.innerText=lang;
+    if(langChanger.innerText===""){
+      langChanger.innerText=defaultLang;
+    }
+    langChanger.title="Change Language";
+    langChanger.addEventListener("click",changeLanguage);
+    if(typeof(callback)==="function"){
+      callback();
+    }
   }
 }
 
