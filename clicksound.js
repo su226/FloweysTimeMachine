@@ -13,7 +13,7 @@ function doAddClickSound(){
   addClickSound(document.getElementsByTagName("button"));
   addClickSound(document.getElementsByTagName("input"));
   addClickSound(document.getElementsByTagName("select"));
-  if(typeof(main)!=="unedfined"){
+  if(typeof(main)!=="undefined"){
     addClickSound([document.getElementById("floweyimg")]);
   }
 }
