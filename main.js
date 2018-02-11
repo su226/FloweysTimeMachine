@@ -1324,21 +1324,6 @@ function doConfig() {
     document.getElementById("floweyimg").src = "res/flowey_wink.png";
     localStorage.setItem("laughed", false);
   }, false);
-  function addClickSound(list){
-    for(var i=0;i<list.length;i++){
-      list[i].addEventListener("click",function(){
-        if(!document.getElementById("mute").checked) {
-          var audio = new Audio("res/menuselect.ogg");
-          audio.play()
-        }
-      })
-    }
-  }
-  addClickSound(document.getElementsByTagName("a"));
-  addClickSound(document.getElementsByTagName("button"));
-  addClickSound(document.getElementsByTagName("input"));
-  addClickSound(document.getElementsByTagName("select"));
-  addClickSound([document.getElementById("floweyimg")]);
 }
 
 document.addEventListener("DOMContentLoaded", start);
