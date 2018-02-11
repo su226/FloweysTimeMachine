@@ -1,12 +1,12 @@
 # 小花的时间机器
 Undertale存档编辑器
 
-Flowey's Time Machine的汉化版
+Flowey's Time Machine的汉化+增强版
 
 原版:[https://github.com/crumblingstatue/FloweysTimeMachine](https://github.com/crumblingstatue/FloweysTimeMachine)
 
 ## 具体更改
-- 汉化(部分选项未汉化，以后再说)
+- 汉化(全部完成，目前正在处理多语言的兼容问题)
 - 增加了undertale.ini中的怪物相关选项
 
 (对应\[Sans\]\[Papyrus\]\[Flowey\]和\[Toriel\]四个章节)
