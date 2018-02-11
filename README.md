@@ -1,10 +1,11 @@
 # 小花的时间机器
+**本版本为旧版本，即将封存！**
+
 Undertale存档编辑器
 
 Flowey's Time Machine的汉化版
 
 原版:[https://github.com/crumblingstatue/FloweysTimeMachine](https://github.com/crumblingstatue/FloweysTimeMachine)
-
 ## 具体更改
 - 汉化(部分选项未汉化，以后再说)
 - 增加了undertale.ini中的怪物相关选项
@@ -18,4 +19,7 @@ Flowey's Time Machine的汉化版
 - 适应移动端(android有UT的移植版)
 
 ## TODO
-- 汉化地名,物品名,怪物名(不知道怎么汉化)
+- 汉化物品名,怪物名(不知道怎么汉化)
+
+(地名已完成)
+- 多语言支持
