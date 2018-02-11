@@ -580,7 +580,7 @@ function loadIniFromFile(file, closure) {
     try {
       closure(parseIniFromText(text));
     } catch (err) {
-      window.alert(alertText.errorParseIni + err + "\n");
+      window.alert(alertText.errorParseIni + err);
     }
   };
   reader.readAsText(file);
@@ -1175,7 +1175,7 @@ function doConfig() {
   var iniLoadButton = document.getElementById("ini-loadbutton");
   iniLoadButton.addEventListener("click", function() {
     if (!iniFile) {
-      window.alert(alertText.selectFile + "\n");
+      window.alert(alertText.selectFile);
       return;
     }
     loadIniFromFile(iniFile, function(iniobj) {
@@ -1186,7 +1186,7 @@ function doConfig() {
   var file0LoadButton = document.getElementById("sav-loadbutton");
   file0LoadButton.addEventListener("click", function() {
     if (!saveFile) {
-      window.alert(alertText.selectFile + "\n");
+      window.alert(alertText.selectFile);
       return;
     }
     loadSaveFromFile(saveFile, function(lines) {
@@ -1248,7 +1248,7 @@ function doConfig() {
     if (name === null){
       return;
     }else if (name === "") {
-      window.alert(alertText.invaindName + "\n");
+      window.alert(alertText.invaindName);
     } else {
       saveUserPreset(name);
       var presetSelect = document.getElementById("userpresetselect");
@@ -1268,7 +1268,7 @@ function doConfig() {
     if (name !== null && name !== "") {
       saveUserPreset(name);
     } else {
-      window.alert(alertText.selectConfig + "\n");
+      window.alert(alertText.selectConfig);
     }
   }, false);
   document.getElementById("userpresetload").addEventListener("click", function() {
@@ -1282,7 +1282,7 @@ function doConfig() {
       updateSaveDataForm(saveLines);
       updatePersistentDataForm(ini);
     } else {
-      window.alert(alertText.selectConfig + "\n");
+      window.alert(alertText.selectConfig);
     }
   }, false);
   document.getElementById("userpresetdelete").addEventListener("click", function() {
