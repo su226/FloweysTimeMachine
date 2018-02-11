@@ -3,7 +3,7 @@
 
 Undertale存档编辑器
 
-Flowey's Time Machine的汉化版
+Flowey's Time Machine的汉化+增强版
 
 原版:[https://github.com/crumblingstatue/FloweysTimeMachine](https://github.com/crumblingstatue/FloweysTimeMachine)
 ## 具体更改
@@ -29,7 +29,12 @@ Flowey's Time Machine的汉化版
 (android有UT的移植版)
 
 ## TODO
-- 汉化物品名,怪物名(不知道怎么汉化)
+- 汉化物品名,怪物名(地名已完成)
 
-(地名已完成)
+(不知道怎么汉化)
 - 多语言支持
+
+(在新版本中有实现)
+- 重写README.md
+
+*由于取名废羊爸的"优良"基因，导致我写这个的技术都不行了*
