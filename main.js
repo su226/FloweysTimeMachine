@@ -1,3 +1,5 @@
+var main = {};
+
 var items = [
   "<empty>",
   "Monster Candy",
@@ -496,7 +498,7 @@ function parseIniFromText(text) {
       }
       var eq = line.indexOf("=");
       if (eq === -1) {
-        throw alertText.exceptEqual;
+        throw iniErrors.exceptEqual;
       }
       var lquot = line.indexOf('"');
       if (lquot === -1) {
@@ -578,7 +580,7 @@ function loadIniFromFile(file, closure) {
     try {
       closure(parseIniFromText(text));
     } catch (err) {
-      window.alert(alertText.errorParseIni + err);
+      window.alert(alertText.errorParseIni + err + "\n");
     }
   };
   reader.readAsText(file);
@@ -1173,7 +1175,7 @@ function doConfig() {
   var iniLoadButton = document.getElementById("ini-loadbutton");
   iniLoadButton.addEventListener("click", function() {
     if (!iniFile) {
-      window.alert(alertText.selectFile);
+      window.alert(alertText.selectFile + "\n");
       return;
     }
     loadIniFromFile(iniFile, function(iniobj) {
@@ -1184,7 +1186,7 @@ function doConfig() {
   var file0LoadButton = document.getElementById("sav-loadbutton");
   file0LoadButton.addEventListener("click", function() {
     if (!saveFile) {
-      window.alert(alertText.selectFile);
+      window.alert(alertText.selectFile + "\n");
       return;
     }
     loadSaveFromFile(saveFile, function(lines) {
@@ -1246,7 +1248,7 @@ function doConfig() {
     if (name === null){
       return;
     }else if (name === "") {
-      window.alert(alertText.invaindName);
+      window.alert(alertText.invaindName + "\n");
     } else {
       saveUserPreset(name);
       var presetSelect = document.getElementById("userpresetselect");
@@ -1266,7 +1268,7 @@ function doConfig() {
     if (name !== null && name !== "") {
       saveUserPreset(name);
     } else {
-      window.alert(alertText.selectConfig);
+      window.alert(alertText.selectConfig + "\n");
     }
   }, false);
   document.getElementById("userpresetload").addEventListener("click", function() {
@@ -1280,7 +1282,7 @@ function doConfig() {
       updateSaveDataForm(saveLines);
       updatePersistentDataForm(ini);
     } else {
-      window.alert(alertText.selectConfig);
+      window.alert(alertText.selectConfig + "\n");
     }
   }, false);
   document.getElementById("userpresetdelete").addEventListener("click", function() {
