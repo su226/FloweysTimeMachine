@@ -8,7 +8,16 @@ function addClickSound(list){
     })
   }
 }
-function doAddClickSound(){
+function doMiscChange(){
+  var message=document.querySelectorAll("[data-message]");
+  for (var i in message) {
+    if (message.hasOwnProperty(i)) {
+      message[i].addEventListener("click",function(){
+        window.alert(this.getAttribute("title"));
+      })
+    }
+  }
+  addClickSound(document.querySelectorAll("[data-message]"));
   addClickSound(document.getElementsByTagName("a"));
   addClickSound(document.getElementsByTagName("button"));
   addClickSound(document.getElementsByTagName("input"));
@@ -17,4 +26,4 @@ function doAddClickSound(){
     addClickSound([document.getElementById("floweyimg")]);
   }
 }
-document.addEventListener("DOMContentLoaded", doAddClickSound);
+document.addEventListener("DOMContentLoaded", doMiscChange);
