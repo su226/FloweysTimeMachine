@@ -21,16 +21,19 @@
     <meta name="msapplication-TileImage" content="res/tile.png"/>
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title data-langable="pagetitle">Flowey's Time Machine</title>
+    <title data-langable="title">Flowey's Time Machine</title>
   </head>
   <body>
-    <a href="https://github.com/su226/FloweysTimeMachine" id="forkme"><img src="./res/forkme.png" alt="在Github上克隆" data-langable="forkme"></a>
-    <div id="title">
-      <img src="res/flowey_nice.png" alt="" id="floweyimg"/>
-      <h1><span data-langable="contenttitle">Flowey's Time Machine</span><sup id="currentlang"></sup></h1>
-      <span data-langable="note">Undertale SAVE editor</span>
-      <a href="help.html" target="_blank" data-langable="helplink">Help</a>
-      <a href="about.html" target="_blank" data-langable="aboutlink">About</a>
+    <a href="https://github.com/su226/FloweysTimeMachine" id="forkme" data-langless><img src="./res/forkme.png" alt="Fork me on GitHub" data-langable="forkme"></a>
+    <div id="title" data-langless>
+      <img src="res/flowey_nice.png" alt="Flowey" data-langable id="floweyimg"/>
+      <h1><span data-langable="title">Flowey's Time Machine</span></h1>
+      <div><span>Language: </span><a id="currentlang" href="#!"></a></div>
+      <div data-langable="note">Undertale SAVE editor</div>
+      <div>
+        <a href="help.html" target="_blank" data-langable="helplink">Help</a>
+        <a href="about.html" target="_blank" data-langable="aboutlink">About</a>
+      </div>
       <div style="clear:both"></div>
     </div>
     <h2 data-langable="configtitle">Config</h2>
@@ -38,19 +41,19 @@
       <label data-langable="builtinpresets"> Built-in presets</label>
       <select id="builtinpresetselect"> </select>
     </div>
-    <input type="button" id="builtinpresetload" value="Load" />
+    <input type="button" id="builtinpresetload" data-langable="load" value="Load" />
     <br>
     <div id="userpreset">
       <label data-langable="userpresets"> User presets</label>
       <select id="userpresetselect"> </select>
     </div>
-    <input type="button" id="userpresetload" value="Load" disabled />
-    <input type="button" id="userpresetsave" value="Save" disabled />
-    <input type="button" id="userpresetnew" value="New" />
-    <input type="button" id="userpresetdelete" value="Delete" disabled />
-    <input type="button" id="userpresetexport" value="Save & Export" disabled />
+    <input type="button" id="userpresetload" data-langable="load" value="Load" disabled />
+    <input type="button" id="userpresetsave" data-langable="save" value="Save" disabled />
+    <input type="button" id="userpresetnew" data-langable="new" value="New" />
+    <input type="button" id="userpresetdelete" data-langable="delete" value="Delete" disabled />
+    <input type="button" id="userpresetexport" data-langable="export" value="Save & Export" disabled />
     <div>
-    	<label data-langable="mute"> Mute</label><input type="checkbox" id="mute" />
+      <label data-langable="mute">Mute</label><input type="checkbox" id="mute" data-langless />
     </div>
     <h2 data-langable="inititle"> Persistent Data </h2>
     <p data-langable="ininote"> Things that Undertale remembers throughout multiple playthroughs. </p>
@@ -60,8 +63,8 @@
           <legend>undertale.ini</legend>
           <input type="file" id="ini-file" />
           <div style="display:flex">
-            <input id="ini-loadbutton" type="button" value="Load" style="flex:1" disabled data-langable="iniloadbutton"/>
-            <input id="ini-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" data-langable="inisavebutton"/>
+            <input id="ini-loadbutton" type="button" value="Load" style="flex:1" disabled data-langable="load"/>
+            <input id="ini-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" data-langable="save"/>
           </div>
         </fieldset>
         <fieldset>
@@ -81,53 +84,53 @@
       </div>
       <div>
         <fieldset>
-          <legend data-langable="flowey"> Flowey</legend>
-          <label data-langable="metflowey"> Met Flowey</label>
+          <legend data-langable="flowey">Flowey</legend>
+          <label data-langable="metflowey">Met Flowey</label>
           <input type="checkbox" id="ini-flowey-met" />
         </fieldset>
         <fieldset>
-          <legend data-langable="toriel"> Toriel</legend>
-          <label data-langable="prefer"> You prefer</label>
+          <legend data-langable="toriel">Toriel</legend>
+          <label data-langable="prefer">You prefer</label>
           <select id="ini-toriel-prefer"> </select>
-          <label data-langable="killedtoriel"> Killed Toriel</label>
+          <label data-langable="killedtoriel">Killed Toriel</label>
           <input type="checkbox" id="ini-killed-toriel" />
-          <label data-langable="sparedtoriel"> Spared Toriel</label>
+          <label data-langable="sparedtoriel">Spared Toriel</label>
           <input type="checkbox" id="ini-spared-toriel" />
         </fieldset>
         <fieldset>
-          <legend data-langable="sans"> Sans</legend>
-          <label data-langable="metsans"> Met Sans</label> <input type="checkbox" id="ini-sans-met" />
-          <label data-langable="deathsfull"> Death Count</label>
+          <legend data-langable="sans">Sans</legend>
+          <label data-langable="metsans">Met Sans</label> <input type="checkbox" id="ini-sans-met" />
+          <label data-langable="deaths">Deaths</label>
           <input type="text" id="ini-sans-deaths" />
         </fieldset>
         <fieldset>
-          <legend data-langable="papyrus"> Papyrus</legend>
-          <label data-langable="deathsfull"> Met Papyrus</label> <input type="checkbox" id="ini-papyrus-met" />
-          <label>Killed Papyrus</label>
+          <legend data-langable="papyrus">Papyrus</legend>
+          <label data-langable="metpapyrus">Met Papyrus</label> <input type="checkbox" id="ini-papyrus-met" />
+          <label data-langable="killedpapyrus">Killed Papyrus</label>
           <input type="checkbox" id="ini-killed-papyrus" />
-          <label>Spared Papyrus</label>
+          <label data-langable="sparedpapyrus">Spared Papyrus</label>
           <input type="checkbox" id="ini-spared-papyrus" />
         </fieldset>
         <fieldset>
-          <legend>Omega Flowey</legend>
-          <label>Trapped in Flowey's world</label> <input type="checkbox" id="ini-omega-flowey-trapped" />
-          <label>Next Attack</label> <select id="ini-omega-flowey-soul"></select>
-          <label>Deaths</label> <input type="text" id="ini-omega-flowey-deaths" />
+          <legend data-langable="omegaflowey">Omega Flowey</legend>
+          <label data-langable="omegafloweytrapped">Trapped in Flowey's world</label> <input type="checkbox" id="ini-omega-flowey-trapped" />
+          <label data-langable="nextattack">Next Attack</label> <select id="ini-omega-flowey-soul"></select>
+          <label data-langable="deaths">Deaths</label> <input type="text" id="ini-omega-flowey-deaths" />
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend>Genocide Ending Polluction</legend>
-          <label>system_information_962<sup title="当此文件存在时，世界将处在GE线通关后的'被删除'的状态">[?]</sup></label>
+          <legend data-langable="gepolluction">Genocide Ending Polluction</legend>
+          <label>system_information_962<sup data-message data-langable="info962note" title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run."></sup></label>
           <input type="button" id="savesi2" value="保存" />
-          <label>system_information_963<sup title="当此文件存在时，你'出售'了你的灵魂来赎回整个世界">[?]</sup></label>
+          <label>system_information_963<sup data-message data-langable="info963note" title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run."></sup></label>
           <input type="button" id="savesi3" value="保存" />
         </fieldset>
         <fieldset>
-          <legend>Other</legend>
-          <label>Dodged all of the special thanks</label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
-          <label>Exited barriel (Peace ending finished)</label> <input type="checkbox" id="ini-exit-barrier" />
-          <label>"Fun" value</label> <input type="text" id="ini-fun" />
+          <legend data-langable="other">Other</legend>
+          <label data-langable="doggedallsc">Dodged all of the special thanks</label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
+          <label data-langable="exitedbarriel">Exited barriel (Peace ending finished)</label> <input type="checkbox" id="ini-exit-barrier" />
+          <label data-langable="funvalue">"Fun" value</label> <input type="text" id="ini-fun" />
         </fieldset>
       </div>
     </form>
@@ -283,6 +286,7 @@
     <script src="alllangs.js"></script>
     <script id="langloader"></script>
     <script src="main.js"></script>
+    <script src="miscapis.js"></script>
     <!-- /script -->
   </body>
 </html>

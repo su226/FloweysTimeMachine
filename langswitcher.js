@@ -1,4 +1,9 @@
+var defaultLang="en_US"
+var availableLangs=[]
+var translaters={}
 var translates={};
+var translatesHelp={};
+var translatesAbout={};
 var newItems = [];
 var newCellOpts = {};
 var newRooms = {};
@@ -24,13 +29,14 @@ var newAlertText = {};
 
 function changeLanguage(){
   for(;;){
-    var lang=window.prompt("Enter new language code(such as 'zh_CN')\nFor list please enter list\nChange to '"+defaultLang+"' please just press OK");
+    var lang=window.prompt("Enter new language code(such as 'zh_CN')\nFor list please enter 'list'");
     if (lang===null){
       return;
     }else if(lang==="list"){
-      window.alert("Available languages:\n"+availableLangs.toString());
+      var langs=availableLangs.toString();
+      window.alert("Available languages:\n"+langs+defaultLang);
       continue;
-    }else if(lang===""){
+    }else if(lang===defaultLang){
       localStorage.setItem("language","");
       window.alert("Language set to "+defaultLang+"\nRefresh to use new language");
     }else{
@@ -66,6 +72,7 @@ function beginChange(callback){
     if(!langAvailable){
       localStorage.setItem("language","");
       lang="";
+      window.alert("Language "+lang+" is NOT available! Changed to "+defaultLang+"\nPlease Refresh\n");
       console.warn("Language",lang,"is NOT available! Changed to",defaultLang);
       console.info("Please Refresh");
     }
@@ -79,8 +86,16 @@ function beginChange(callback){
   }
   function doChange(){
     if(lang!==""){
-      doHTMLchange();
-      doObjectChange();
+      if(typeof(main)!=="undefined"){
+        doHTMLchange(translates);
+        doMainObjectChange();
+      }else if(typeof(help)!=="undefined"){
+        doHTMLchange(translatesHelp);
+      }else if(typeof(about)!=="undefined"){
+        doHTMLchange(translatesAbout);
+      }else{
+        window.alert("Invaild Page");
+      }
     }
     var langChanger=document.getElementById("currentlang")
     langChanger.innerText=lang;
@@ -109,6 +124,8 @@ function changeHTML(node,text,itemname) {
       node.value=text;
     }else if(node.localName==="img"){
       node.alt=text;
+    }else if(node.getAttribute("data-message")!==null){
+      node.title=text;
     }else{
       node.innerText=text;
     }
@@ -116,19 +133,34 @@ function changeHTML(node,text,itemname) {
     console.warn("Not accepted value",text,"in",itemname);
   }
 }
-function doHTMLchange(){
-  for (var translate in translates) {
-    var text=translates[translate];
+function doHTMLchange(allTranslate){
+  for (var translate in allTranslate) {
+    var text=allTranslate[translate];
     var data=document.querySelectorAll("[data-langable='"+translate+"']");
     var id=document.querySelector("#"+translate);
     var HTMLClass=document.querySelectorAll("."+translate);
+    var changed=0;
     if(data.length>0){
-      changeHTML(data[0],text,translate);
-    }else if(id!==null){
+      changed+=data.length;
+      for (var i in data) {
+        if (data.hasOwnProperty(i)){
+          changeHTML(data[i],text,translate);
+        }
+      }
+    }
+    if(id!==null && id.getAttribute("data-langless")===null){
+      changed+=1
       changeHTML(id,text,translate);
-    }else if(HTMLClass.length>0){
-      changeHTML(HTMLClass[0],text,translate);
-    }else{
+    }
+    if(HTMLClass.length>0){
+      for (var i in HTMLClass) {
+        if(HTMLClass[i].getAttribute("data-langless")===null){
+          changed+=1;
+          changeHTML(HTMLClass[i],text,translate);
+        }
+      }
+    }
+    if(changed===0){
       console.warn("Stray translate item:"+translate);
     }
   }
@@ -151,7 +183,7 @@ function changeObject(originvalue,newvalue,name){
   }
   return newobject;
 }
-function doObjectChange(){
+function doMainObjectChange(){
   items=changeObject(items,newItems,"newItems");
   cellOpts=changeObject(cellOpts,newCellOpts,"newCellOpts");
   rooms=changeObject(rooms,newRooms,"newRooms");

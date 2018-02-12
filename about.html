@@ -16,15 +16,26 @@
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>小花的时间机器(存档编辑器) - 关于</title>
+    <title data-langable="pagetitle">Flowey's Time Machine - About</title>
   </head>
   <body>
-    <h1> 关于 </h1>
+    <h1 data-langable="contenttitle">About</h1>
+    <div><span data-langable="changelang">Language: </span><a id="currentlang" href="#!"></a></div>
+    <label data-langable="mute"> Mute</label><input type="checkbox" id="mute" />
     <p>
-      原作者: crumblingstatue [<a href="https://github.com/crumblingstatue" target="_blank">GitHub</a>]
+      <span data-langable="origauthor">Author</span>: crumblingstatue [<a href="https://github.com/crumblingstatue" target="_blank">GitHub</a>]
     </p>
     <p>
-      翻译及修改: su226 [<a href="https://github.com/su226" target="_blank">GitHub</a>]
+      <span data-langable="modifyauthor">Modify</span>: su226 [<a href="https://github.com/su226" target="_blank">GitHub</a>]
+    </p>
+    <p>
+      <span id="translateauthor" data-langable>Translate</span>
+      <ul id="translaters"></ul>
     </p>
   </body>
+  <script src="langswitcher.js"></script>
+  <script src="alllangs.js"></script>
+  <script id="langloader"></script>
+  <script src="miscapis.js"></script>
+  <script src="about.js"></script>
 </html>

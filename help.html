@@ -16,10 +16,12 @@
     <meta name="msapplication-tap-highlight" content="no">
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title>小花的时间机器(存档编辑器) - 帮助</title>
+    <title data-langable="pagetitle">小花的时间机器(存档编辑器) - 帮助</title>
   </head>
   <body>
-    <h1> 帮助 </h1>
+    <h1 data-langable="contenttitle">Help</h1>
+    <div><span data-langable="changelang">Language: </span><a id="currentlang" href="#!"></a></div>
+    <label data-langable="mute"> Mute</label><input type="checkbox" id="mute" />
     <h2> 外部工具 </h2>
     如果你希望临时尝试新的存档，你可以使用第三方工具
     <a href="https://github.com/LEGOlord208/UndertaleSandbox">UndertaleSandbox</a>.
@@ -48,7 +50,7 @@
     </p>
     <h2> 编辑 </h2>
     <p>
-      只要更改各种各样的编辑框就好,有一些的旁边会有一个<sup title="不是我╭(╯^╰)╮">[?]</sup>,将鼠标移到上面即可获得帮助.
+      只要更改各种各样的编辑框就好,有一些的旁边会有一个[?],将鼠标移到上面即可获得帮助.
     </p>
     <h2> 保存 </h2>
     <p>
@@ -69,21 +71,10 @@
       如果你使用Steam版本,这些文件随着游戏启动可能被备份并且恢复.
       在那种情况,你应该删除Undertale的Steam云存档,但是我没有做这个的办法.
     </p>
-    <script>
-      var pf=navigator.platform;
-      var ua=navigator.userAgent;
-      var save=document.getElementById("save");
-      if(pf=="Win32" || pf == "Windows"){
-        save.innerText="C:/users/你的用户名/Local Settings/Application Data/UNDERTALE";
-      }else if(pf=="Mac68K" || pf=="MacPPC" || pf=="MacInter" || pf=="Macintosh"){
-        save.innerText="不知道,我没钱买苹果";
-      }else if(ua.indexOf("Android")>-1){
-        save.innerText="/data/user/0/com.mrpowergamerbr.UndertaleWrapper/files(修改需要ROOT权限)";
-      }else if(pf.indexOf("Linux")>-1){
-        save.innerText="~/.config/UNDERTALE";
-      }else{
-        save.innerText="Undertale目前只支持Windows,Mac,Linux和Android";
-      }
-    </script>
+    <script src="langswitcher.js"></script>
+    <script src="alllangs.js"></script>
+    <script id="langloader"></script>
+    <script src="miscapis.js"></script>
+    <script src="help.js"></script>
   </body>
 </html>

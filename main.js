@@ -1217,14 +1217,14 @@ function doConfig() {
   var weaponSelect = document.getElementById("sav-weapon");
   weaponSelect.onchange = function() {
     var at = weaponAts[weaponSelect.value];
-    if (typeof at !== "undefined") {
+    if (at !== undefined) {
       document.getElementById("sav-weaponat").value = at;
     }
   };
   var armorSelect = document.getElementById("sav-armor");
   armorSelect.onchange = function() {
     var df = ArmorDfs[armorSelect.value];
-    if (typeof df !== "undefined") {
+    if (df !== undefined) {
       document.getElementById("sav-armordf").value = df;
     }
   };
