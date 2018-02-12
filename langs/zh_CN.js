@@ -77,7 +77,8 @@ translates = {
   trueending:"真和平结局",
   truelabexited:"离开真实验室(能得到真结局)",
   defeatedasriel:"击败Asriel(真和平结局完成)",
-  plotvalue:"\"情节\" 值"
+  plotvalue:"\"情节\" 值",
+  other:"其他",
 }
 
 newItems = [
