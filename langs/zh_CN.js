@@ -78,7 +78,7 @@ translates = {
   truelabexited:"离开真实验室(能得到真结局)",
   defeatedasriel:"击败Asriel(真和平结局完成)",
   plotvalue:"\"情节\" 值",
-  other:"其他",
+  other:"其他"
 }
 translatesHelp={
   pagetitle:"小花的时间机器 - 帮助",
@@ -105,7 +105,15 @@ translatesHelp={
   seeinfo962:"如果你清除了世界,你应该看到文件",
   seeinfo963:"如果你出卖了你的灵魂,你应该看到文件",
   deleteinfo:"删除这两个文件即可.",
-  deleteforsteamver:"如果你使用Steam版本,这些文件随着游戏启动可能被备份并且恢复.在那种情况,你应该删除Undertale的Steam云存档,但是我没有做这个的办法.",
+  deleteforsteamver:"如果你使用Steam版本,这些文件随着游戏启动可能被备份并且恢复.在那种情况,你应该删除Undertale的Steam云存档,但是我没有做这个的办法."
+}
+var translatesAbout={
+  pagetitle:"小花的时间机器 - 关于",
+  contenttitle:"关于",
+  mute:"静音",
+  origauthor:"原作者",
+  modifyauthor:"修改",
+  translateauthor:"翻译"
 }
 newItems = [
   "<空>",
