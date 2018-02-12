@@ -126,4 +126,5 @@ button{
 }
 [data-message]:after{
   content: "[?]";
+  cursor: pointer;
 }
