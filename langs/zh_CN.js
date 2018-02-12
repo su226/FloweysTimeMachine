@@ -43,7 +43,41 @@ translates = {
   info963note:"当此文件存在时，你'出卖'了你的灵魂来赎回整个世界",
   doggedallsc:"躲过了所有特别感谢",
   exitedbarriel:"离开了屏障(和平结局达成)",
-  funvalue:"'欢乐' 值"
+  funvalue:"\"欢乐\" 值",
+  savetitle:"存档数据",
+  savenote:"这是存档时会被保存的数据",
+  health:"生命",
+  gold:"金币",
+  attack:"攻击",
+  weaponattack:"武器攻击",
+  defense:"防御",
+  armordefense:"防具防御",
+  cellphone:"电话",
+  inventory:"物品",
+  havecellphone:"你有电话",
+  dimboxa:"维度盒子A",
+  dimboxb:"维度盒子B",
+  ruins:"遗迹",
+  trainingdummystate:"训练假人状态",
+  torielstate:"托丽尔状态",
+  doggostate:"Doggo状态",//TODO
+  dogamydogaressastate:"狗夫妇状态",
+  greaterdogstate:"大犬汪状态",
+  comedianstate:"Comedian状态",//TODO
+  papyrusstate:"帕帕瑞斯状态",
+  waterfall:"瀑布",
+  shyrenstate:"塞壬状态",
+  maddummystate:"愤怒假人状态",
+  undynestate1:"安黛因状态1",
+  undynestate2:"安黛因状态2",
+  hotland:"热地",
+  broguardstate:"皇家守卫状态",
+  muffetstate:"玛菲特状态",
+  mettatonstate:"镁塔顿状态",
+  trueending:"真和平结局",
+  truelabexited:"离开真实验室(能得到真结局)",
+  defeatedasriel:"击败Asriel(真和平结局完成)",
+  plotvalue:"\"情节\" 值"
 }
 
 newItems = [

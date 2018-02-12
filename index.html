@@ -134,25 +134,25 @@
         </fieldset>
       </div>
     </form>
-    <h2> SAVE Data </h2>
-    <p>This is what gets SAVED at SAVE points.</p>
+    <h2 data-langable="savetitle">SAVE Data</h2>
+    <p data-langable="savenote">This is what gets SAVED at SAVE points.</p>
     <form>
       <div>
         <fieldset>
           <legend>file0</legend>
           <input type="file" id="sav-file" />
           <div style="display:flex">
-            <input id="sav-loadbutton" type="button" value="Load" style="flex:1" disabled />
-            <input id="sav-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" />
+            <input id="sav-loadbutton" type="button" value="Load" data-langable="load" style="flex:1" disabled />
+            <input id="sav-savebutton" type="button" value="Save" data-langable="save" style="flex:1;margin-left:10px" />
           </div>
         </fieldset>
         <fieldset>
         <legend>General</legend>
-        <label>Name</label> <input type="text" id="sav-name" />
-        <label>Location</label> <select id="sav-location"> </select>
-        <label>Deaths</label> <input type="text" id="sav-unkkills" />
-        <label>Kills</label> <input type="text" id="sav-kills" />
-        <label>Time</label>
+        <label data-langable="name">Name</label> <input type="text" id="sav-name" />
+        <label data-langable="location">Location</label> <select id="sav-location"> </select>
+        <label data-langable="deaths">Deaths</label> <input type="text" id="sav-unkkills" />
+        <label data-langable="kills">Kills</label> <input type="text" id="sav-kills" />
+        <label data-langable="time">Time</label>
           <div style="display:flex">
           <input id="sav-time-minute" type="text" style="width:0;flex-grow:1;text-align:center" />
           :
@@ -160,25 +160,25 @@
           </div>
         </fieldset>
         <fieldset>
-        <legend>States</legend>
-        <label>Health</label> <input type="text" id="sav-hp" />
+        <legend data-langable="states">States</legend>
+        <label data-langable="health">Health</label> <input type="text" id="sav-hp" />
         <label>LOVE</label> <input type="text" id="sav-love" />
         <label>EXP</label> <input type="text" id="sav-exp" />
-        <label>Gold</label> <input type="text" id="sav-gold" />
-        <label>AT</label> <input type="text" id="sav-at" />
-        <label>Weapon AT</label> <input type="text" id="sav-weaponat" />
-        <label>DF</label> <input type="text" id="sav-df" />
-        <label>Armor DF</label> <input type="text" id="sav-armordf" />
+        <label data-langable="gold">Gold</label> <input type="text" id="sav-gold" />
+        <label data-langable="attack">AT</label> <input type="text" id="sav-at" />
+        <label data-langable="weaponattack">Weapon AT</label> <input type="text" id="sav-weaponat" />
+        <label data-langable="defense">DF</label> <input type="text" id="sav-df" />
+        <label data-langable="armordefense">Armor DF</label> <input type="text" id="sav-armordf" />
         </fieldset>
       </div>
       <div>
       <fieldset>
-        <legend>Equipment</legend>
-        <label>Weapon</label> <select id="sav-weapon"> </select>
-        <label>Armor</label> <select id="sav-armor"> </select>
+        <legend data-langable="equipment">Equipment</legend>
+        <label data-langable="weapon">Weapon</label> <select id="sav-weapon"> </select>
+        <label data-langable="armor">Armor</label> <select id="sav-armor"> </select>
       </fieldset>
       <fieldset>
-        <legend>Inventory</legend>
+        <legend data-langable="inventory">Inventory</legend>
         <select id="sav-invslot1"> </select>
         <select id="sav-invslot2"> </select>
         <select id="sav-invslot3"> </select>
@@ -189,8 +189,8 @@
         <select id="sav-invslot8"> </select>
       </fieldset>
       <fieldset>
-        <legend>Cellphone</legend>
-        <label>You have cellphone</label> <input id="sav-havecell" type="checkbox" />
+        <legend data-langable="cellphone">Cellphone</legend>
+        <label data-langable="havecellphone">You have cellphone</label> <input id="sav-havecell" type="checkbox" />
         <select id="sav-cellslot1"> </select>
         <select id="sav-cellslot2"> </select>
         <select id="sav-cellslot3"> </select>
@@ -201,7 +201,7 @@
         <select id="sav-cellslot8"> </select>
       </fieldset>
       <fieldset>
-        <legend>Dimension Box A</legend>
+        <legend data-langable="dimboxa">Dimension Box A</legend>
         <select id="sav-dimaslot1"> </select>
         <select id="sav-dimaslot2"> </select>
         <select id="sav-dimaslot3"> </select>
@@ -214,7 +214,7 @@
         <select id="sav-dimaslot10"> </select>
       </fieldset>
       <fieldset>
-        <legend>Dimension Box B</legend>
+        <legend data-langable="dimboxb">Dimension Box B</legend>
         <select id="sav-dimbslot1"> </select>
         <select id="sav-dimbslot2"> </select>
         <select id="sav-dimbslot3"> </select>
@@ -229,46 +229,46 @@
       </div>
       <div>
         <fieldset>
-          <legend>Ruins</legend>
-          <label>Kills</label> <input type="text" id="sav-ruinskills" />
-          <label>Training Dummy State</label> <select id="sav-trainingdummystate"> </select>
-          <label>Toriel State</label> <select id="sav-torielstate"> </select>
+          <legend data-langable="ruins">Ruins</legend>
+          <label data-langable="kills">Kills</label> <input type="text" id="sav-ruinskills" />
+          <label data-langable="trainingdummystate">Training Dummy State</label> <select id="sav-trainingdummystate"> </select>
+          <label data-langable="torielstate">Toriel State</label> <select id="sav-torielstate"> </select>
         </fieldset>
         <fieldset>
-          <legend>Snowdin</legend>
-          <label>Kills</label> <input type="text" id="sav-snowdinkills" />
-          <label>Doggo State</label> <select id="sav-doggostate"> </select>
-          <label>Dogamy & Dogaressa State</label> <select id="sav-dogamydogaressastate"> </select>
-          <label>Greater Dog State</label> <select id="sav-greaterdogstate"> </select>
-          <label>Comedian State</label> <select id="sav-comedianstate"> </select>
-          <label>Papyrus State</label> <select id="sav-papyrusstate"> </select>
+          <legend data-langable="snowdin">Snowdin</legend>
+          <label data-langable="kills">Kills</label> <input type="text" id="sav-snowdinkills" />
+          <label data-langable="doggostate">Doggo State</label> <select id="sav-doggostate"> </select>
+          <label data-langable="doaamydogaressastate">Dogamy & Dogaressa State</label> <select id="sav-dogamydogaressastate"> </select>
+          <label data-langable="greaterdogstate">Greater Dog State</label> <select id="sav-greaterdogstate"> </select>
+          <label data-langable="comedianstate">Comedian State</label> <select id="sav-comedianstate"> </select>
+          <label data-langable="papyrusstate">Papyrus State</label> <select id="sav-papyrusstate"> </select>
         </fieldset>
         <fieldset>
-          <legend>Waterfall</legend>
-          <label>Kills</label> <input type="text" id="sav-waterfallkills" />
-          <label>Shyren State</label> <select id="sav-shyrenstate"> </select>
-          <label>Mad Dummy State</label> <select id="sav-maddummystate"> </select>
-          <label>Undyne State 1</label> <select id="sav-undynestate1"> </select>
-          <label>Undyne State 2</label> <select id="sav-undynestate2"> </select>
+          <legend data-langable="waterfall">Waterfall</legend>
+          <label data-langable="kills">Kills</label> <input type="text" id="sav-waterfallkills" />
+          <label data-langable="shyrenstate">Shyren State</label> <select id="sav-shyrenstate"> </select>
+          <label data-langable="maddummystate">Mad Dummy State</label> <select id="sav-maddummystate"> </select>
+          <label data-langable="undynestate1">Undyne State 1</label> <select id="sav-undynestate1"> </select>
+          <label data-langable="undynestate2">Undyne State 2</label> <select id="sav-undynestate2"> </select>
         </fieldset>
         <fieldset>
-          <legend>Hotland</legend>
-          <label>Kills</label> <input type="text" id="sav-hotlandkills" />
-          <label>Bro Guards State</label> <select id="sav-broguardsstate"> </select>
-          <label>Muffet State</label> <select id="sav-muffetstate"> </select>
-          <label>Mettaton State</label> <select id="sav-mettatonstate"> </select>
+          <legend data-langable="hotland">Hotland</legend>
+          <label data-langable="kills">Kills</label> <input type="text" id="sav-hotlandkills" />
+          <label data-langable="broguardstate">Bro Guards State</label> <select id="sav-broguardsstate"> </select>
+          <label data-langable="muffetstate">Muffet State</label> <select id="sav-muffetstate"> </select>
+          <label data-langable="mettatonstate">Mettaton State</label> <select id="sav-mettatonstate"> </select>
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend>True Ending</legend>
-          <label>True lab exited (can get true ending)</label> <input id="sav-exitedtruelab" type="checkbox" />
-          <label>Defeated Asriel (true pacifist finished) </label> <input id="sav-defeatedasriel" type="checkbox" />
+          <legend data-langable="trueending">True Ending</legend>
+          <label data-langable="truelabexited">True lab exited (can get true ending)</label> <input id="sav-exitedtruelab" type="checkbox" />
+          <label data-langable="defeatedasriel">Defeated Asriel (true pacifist finished) </label> <input id="sav-defeatedasriel" type="checkbox" />
         </fieldset>
         <fieldset>
-          <legend>Other</legend>
-          <label>"Plot" Value</label> <select id="sav-plotvalue"> </select>
-          <label>"Fun" Value</label> <input type="text" id="sav-fun" />
+          <legend data-langable="other">Other</legend>
+          <label data-langable="plotvalue">"Plot" Value</label> <select id="sav-plotvalue"> </select>
+          <label data-langable="funvalue">"Fun" Value</label> <input type="text" id="sav-fun" />
         </fieldset>
       </div>
     </form>
