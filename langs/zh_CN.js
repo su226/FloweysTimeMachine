@@ -54,6 +54,9 @@ translates = {
   armordefense:"防具防御",
   cellphone:"电话",
   inventory:"物品",
+  equipment:"穿戴",
+  weapon:"武器",
+  armor:"防具",
   havecellphone:"你有电话",
   dimboxa:"维度盒子A",
   dimboxb:"维度盒子B",
@@ -61,7 +64,7 @@ translates = {
   trainingdummystate:"训练假人状态",
   torielstate:"托丽尔状态",
   doggostate:"Doggo状态",//TODO
-  dogamydogaressastate:"狗夫妇状态",
+  doaamydogaressastate:"狗夫妇状态",
   greaterdogstate:"大犬汪状态",
   comedianstate:"Comedian状态",//TODO
   papyrusstate:"帕帕瑞斯状态",
