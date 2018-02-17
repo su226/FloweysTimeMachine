@@ -34,6 +34,9 @@ function changeLanguage(){
       return;
     }else if(lang==="list"){
       var langs=availableLangs.toString();
+      if(langs!==""){
+        langs+=","
+      }
       window.alert("Available languages:\n"+langs+defaultLang);
       continue;
     }else if(lang===defaultLang){
