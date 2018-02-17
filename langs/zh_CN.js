@@ -63,6 +63,7 @@ translates = {
   ruins:"遗迹",
   trainingdummystate:"训练假人状态",
   torielstate:"托丽尔状态",
+  snowdin:"雪町",
   doggostate:"Doggo状态",//TODO
   doaamydogaressastate:"狗夫妇状态",
   greaterdogstate:"大犬汪状态",
