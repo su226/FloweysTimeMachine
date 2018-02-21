@@ -46,8 +46,9 @@ button:disabled, [type="button"]:disabled {
     border: 2px solid gray;
 }
 button:not(:disabled):hover, [type="button"]:not(:disabled):hover {
-    content: ' ';
-    background: url("res/determinate.png") no-repeat 8px center;
+    color:yellow;
+    background-image: url("res/determinate.png") no-repeat 8px center;
+    background-color: yellow;
 }
 input+label, select+label {
     margin-top: 5px;
