@@ -1,6 +1,5 @@
 translates = {
   title:"小花的时间机器",
-  title:"小花的时间机器",
   note:"Undertale 存档编辑器",
   forkme:"在GitHub上克隆",
   floweyimg:"小花",
@@ -539,7 +538,7 @@ newTrainingDummyStates = {
   "0": "初始状态",
   "1": "被杀死",
   "2": "被谈话",
-  "3": "试了你的意大利面"
+  "3": "被饶恕"
 };
 
 newShyrenStates = {

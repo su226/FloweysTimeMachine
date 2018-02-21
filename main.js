@@ -420,7 +420,7 @@ var trainingDummyStates = {
   "0": "Initial state",
   "1": "Killed",
   "2": "Talked to",
-  "3": "Tired of your shenanigans"
+  "3": "Spared"
 };
 
 var shyrenStates = {
