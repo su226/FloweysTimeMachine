@@ -1,3 +1,4 @@
+"use strict";
 var main = {};
 
 var items = [
@@ -471,11 +472,11 @@ var alertText = {
   selectFile:"You need to choose a file first!",
   enterName:"Enter the name for your new preset",
   invaindName:"You did not enter a valid name, preset not created.",
-  selectConfig:"You need to select a valid preset first!"
+  selectConfig:"You need to select a valid preset first!",
+  unrecognized:"Unrecognized"
 }
 
 function parseIniFromText(text) {
-  "use strict";
   var lines = text.match(/[^\r\n]+/g);
   var section = null;
   var ini = {};
@@ -517,7 +518,6 @@ function parseIniFromText(text) {
 }
 
 function flowey_laugh_once() {
-  "use strict";
   if (localStorage.getItem("laughed") !== "true") {
     document.getElementById("floweyimg").src = "res/flowey_evil.png";
     if(!document.getElementById("mute").checked) {
@@ -529,7 +529,6 @@ function flowey_laugh_once() {
 }
 
 function insert_inv_lists() {
-  "use strict";
   function insert(node, i) {
     var newOption = document.createElement("option");
     newOption.setAttribute("value", i);
@@ -552,14 +551,12 @@ function insert_inv_lists() {
 }
 
 function insert_cell_lists() {
-  "use strict";
   for (var i = 1; i <= 8; i++) {
     loadSelectFromObj("sav-cellslot" + i, cellOpts);
   }
 }
 
 function loadSelectFromObj(selectId, obj) {
-  "use strict";
   var select = document.getElementById(selectId);
   select.innerText="";
   for (var key in obj) {
@@ -573,7 +570,6 @@ function loadSelectFromObj(selectId, obj) {
 
 // Load undertale.ini data into an ini object and execute a closure on it.
 function loadIniFromFile(file, closure) {
-  "use strict";
   var reader = new FileReader();
   reader.onload = function(e) {
     var text = e.target.result;
@@ -588,7 +584,6 @@ function loadIniFromFile(file, closure) {
 
 // Load save data from a file into an array of values, and execute a closure on it.
 function loadSaveFromFile(file, closure) {
-  "use strict";
   var reader = new FileReader();
   reader.onload = function(e) {
     var text = e.target.result;
@@ -599,204 +594,180 @@ function loadSaveFromFile(file, closure) {
 
 // Update the persistent data form from an ini object.
 function updatePersistentDataForm(iniobj) {
-  "use strict";
+  //Firefox will keep the value of <input> and <select> when refreshing.
+  //Reset them before loading ini file.
+  document.getElementById("ini-location").value = 4;
+  document.getElementById("ini-kills").value = 0;
+  document.getElementById("ini-dies").value = 0;
+  document.getElementById("ini-love").value = 0;
+  document.getElementById("ini-time-minute").value = 0;
+  document.getElementById("ini-flowey-met").checked = false;
+  document.getElementById("ini-time-second").value = 0;
+  document.getElementById("ini-omega-flowey-trapped").checked = false;
+  document.getElementById("ini-omega-flowey-soul").value = 0;
+  document.getElementById("ini-omega-flowey-deaths").value = 0;
+  document.getElementById("ini-dodged-all-special-thanks").checked = false;
+  document.getElementById("ini-fun").value = "0";
+  document.getElementById("ini-sans-deaths").value = 0;
+  document.getElementById("ini-sans-met").checked = false;
+  document.getElementById("ini-sans-judged").checked = false;
+  document.getElementById("ini-sans-judgedpe").checked = false;
+  document.getElementById("ini-toriel-prefer").value = 0;
+  document.getElementById("ini-spared-toriel").checked = false;
+  document.getElementById("ini-killed-toriel").checked = false;
+  document.getElementById("ini-papyrus-met").checked = false;
+  document.getElementById("ini-spared-papyrus").checked = false;
+  document.getElementById("ini-killed-papyrus").checked = false;
+  document.getElementById("ini-dated-papyrus").checked = false;
+  document.getElementById("ini-defeated-asriel").checked = false;
+  document.getElementById("ini-exit-barrier").checked = false;
+  document.getElementById("ini-dated-undyne").checked = false;
+  document.getElementById("ini-dated-alphys").checked = false;
   if (iniobj.General){
     document.getElementById("ini-name").value = iniobj.General.Name;
     if(iniobj.General.Room){
       document.getElementById("ini-location").value = parseInt(iniobj.General.Room.trim());
-    }else{
-      document.getElementById("ini-location").value = 4;
     }
     if(iniobj.General.Kills){
       document.getElementById("ini-kills").value = parseInt(iniobj.General.Kills.trim());
-    }else{
-      document.getElementById("ini-kills").value = 0;
     }
     if(iniobj.General.Gameover){
       document.getElementById("ini-dies").value = parseInt(iniobj.General.Gameover.trim());
-    }else{
-      document.getElementById("ini-dies").value = 0;
     }
     if(iniobj.General.Love){
       document.getElementById("ini-love").value = parseInt(iniobj.General.Love.trim());
-    }else{
-      document.getElementById("ini-love").value = 0;
     }
     if(iniobj.General.Time){
       document.getElementById("ini-time-minute").value =   parseInt(iniobj.General.Time.trim()/30/60);
       document.getElementById("ini-time-second").value = Math.round(iniobj.General.Time.trim()/30%60);
-    }else{
-      document.getElementById("ini-time-minute").value = 0;
-      document.getElementById("ini-time-second").value = 0;
     }
-  } else {
-    document.getElementById("ini-name").value = undefined;
-    document.getElementById("ini-location").value = 4;
-    document.getElementById("ini-kills").value = 0;
-    document.getElementById("ini-dies").value = 0;
-    document.getElementById("ini-love").value = 0;
-    document.getElementById("ini-time-minute").value = 0;
-    document.getElementById("ini-time-second").value = 0;
-  }
-  if (iniobj.Flowey) {
-    if(iniobj.Flowey.Met1){
-      if (parseInt(iniobj.Flowey.Met1.trim()) === 1) {
-        document.getElementById("ini-flowey-met").checked = true;
-      } else {
-        document.getElementById("ini-flowey-met").checked = false;
-      }
-    }else{
-      document.getElementById("ini-flowey-met").checked = false;
-    }
-  }else{
-    document.getElementById("ini-flowey-met").checked = false;
-  }
-  if (iniobj.FFFFF) {
-    if (iniobj.FFFFF.F) {
-      if (parseInt(iniobj.FFFFF.F.trim()) === 1) {
-        document.getElementById("ini-omega-flowey-trapped").checked = true;
-      } else {
-        document.getElementById("ini-omega-flowey-trapped").checked = false;
-      }
-    } else {
-      document.getElementById("ini-omega-flowey-trapped").checked = false;
-    }
-    if (iniobj.FFFFF.P) {
-      document.getElementById("ini-omega-flowey-soul").value = parseInt(iniobj.FFFFF.P.trim());
-    } else {
-      document.getElementById("ini-omega-flowey-soul").value = 0;
-    }
-    if (iniobj.FFFFF.D) {
-      document.getElementById("ini-omega-flowey-deaths").value = parseInt(iniobj.FFFFF.D.trim());
-    } else {
-      document.getElementById("ini-omega-flowey-deaths").value = 0;
-    }
-  } else {
-    document.getElementById("ini-omega-flowey-trapped").checked = false;
-    document.getElementById("ini-omega-flowey-soul").value = 0;
-    document.getElementById("ini-omega-flowey-deaths").value = 0;
-  }
-  if (iniobj.reset) {
-    if (iniobj.reset.s_key) {
-      if (parseInt(iniobj.reset.s_key.trim()) === 1) {
-        document.getElementById("ini-dodged-all-special-thanks").checked = true;
-      } else {
-        document.getElementById("ini-dodged-all-special-thanks").checked = false;
-      }
-    } else {
-      document.getElementById("ini-dodged-all-special-thanks").checked = false;
-    }
-  } else {
-    document.getElementById("ini-dodged-all-special-thanks").checked = false;
   }
   if (iniobj.fun) {
     document.getElementById("ini-fun").value = parseInt(iniobj.fun.trim());
+  }
+  if (iniobj.Flowey) {
+    if(iniobj.Flowey.Met1){
+      if (parseInt(iniobj.Flowey.Met1.trim()) > 0) {
+        document.getElementById("ini-flowey-met").checked = true;
+      }
+    }
+  }
+  if (iniobj.reset) {
+    if (iniobj.reset.s_key) {
+      if (parseInt(iniobj.reset.s_key.trim()) != 0) {
+        document.getElementById("ini-dodged-all-special-thanks").checked = true;
+      }
+    }
+  }
+  if (iniobj.Toriel) {
+    if (iniobj.Toriel.Bscotch) {
+      updateSelection("ini-toriel-prefer",[iniobj.Toriel.Bscotch.trim()],0,torielPrefer);
+    }
+    if (iniobj.Toriel.TS) {
+      if (parseInt(iniobj.Toriel.TS.trim()) != 0) {
+        document.getElementById("ini-spared-toriel").checked = true;
+      }
+    }
+    if (iniobj.Toriel.TK) {
+      if (parseInt(iniobj.Toriel.TK.trim()) != 0) {
+        document.getElementById("ini-killed-toriel").checked = true;
+      }
+    }
   }
   if (iniobj.Sans){
     if (iniobj.Sans.F) {
       document.getElementById("ini-sans-deaths").value = parseInt(iniobj.Sans.F.trim());
     }
     if (iniobj.Sans.M1) {
-      if (parseInt(iniobj.Sans.M1.trim()) === 1) {
+      if (parseInt(iniobj.Sans.M1.trim()) > 0) {
         document.getElementById("ini-sans-met").checked = true;
-      } else {
-        document.getElementById("ini-sans-met").checked = false;
       }
     }
-  } else {
-    document.getElementById("ini-sans-deaths").value = 0;
-    document.getElementById("ini-sans-met").checked = false;
-  }
-  if (iniobj.Toriel) {
-    if (iniobj.Toriel.Bscotch) {
-      document.getElementById("ini-toriel-prefer").value = parseInt(iniobj.Toriel.Bscotch.trim());
-    } else {
-      document.getElementById("ini-toriel-prefer").value = 0;
-    }
-    if (iniobj.Toriel.TS) {
-      if (parseInt(iniobj.Toriel.TS.trim()) === 1) {
-        document.getElementById("ini-spared-toriel").checked = true;
-      } else {
-        document.getElementById("ini-spared-toriel").checked = false;
+    if(iniobj.Sans.EndMet){
+      if (parseInt(iniobj.Sans.EndMet.trim()) != 0) {
+        document.getElementById("ini-sans-judged").checked = true;
       }
-    } else {
-      document.getElementById("ini-spared-toriel").checked = false;
     }
-    if (iniobj.Toriel.TK) {
-      if (parseInt(iniobj.Toriel.TK.trim()) === 1) {
-        document.getElementById("ini-killed-toriel").checked = true;
-      } else {
-        document.getElementById("ini-killed-toriel").checked = false;
+    if(iniobj.Sans.MeetLv1){
+      if (parseInt(iniobj.Sans.MeetLv1.trim()) != 0) {
+        document.getElementById("ini-sans-judgedpe").checked = true;
       }
-    } else {
-      document.getElementById("ini-killed-toriel").checked = false;
     }
-  } else {
-    document.getElementById("ini-toriel-prefer").value = 0;
-    document.getElementById("ini-spared-toriel").checked = false;
-    document.getElementById("ini-killed-toriel").checked = false;
   }
   if (iniobj.Papyrus){
     if (iniobj.Papyrus.M1) {
-      if (parseInt(iniobj.Papyrus.M1.trim()) === 1) {
+      if (parseInt(iniobj.Papyrus.M1.trim()) > 0) {
         document.getElementById("ini-papyrus-met").checked = true;
-      } else {
-        document.getElementById("ini-papyrus-met").checked = false;
       }
-    } else {
-      document.getElementById("ini-papyrus-met").checked = false;
     }
     if (iniobj.Papyrus.PS){
-      if (parseInt(iniobj.Papyrus.PS.trim()) === 1){
+      if (parseInt(iniobj.Papyrus.PS.trim()) != 0){
         document.getElementById("ini-spared-papyrus").checked = true;
-      } else {
-        document.getElementById("ini-spared-papyrus").checked = false;
       }
-    } else {
-      document.getElementById("ini-spared-papyrus").checked = false;
     }
     if (iniobj.Papyrus.PK){
-      if (parseInt(iniobj.Papyrus.PK.trim()) === 1){
+      if (parseInt(iniobj.Papyrus.PK.trim()) != 0){
         document.getElementById("ini-killed-papyrus").checked = true;
-      } else {
-        document.getElementById("ini-killed-papyrus").checked = false;
       }
-    } else {
-      document.getElementById("ini-killed-papyrus").checked = false;
     }
-  } else {
-    document.getElementById("ini-papyrus-met").checked = false;
-    document.getElementById("ini-spared-papyrus").checked = false;
-    document.getElementById("ini-killed-papyrus").checked = false;
+    console.log(iniobj);
+    if (iniobj.Papyrus.PD){
+      if (parseInt(iniobj.Papyrus.PD.trim()) >= 1){
+        document.getElementById("ini-dated-papyrus").checked = true;
+      }
+    }
+  }
+  if(iniobj.Undyne){
+    if(iniobj.Undyne.UD){
+      if (parseInt(iniobj.Undyne.UD.trim()) != 0){
+        document.getElementById("ini-dated-undyne").checked = true;
+      }
+    }
+  }
+  if(iniobj.Alphys){
+    if(iniobj.Alphys.AD){
+      if (parseInt(iniobj.Alphys.AD.trim()) != 0){
+        document.getElementById("ini-dated-alphys").checked = true;
+      }
+    }
+  }
+  if (iniobj.FFFFF) {
+    if (iniobj.FFFFF.F) {
+      if (parseInt(iniobj.FFFFF.F.trim()) != 0) {
+        document.getElementById("ini-omega-flowey-trapped").checked = true;
+      }
+    }
+    if (iniobj.FFFFF.P) {
+      document.getElementById("ini-omega-flowey-soul").value = parseInt(iniobj.FFFFF.P.trim());
+    }
+    if (iniobj.FFFFF.D) {
+      document.getElementById("ini-omega-flowey-deaths").value = parseInt(iniobj.FFFFF.D.trim());
+    }
+  }
+  if (iniobj.F7){
+    if (iniobj.F7.F7){
+      if (parseInt(iniobj.F7.F7.trim()) != 0){
+        document.getElementById("ini-defeated-asriel").checked = true;
+      }
+    }
   }
   if (iniobj.EndF){
     if (iniobj.EndF.EndF){
-      if (parseInt(iniobj.EndF.EndF.trim()) === 1){
+      if (parseInt(iniobj.EndF.EndF.trim()) != 0){
         document.getElementById("ini-exit-barrier").checked = true;
-      } else {
-        document.getElementById("ini-exit-barrier").checked = false;
       }
-    } else {
-      document.getElementById("ini-exit-barrier").checked = false;
     }
-  } else {
-    document.getElementById("ini-exit-barrier").checked = false;
   }
 }
 
 // Update an ini object from the persistent data form.
 function updateIniFromForm(ini) {
-  "use strict";
-  if (!ini.FFFFF) {
-    ini.FFFFF = {};
-  }
   ini.General.Name = document.getElementById("ini-name").value;
   ini.General.Room = document.getElementById("ini-location").value;
   ini.General.Kills = document.getElementById("ini-kills").value;
   ini.General.Love = document.getElementById("ini-love").value;
   ini.General.Time = (document.getElementById("ini-time-minute").value*60+
-            document.getElementById("ini-time-second").value*1)*30;
-  console.log(ini.General.Time)
+                    document.getElementById("ini-time-second").value*1)*30;
   if (document.getElementById("ini-omega-flowey-trapped").checked) {
     if (!ini.FFFFF) {
       ini.FFFFF = {};
@@ -843,6 +814,22 @@ function updateIniFromForm(ini) {
     }
     if (ini.Sans) {
       ini.Sans.M1 = "1";
+    }
+  }
+  if (document.getElementById("ini-sans-judged").checked) {
+    if (!ini.Sans) {
+      ini.Sans = {};
+    }
+    if (ini.Sans) {
+      ini.Sans.EndMet=1;
+    }
+  }
+  if (document.getElementById("ini-sans-judgedpe").checked) {
+    if (!ini.Sans) {
+      ini.Sans = {};
+    }
+    if (ini.Sans) {
+      ini.Sans.MeetLv1=1;
     }
   }
   var timesDiedSans = parseInt(document.getElementById("ini-sans-deaths").value);
@@ -901,6 +888,38 @@ function updateIniFromForm(ini) {
       ini.Papyrus.PK = "1";
     }
   }
+  if (document.getElementById("ini-dated-papyrus").checked){
+    if (!ini.Papyrus) {
+      ini.Papyrus = {};
+    }
+    if (ini.Papyrus) {
+      ini.Papyrus.PD = "1";
+    }
+  }
+  if (document.getElementById("ini-dated-undyne").checked){
+    if (!ini.Undyne) {
+      ini.Undyne = {};
+    }
+    if (ini.Undyne) {
+      ini.Undyne.UD = "1";
+    }
+  }
+  if (document.getElementById("ini-dated-alphys").checked){
+    if (!ini.Alphys) {
+      ini.Alphys = {};
+    }
+    if (ini.Alphys) {
+      ini.Alphys.AD = "1";
+    }
+  }
+  if(document.getElementById("ini-defeated-asriel").checked){
+  	if (!ini.F7) {
+      ini.F7 = {};
+    }
+    if (ini.F7) {
+      ini.F7.F7 = 1;
+    }
+  }
   if(document.getElementById("ini-exit-barrier").checked){
   	if (!ini.EndF) {
       ini.EndF = {};
@@ -912,10 +931,9 @@ function updateIniFromForm(ini) {
 }
 
 function updateSelection(id, values, index, list) {
-  "use strict";
   var value = parseInt(values[index].trim());
   if (!list[value]) {
-    list[value] = "Unrecognized (" + value + ")";
+    list[value] = alertText.unrecognized+" (" + value + ")";
     loadSelectFromObj(id, list);
   }
   document.getElementById(id).value = value;
@@ -923,7 +941,6 @@ function updateSelection(id, values, index, list) {
 
 // Update the save data form from an array of values.
 function updateSaveDataForm(values) {
-  "use strict";
   document.getElementById("sav-name").value = values[0];
   document.getElementById("sav-time-minute").value =   parseInt(values[548]/30/60);
   document.getElementById("sav-time-second").value = Math.round(values[548]/30%60);
@@ -987,7 +1004,6 @@ function updateSaveDataForm(values) {
 
 // Update an array of values from the save data form.
 function updateSaveValuesFromForm(values) {
-  "use strict";
   values[0] = document.getElementById("sav-name").value;
   values[548] = (document.getElementById("sav-time-minute").value*60+
            document.getElementById("sav-time-second").value*1)*30;
@@ -1062,7 +1078,6 @@ function updateSaveValuesFromForm(values) {
 }
 
 function saveIniToFile(ini) {
-  "use strict";
   var string = "";
   for (var section in ini) {
     string += "[" + section + "]\r\n";
@@ -1076,7 +1091,6 @@ function saveIniToFile(ini) {
 }
 
 function saveSaveValuesToFile(values) {
-  "use strict";
   var string = "";
   for (var i = 0; i < values.length; i++) {
     string += values[i] + "\r\n";
@@ -1087,7 +1101,6 @@ function saveSaveValuesToFile(values) {
 }
 
 function loadPresetSelect() {
-  "use strict";
   var selectNode = document.getElementById("builtinpresetselect");
   for (var k in presets) {
     var newOption = document.createElement("option");
@@ -1107,7 +1120,6 @@ function start(){
 }
 
 function doConfig() {
-  "use strict";
   var userPresets = localStorage.getItem("userPresets");
   if (userPresets === null) {
     localStorage.setItem("userPresets", JSON.stringify({}));

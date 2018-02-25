@@ -7,18 +7,6 @@
     <meta name="keywords" content="Undertale,SAVE,Editor,Enhanced" />
     <meta name="author" content="su226, su.226@qq.com"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="full-screen" content="yes">
-    <meta name="browsermode" content="application">
-    <meta name="x5-orientation" content="portrait">
-    <meta name="x5-fullscreen" content="true">
-    <meta name="x5-page-mode" content="app">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="renderer" content="webkit">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="msapplication-TileColor" content="#000"/>
-    <meta name="msapplication-TileImage" content="res/tile.png"/>
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
     <title data-langable="title">Flowey's Time Machine</title>
@@ -100,16 +88,27 @@
         <fieldset>
           <legend data-langable="sans">Sans</legend>
           <label data-langable="metsans">Met Sans</label> <input type="checkbox" id="ini-sans-met" />
+          <label data-langable="judged">Be Judged</label> <input type="checkbox" id="ini-sans-judged" />
+          <label data-langable="judgedpe">Be Judged(PE)</label> <input type="checkbox" id="ini-sans-judgedpe" />
           <label data-langable="deaths">Deaths</label>
           <input type="text" id="ini-sans-deaths" />
         </fieldset>
+      </div>
+      <div>
         <fieldset>
           <legend data-langable="papyrus">Papyrus</legend>
           <label data-langable="metpapyrus">Met Papyrus</label> <input type="checkbox" id="ini-papyrus-met" />
-          <label data-langable="killedpapyrus">Killed Papyrus</label>
-          <input type="checkbox" id="ini-killed-papyrus" />
-          <label data-langable="sparedpapyrus">Spared Papyrus</label>
-          <input type="checkbox" id="ini-spared-papyrus" />
+          <label data-langable="killedpapyrus">Killed Papyrus</label> <input type="checkbox" id="ini-killed-papyrus" />
+          <label data-langable="sparedpapyrus">Spared Papyrus</label> <input type="checkbox" id="ini-spared-papyrus" />
+          <label data-langable="datedpapyrus">Dated Papyrus</label> <input type="checkbox" id="ini-dated-papyrus" />
+        </fieldset>
+        <fieldset>
+          <legend data-langable="undyne">Undyne</legend>
+          <label data-langable="datedundyne">Dated Undyne</label> <input type="checkbox" id="ini-dated-undyne" />
+        </fieldset>
+        <fieldset>
+          <legend data-langable="alphys">Alphys</legend>
+          <label data-langable="datedalphys">Dated Alphys</label> <input type="checkbox" id="ini-dated-alphys" />
         </fieldset>
         <fieldset>
           <legend data-langable="omegaflowey">Omega Flowey</legend>
@@ -123,13 +122,17 @@
           <legend data-langable="gepolluction">Genocide Ending Polluction</legend>
           <label>system_information_962<sup data-message data-langable="info962note" title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run."></sup></label>
           <input type="button" id="savesi2" value="保存" />
-          <label>system_information_963<sup data-message data-langable="info963note" title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run."></sup></label>
+          <label>system_information_963<sup data-message data-langable="info963note" title="When this file is present, you have 'sold' your soul to get the world back after a genocide run."></sup></label>
           <input type="button" id="savesi3" value="保存" />
+        </fieldset>
+        <fieldset>
+          <legend data-langable="trueending">True Ending</legend>
+          <label data-langable="defeatedasriel">Defeated Asriel (will get true ending)</label> <input type="checkbox" id="ini-defeated-asriel" />
+          <label data-langable="exitedbarriel">Exited barriel (true ending finshed)</label> <input type="checkbox" id="ini-exit-barrier" />
         </fieldset>
         <fieldset>
           <legend data-langable="other">Other</legend>
           <label data-langable="doggedallsc">Dodged all of the special thanks</label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
-          <label data-langable="exitedbarriel">Exited barriel (Peace ending finished)</label> <input type="checkbox" id="ini-exit-barrier" />
           <label data-langable="funvalue">"Fun" value</label> <input type="text" id="ini-fun" />
         </fieldset>
       </div>
@@ -263,7 +266,7 @@
         <fieldset>
           <legend data-langable="trueending">True Ending</legend>
           <label data-langable="truelabexited">True lab exited (can get true ending)</label> <input id="sav-exitedtruelab" type="checkbox" />
-          <label data-langable="defeatedasriel">Defeated Asriel (true pacifist finished) </label> <input id="sav-defeatedasriel" type="checkbox" />
+          <label data-langable="defeatedasriel">Defeated Asriel (will get true ending)</label> <input id="sav-defeatedasriel" type="checkbox" />
         </fieldset>
         <fieldset>
           <legend data-langable="other">Other</legend>

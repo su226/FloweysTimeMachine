@@ -30,6 +30,8 @@ translates = {
   sparedtoriel:"饶恕了托丽尔",
   sans:"衫斯",
   metsans:"遇见衫斯",
+  judged:"被审判",
+  judgedpe:"和平线被审判",
   papyrus:"帕帕瑞斯",
   metpapyrus:"遇见帕帕瑞斯",
   killedpapyrus:"杀死了帕帕瑞斯",
@@ -63,7 +65,7 @@ translates = {
   trainingdummystate:"训练假人状态",
   torielstate:"托丽尔状态",
   snowdin:"雪町",
-  doggostate:"Doggo状态",//TODO
+  doggostate:"遁狗状态",
   doaamydogaressastate:"狗夫妇状态",
   greaterdogstate:"大犬汪状态",
   comedianstate:"Comedian状态",//TODO
@@ -79,9 +81,16 @@ translates = {
   mettatonstate:"镁塔顿状态",
   trueending:"真和平结局",
   truelabexited:"离开真实验室(能得到真结局)",
-  defeatedasriel:"击败Asriel(真和平结局完成)",
+  defeatedasriel:"击败Asriel(将要得到真结局)",
+  exitedbarriel:"离开屏障(得到真结局)",
   plotvalue:"\"情节\" 值",
-  other:"其他"
+  other:"其他",
+  states:"状态",
+  alphys:"艾菲斯",
+  undyne:"安黛因",
+  datedpapyrus:"约会了帕帕瑞斯",
+  datedundyne:"约会了安黛因",
+  datedalphys:"约会了艾菲斯",
 }
 translatesHelp={
   pagetitle:"小花的时间机器 - 帮助",
@@ -269,7 +278,7 @@ newRooms = {
   "46": "雪町 - Box Road [存档点]",//TODO
   "47": "雪町 - 鱼竿",
   "48": "雪町 - 帕帕瑞斯岗哨",
-  "49": "雪町 - Doggo",//TODO
+  "49": "雪町 - 遁狗",//TODO
   "50": "雪町 - 指南针图标",
   "51": "雪町 - 雪人",
   "52": "雪町 - 高压电迷宫",
@@ -501,7 +510,7 @@ newComedianStates = {
   "2": "被杀死"
 };
 
-newDoggoStates = {
+new遁狗States = {
   "0": "初始状态",
   "1": "被杀死",
   "2": "被饶恕"
@@ -589,5 +598,6 @@ newAlertText = {
   selectFile:"请选择一个文件!",
   enterName:"输入配置名称",
   invaindName:"无效名称，未创建配置!",
-  selectConfig:"请选择一个有效的配置！"
+  selectConfig:"请选择一个有效的配置！",
+  unrecognized:"未被承认的"
 }
