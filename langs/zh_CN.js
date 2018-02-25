@@ -510,7 +510,7 @@ newComedianStates = {
   "2": "被杀死"
 };
 
-new遁狗States = {
+newDoggoStates = {
   "0": "初始状态",
   "1": "被杀死",
   "2": "被饶恕"
