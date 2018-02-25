@@ -661,7 +661,7 @@ function updatePersistentDataForm(iniobj) {
   }
   if (iniobj.Toriel) {
     if (iniobj.Toriel.Bscotch) {
-      updateSelection("ini-toriel-prefer",[iniobj.Toriel.Bscotch.trim()],0,torielPrefer);
+      updateSelection("ini-toriel-prefer",[iniobj.Toriel.Bscotch],0,torielPrefer);
     }
     if (iniobj.Toriel.TS) {
       if (parseInt(iniobj.Toriel.TS.trim()) != 0) {
