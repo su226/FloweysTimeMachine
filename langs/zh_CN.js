@@ -106,6 +106,8 @@ translatesHelp={
   and:"以及",
   haventsaved:"除非你没有存档,或者把它们删除了.",
   loading:"加载",
+  roottip:"(修改需要root权限)",
+  systemtip:"UNDERTALE只支持Windows,Mac,Linux以及Android",
   canload:"当你找到了你的存档文件之后,你就可以用小花的时间机器打开然后编辑它了.",
   userpresetinstead:"如果你没有加载存档,你可以在页面顶部选择一个预设来替代,或者是使用默认设置好的配置.",
   editing:"编辑",
