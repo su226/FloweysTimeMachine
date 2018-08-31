@@ -2,7 +2,6 @@ translates = {
   main:{
     title:"小花的时间机器",
     note:"Undertale 存档编辑器",
-    forkme:"在GitHub上克隆",
     floweyimg:"小花",
     helplink:"帮助",
     aboutlink:"关于",
@@ -14,7 +13,6 @@ translates = {
     load:"加载",
     delete:"删除",
     export:"保存&导出",
-    mute:"静音",
     inititle:"永久性数据",
     ininote:"多次游玩时都会记录的数据",
     general:"通用",
@@ -118,7 +116,9 @@ translates = {
     seeinfo962:"如果你清除了世界,你应该看到文件",
     seeinfo963:"如果你出卖了你的灵魂,你应该看到文件",
     deleteinfo:"删除这两个文件即可.",
-    deleteforsteamver:"如果你使用Steam版本,这些文件随着游戏启动可能被备份并且恢复.在那种情况,你应该删除Undertale的Steam云存档,但是我没有做这个的办法."
+    deleteforsteamver:"如果你使用Steam版本,这些文件随着游戏启动可能被备份并且恢复.在那种情况,你应该删除Undertale的Steam云存档,但是我没有做这个的办法.",
+    roottip:"(修改需要root权限)",
+    systemtip:"UNDERTALE只支持Windows,Mac,Linux以及Android"
   },
   about:{
     pagetitle:"小花的时间机器 - 关于",
