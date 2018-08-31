@@ -1,5 +1,5 @@
 "use strict";
-var main = {};
+var pageid="main";
 
 var items = [
   "<empty>",
@@ -520,10 +520,7 @@ function parseIniFromText(text) {
 function flowey_laugh_once() {
   if (localStorage.getItem("laughed") !== "true") {
     document.getElementById("floweyimg").src = "res/flowey_evil.png";
-    if(!document.getElementById("mute").checked) {
-      var audio = new Audio("res/flowey_laugh.mp3");
-      audio.play();
-    }
+    new Audio("res/flowey_laugh.mp3").play();
     localStorage.setItem("laughed", "true");
   }
 }
@@ -1112,10 +1109,10 @@ function loadPresetSelect() {
 
 function start(){
   if(typeof(beginChange) === "function"){
-  beginChange(doConfig);
+    beginChange(doConfig);
   }else{
-  console.warn("Muitl-language module is NOT loaded");
-  doConfig();
+    console.warn("Muitl-language module is NOT loaded");
+    doConfig();
   }
 }
 

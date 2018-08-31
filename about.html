@@ -6,30 +6,27 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title data-langable="pagetitle">Flowey's Time Machine - About</title>
+    <title langkey="pagetitle">Flowey's Time Machine - About</title>
   </head>
   <body>
-    <h1 data-langable="contenttitle">About</h1>
-    <div><span>Language: </span><a id="currentlang" href="#!"></a></div>
-    <label data-langable="mute"> Mute</label><input type="checkbox" id="mute" data-langless />
+    <h1 langkey="contenttitle">About</h1>
+
     <p>
-      <span data-langable="origauthor">Author</span>
+      <span langkey="origauthor">Author</span>
       <span>crumblingstatue</span>
       [<a href="https://github.com/crumblingstatue" target="_blank">GitHub</a>]
     </p>
     <p>
-      <span data-langable="modifyauthor">Modify</span>
+      <span langkey="modifyauthor">Modify</span>
       <span>su226</span>
       [<a href="https://github.com/su226" target="_blank">GitHub</a>]
     </p>
     <p>
-      <span id="translateauthor" data-langable>Translate</span>
+      <span id="translateauthor" langkey>Translate</span>
       <ul id="translaters"></ul>
     </p>
   </body>
-  <script src="langswitcher.js"></script>
-  <script src="alllangs.js"></script>
-  <script id="langloader"></script>
-  <script src="miscapis.js"></script>
+  <script id="lang"></script>
+  <script src="lang.js"></script>
   <script src="about.js"></script>
 </html>

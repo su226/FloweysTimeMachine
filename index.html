@@ -9,60 +9,56 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title data-langable="title">Flowey's Time Machine</title>
+    <title langkey="title">Flowey's Time Machine</title>
   </head>
   <body>
-    <a href="https://github.com/su226/FloweysTimeMachine" id="forkme" data-langless><img src="./res/forkme.png" alt="Fork me on GitHub" data-langable="forkme"></a>
-    <div id="title" data-langless>
-      <img src="res/flowey_nice.png" alt="Flowey" data-langable id="floweyimg"/>
-      <h1><span data-langable="title">Flowey's Time Machine</span></h1>
-      <div><span>Language: </span><a id="currentlang" href="#!"></a></div>
-      <div data-langable="note">Undertale SAVE editor</div>
+    <div id="title" nolang>
+      <img src="res/flowey_nice.png" alt="Flowey" langkey id="floweyimg"/>
+      <h1><span langkey="title">Flowey's Time Machine</span></h1>
+      <div langkey="note">Undertale SAVE editor</div>
       <div>
-        <a href="help.html" target="_blank" data-langable="helplink">Help</a>
-        <a href="about.html" target="_blank" data-langable="aboutlink">About</a>
+        <a href="help.html" target="_blank" langkey="helplink">Help</a>
+        <a href="about.html" target="_blank" langkey="aboutlink">About</a>
+        <a href="lang.html" target="_blank">Language</a>
       </div>
       <div style="clear:both"></div>
     </div>
-    <h2 data-langable="configtitle">Config</h2>
+    <h2 langkey="configtitle">Config</h2>
     <div id="builtinpreset">
-      <label data-langable="builtinpresets"> Built-in presets</label>
+      <label langkey="builtinpresets"> Built-in presets</label>
       <select id="builtinpresetselect"> </select>
     </div>
-    <input type="button" id="builtinpresetload" data-langable="load" value="Load" />
+    <input type="button" id="builtinpresetload" langkey="load" value="Load" />
     <br>
     <div id="userpreset">
-      <label data-langable="userpresets"> User presets</label>
+      <label langkey="userpresets"> User presets</label>
       <select id="userpresetselect"> </select>
     </div>
-    <input type="button" id="userpresetload" data-langable="load" value="Load" disabled />
-    <input type="button" id="userpresetsave" data-langable="save" value="Save" disabled />
-    <input type="button" id="userpresetnew" data-langable="new" value="New" />
-    <input type="button" id="userpresetdelete" data-langable="delete" value="Delete" disabled />
-    <input type="button" id="userpresetexport" data-langable="export" value="Save & Export" disabled />
-    <div>
-      <label data-langable="mute">Mute</label><input type="checkbox" id="mute" data-langless />
-    </div>
-    <h2 data-langable="inititle"> Persistent Data </h2>
-    <p data-langable="ininote"> Things that Undertale remembers throughout multiple playthroughs. </p>
+    <input type="button" id="userpresetload" langkey="load" value="Load" disabled />
+    <input type="button" id="userpresetsave" langkey="save" value="Save" disabled />
+    <input type="button" id="userpresetnew" langkey="new" value="New" />
+    <input type="button" id="userpresetdelete" langkey="delete" value="Delete" disabled />
+    <input type="button" id="userpresetexport" langkey="export" value="Save & Export" disabled />
+    <h2 langkey="inititle"> Persistent Data </h2>
+    <p langkey="ininote"> Things that Undertale remembers throughout multiple playthroughs. </p>
     <form>
       <div>
         <fieldset>
           <legend>undertale.ini</legend>
           <input type="file" id="ini-file" />
           <div style="display:flex">
-            <input id="ini-loadbutton" type="button" value="Load" style="flex:1" disabled data-langable="load"/>
-            <input id="ini-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" data-langable="save"/>
+            <input id="ini-loadbutton" type="button" value="Load" style="flex:1" disabled langkey="load"/>
+            <input id="ini-savebutton" type="button" value="Save" style="flex:1;margin-left:10px" langkey="save"/>
           </div>
         </fieldset>
         <fieldset>
-          <legend data-langable="general"> General</legend>
-          <label data-langable="name"> Name</label> <input id="ini-name" type="text" />
-          <label data-langable="location"> Location</label> <select id="ini-location"> </select>
-          <label data-langable="kills"> Kills</label> <input id="ini-kills" type="text" />
-          <label data-langable="deaths"> Deaths</label> <input id="ini-dies" type="text" />
+          <legend langkey="general"> General</legend>
+          <label langkey="name"> Name</label> <input id="ini-name" type="text" />
+          <label langkey="location"> Location</label> <select id="ini-location"> </select>
+          <label langkey="kills"> Kills</label> <input id="ini-kills" type="text" />
+          <label langkey="deaths"> Deaths</label> <input id="ini-dies" type="text" />
           <label>LOVE</label> <input id="ini-love" type="text" />
-          <label data-langable="time"> Time</label>
+          <label langkey="time"> Time</label>
           <div style="display:flex">
           <input id="ini-time-minute" type="text" style="width:0;flex-grow:1;text-align:center" />
           :
@@ -72,90 +68,90 @@
       </div>
       <div>
         <fieldset>
-          <legend data-langable="flowey">Flowey</legend>
-          <label data-langable="metflowey">Met Flowey</label>
+          <legend langkey="flowey">Flowey</legend>
+          <label langkey="metflowey">Met Flowey</label>
           <input type="checkbox" id="ini-flowey-met" />
         </fieldset>
         <fieldset>
-          <legend data-langable="toriel">Toriel</legend>
-          <label data-langable="prefer">You prefer</label>
+          <legend langkey="toriel">Toriel</legend>
+          <label langkey="prefer">You prefer</label>
           <select id="ini-toriel-prefer"> </select>
-          <label data-langable="killedtoriel">Killed Toriel</label>
+          <label langkey="killedtoriel">Killed Toriel</label>
           <input type="checkbox" id="ini-killed-toriel" />
-          <label data-langable="sparedtoriel">Spared Toriel</label>
+          <label langkey="sparedtoriel">Spared Toriel</label>
           <input type="checkbox" id="ini-spared-toriel" />
         </fieldset>
         <fieldset>
-          <legend data-langable="sans">Sans</legend>
-          <label data-langable="metsans">Met Sans</label> <input type="checkbox" id="ini-sans-met" />
-          <label data-langable="judged">Be Judged</label> <input type="checkbox" id="ini-sans-judged" />
-          <label data-langable="judgedpe">Be Judged(PE)</label> <input type="checkbox" id="ini-sans-judgedpe" />
-          <label data-langable="deaths">Deaths</label>
+          <legend langkey="sans">Sans</legend>
+          <label langkey="metsans">Met Sans</label> <input type="checkbox" id="ini-sans-met" />
+          <label langkey="judged">Judged</label> <input type="checkbox" id="ini-sans-judged" />
+          <label langkey="judgedpe">Judged(PE)</label> <input type="checkbox" id="ini-sans-judgedpe" />
+          <label langkey="deaths">Deaths</label>
           <input type="text" id="ini-sans-deaths" />
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend data-langable="papyrus">Papyrus</legend>
-          <label data-langable="metpapyrus">Met Papyrus</label> <input type="checkbox" id="ini-papyrus-met" />
-          <label data-langable="killedpapyrus">Killed Papyrus</label> <input type="checkbox" id="ini-killed-papyrus" />
-          <label data-langable="sparedpapyrus">Spared Papyrus</label> <input type="checkbox" id="ini-spared-papyrus" />
-          <label data-langable="datedpapyrus">Dated Papyrus</label> <input type="checkbox" id="ini-dated-papyrus" />
+          <legend langkey="papyrus">Papyrus</legend>
+          <label langkey="metpapyrus">Met Papyrus</label> <input type="checkbox" id="ini-papyrus-met" />
+          <label langkey="killedpapyrus">Killed Papyrus</label> <input type="checkbox" id="ini-killed-papyrus" />
+          <label langkey="sparedpapyrus">Spared Papyrus</label> <input type="checkbox" id="ini-spared-papyrus" />
+          <label langkey="datedpapyrus">Dated Papyrus</label> <input type="checkbox" id="ini-dated-papyrus" />
         </fieldset>
         <fieldset>
-          <legend data-langable="undyne">Undyne</legend>
-          <label data-langable="datedundyne">Dated Undyne</label> <input type="checkbox" id="ini-dated-undyne" />
+          <legend langkey="undyne">Undyne</legend>
+          <label langkey="datedundyne">Dated Undyne</label> <input type="checkbox" id="ini-dated-undyne" />
         </fieldset>
         <fieldset>
-          <legend data-langable="alphys">Alphys</legend>
-          <label data-langable="datedalphys">Dated Alphys</label> <input type="checkbox" id="ini-dated-alphys" />
+          <legend langkey="alphys">Alphys</legend>
+          <label langkey="datedalphys">Dated Alphys</label> <input type="checkbox" id="ini-dated-alphys" />
         </fieldset>
         <fieldset>
-          <legend data-langable="omegaflowey">Omega Flowey</legend>
-          <label data-langable="omegafloweytrapped">Trapped in Flowey's world</label> <input type="checkbox" id="ini-omega-flowey-trapped" />
-          <label data-langable="nextattack">Next Attack</label> <select id="ini-omega-flowey-soul"></select>
-          <label data-langable="deaths">Deaths</label> <input type="text" id="ini-omega-flowey-deaths" />
+          <legend langkey="omegaflowey">Omega Flowey</legend>
+          <label langkey="omegafloweytrapped">Trapped in Flowey's world</label> <input type="checkbox" id="ini-omega-flowey-trapped" />
+          <label langkey="nextattack">Next Attack</label> <select id="ini-omega-flowey-soul"></select>
+          <label langkey="deaths">Deaths</label> <input type="text" id="ini-omega-flowey-deaths" />
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend data-langable="gepolluction">Genocide Ending Polluction</legend>
-          <label>system_information_962<sup data-message data-langable="info962note" title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run."></sup></label>
-          <input type="button" id="savesi2" value="保存" />
-          <label>system_information_963<sup data-message data-langable="info963note" title="When this file is present, you have 'sold' your soul to get the world back after a genocide run."></sup></label>
-          <input type="button" id="savesi3" value="保存" />
+          <legend langkey="geidentifier">Genocide Ending Identifier</legend>
+          <label>system_information_962<sup data-message langkey="info962note" title="When this file is present, the world is in the 'deleted' state that is triggered when you complete a genocide run."></sup></label>
+          <input type="button" id="savesi2" value="Save" langkey="save" />
+          <label>system_information_963<sup data-message langkey="info963note" title="When this file is present, you have 'sold' your soul to get the world back after a genocide run."></sup></label>
+          <input type="button" id="savesi3" value="Save" langkey="save" />
         </fieldset>
         <fieldset>
-          <legend data-langable="trueending">True Ending</legend>
-          <label data-langable="defeatedasriel">Defeated Asriel (will get true ending)</label> <input type="checkbox" id="ini-defeated-asriel" />
-          <label data-langable="exitedbarriel">Exited barriel (true ending finshed)</label> <input type="checkbox" id="ini-exit-barrier" />
+          <legend langkey="trueending">True Ending</legend>
+          <label langkey="defeatedasriel">Defeated Asriel (will get true ending)</label> <input type="checkbox" id="ini-defeated-asriel" />
+          <label langkey="exitedbarriel">Exited barriel (true ending finshed)</label> <input type="checkbox" id="ini-exit-barrier" />
         </fieldset>
         <fieldset>
-          <legend data-langable="other">Other</legend>
-          <label data-langable="doggedallsc">Dodged all of the special thanks</label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
-          <label data-langable="funvalue">"Fun" value</label> <input type="text" id="ini-fun" />
+          <legend langkey="other">Other</legend>
+          <label langkey="doggedallsc">Dodged all of the special thanks</label> <input type="checkbox" id="ini-dodged-all-special-thanks" />
+          <label langkey="funvalue">"Fun" value</label> <input type="text" id="ini-fun" />
         </fieldset>
       </div>
     </form>
-    <h2 data-langable="savetitle">SAVE Data</h2>
-    <p data-langable="savenote">This is what gets SAVED at SAVE points.</p>
+    <h2 langkey="savetitle">SAVE Data</h2>
+    <p langkey="savenote">This is what gets SAVED at SAVE points.</p>
     <form>
       <div>
         <fieldset>
           <legend>file0</legend>
           <input type="file" id="sav-file" />
           <div style="display:flex">
-            <input id="sav-loadbutton" type="button" value="Load" data-langable="load" style="flex:1" disabled />
-            <input id="sav-savebutton" type="button" value="Save" data-langable="save" style="flex:1;margin-left:10px" />
+            <input id="sav-loadbutton" type="button" value="Load" langkey="load" style="flex:1" disabled />
+            <input id="sav-savebutton" type="button" value="Save" langkey="save" style="flex:1;margin-left:10px" />
           </div>
         </fieldset>
         <fieldset>
-        <legend data-langable="general">General</legend>
-        <label data-langable="name">Name</label> <input type="text" id="sav-name" />
-        <label data-langable="location">Location</label> <select id="sav-location"> </select>
-        <label data-langable="deaths">Deaths</label> <input type="text" id="sav-unkkills" />
-        <label data-langable="kills">Kills</label> <input type="text" id="sav-kills" />
-        <label data-langable="time">Time</label>
+        <legend langkey="general">General</legend>
+        <label langkey="name">Name</label> <input type="text" id="sav-name" />
+        <label langkey="location">Location</label> <select id="sav-location"> </select>
+        <label langkey="unkkills">??? Kills</label> <input type="text" id="sav-unkkills" />
+        <label langkey="kills">Kills</label> <input type="text" id="sav-kills" />
+        <label langkey="time">Time</label>
           <div style="display:flex">
           <input id="sav-time-minute" type="text" style="width:0;flex-grow:1;text-align:center" />
           :
@@ -163,25 +159,25 @@
           </div>
         </fieldset>
         <fieldset>
-        <legend data-langable="states">States</legend>
-        <label data-langable="health">Health</label> <input type="text" id="sav-hp" />
+        <legend langkey="states">States</legend>
+        <label langkey="health">Health</label> <input type="text" id="sav-hp" />
         <label>LOVE</label> <input type="text" id="sav-love" />
         <label>EXP</label> <input type="text" id="sav-exp" />
-        <label data-langable="gold">Gold</label> <input type="text" id="sav-gold" />
-        <label data-langable="attack">AT</label> <input type="text" id="sav-at" />
-        <label data-langable="weaponattack">Weapon AT</label> <input type="text" id="sav-weaponat" />
-        <label data-langable="defense">DF</label> <input type="text" id="sav-df" />
-        <label data-langable="armordefense">Armor DF</label> <input type="text" id="sav-armordf" />
+        <label langkey="gold">Gold</label> <input type="text" id="sav-gold" />
+        <label langkey="attack">AT</label> <input type="text" id="sav-at" />
+        <label langkey="weaponattack">Weapon AT</label> <input type="text" id="sav-weaponat" />
+        <label langkey="defense">DF</label> <input type="text" id="sav-df" />
+        <label langkey="armordefense">Armor DF</label> <input type="text" id="sav-armordf" />
         </fieldset>
       </div>
       <div>
       <fieldset>
-        <legend data-langable="equipment">Equipment</legend>
-        <label data-langable="weapon">Weapon</label> <select id="sav-weapon"> </select>
-        <label data-langable="armor">Armor</label> <select id="sav-armor"> </select>
+        <legend langkey="equipment">Equipment</legend>
+        <label langkey="weapon">Weapon</label> <select id="sav-weapon"> </select>
+        <label langkey="armor">Armor</label> <select id="sav-armor"> </select>
       </fieldset>
       <fieldset>
-        <legend data-langable="inventory">Inventory</legend>
+        <legend langkey="inventory">Inventory</legend>
         <select id="sav-invslot1"> </select>
         <select id="sav-invslot2"> </select>
         <select id="sav-invslot3"> </select>
@@ -192,8 +188,8 @@
         <select id="sav-invslot8"> </select>
       </fieldset>
       <fieldset>
-        <legend data-langable="cellphone">Cellphone</legend>
-        <label data-langable="havecellphone">You have cellphone</label> <input id="sav-havecell" type="checkbox" />
+        <legend langkey="cellphone">Cellphone</legend>
+        <label langkey="havecellphone">You have cellphone</label> <input id="sav-havecell" type="checkbox" />
         <select id="sav-cellslot1"> </select>
         <select id="sav-cellslot2"> </select>
         <select id="sav-cellslot3"> </select>
@@ -204,7 +200,7 @@
         <select id="sav-cellslot8"> </select>
       </fieldset>
       <fieldset>
-        <legend data-langable="dimboxa">Dimension Box A</legend>
+        <legend langkey="dimboxa">Dimension Box A</legend>
         <select id="sav-dimaslot1"> </select>
         <select id="sav-dimaslot2"> </select>
         <select id="sav-dimaslot3"> </select>
@@ -217,7 +213,7 @@
         <select id="sav-dimaslot10"> </select>
       </fieldset>
       <fieldset>
-        <legend data-langable="dimboxb">Dimension Box B</legend>
+        <legend langkey="dimboxb">Dimension Box B</legend>
         <select id="sav-dimbslot1"> </select>
         <select id="sav-dimbslot2"> </select>
         <select id="sav-dimbslot3"> </select>
@@ -232,50 +228,51 @@
       </div>
       <div>
         <fieldset>
-          <legend data-langable="ruins">Ruins</legend>
-          <label data-langable="kills">Kills</label> <input type="text" id="sav-ruinskills" />
-          <label data-langable="trainingdummystate">Training Dummy State</label> <select id="sav-trainingdummystate"> </select>
-          <label data-langable="torielstate">Toriel State</label> <select id="sav-torielstate"> </select>
+          <legend langkey="ruins">Ruins</legend>
+          <label langkey="kills">Kills</label> <input type="text" id="sav-ruinskills" />
+          <label langkey="trainingdummystate">Training Dummy State</label> <select id="sav-trainingdummystate"> </select>
+          <label langkey="torielstate">Toriel State</label> <select id="sav-torielstate"> </select>
         </fieldset>
         <fieldset>
-          <legend data-langable="snowdin">Snowdin</legend>
-          <label data-langable="kills">Kills</label> <input type="text" id="sav-snowdinkills" />
-          <label data-langable="doggostate">Doggo State</label> <select id="sav-doggostate"> </select>
-          <label data-langable="doaamydogaressastate">Dogamy & Dogaressa State</label> <select id="sav-dogamydogaressastate"> </select>
-          <label data-langable="greaterdogstate">Greater Dog State</label> <select id="sav-greaterdogstate"> </select>
-          <label data-langable="comedianstate">Comedian State</label> <select id="sav-comedianstate"> </select>
-          <label data-langable="papyrusstate">Papyrus State</label> <select id="sav-papyrusstate"> </select>
+          <legend langkey="snowdin">Snowdin</legend>
+          <label langkey="kills">Kills</label> <input type="text" id="sav-snowdinkills" />
+          <label langkey="doggostate">Doggo State</label> <select id="sav-doggostate"> </select>
+          <label langkey="doaamydogaressastate">Dogamy & Dogaressa State</label> <select id="sav-dogamydogaressastate"> </select>
+          <label langkey="greaterdogstate">Greater Dog State</label> <select id="sav-greaterdogstate"> </select>
+          <label langkey="comedianstate">Comedian State</label> <select id="sav-comedianstate"> </select>
+          <label langkey="papyrusstate">Papyrus State</label> <select id="sav-papyrusstate"> </select>
         </fieldset>
         <fieldset>
-          <legend data-langable="waterfall">Waterfall</legend>
-          <label data-langable="kills">Kills</label> <input type="text" id="sav-waterfallkills" />
-          <label data-langable="shyrenstate">Shyren State</label> <select id="sav-shyrenstate"> </select>
-          <label data-langable="maddummystate">Mad Dummy State</label> <select id="sav-maddummystate"> </select>
-          <label data-langable="undynestate1">Undyne State 1</label> <select id="sav-undynestate1"> </select>
-          <label data-langable="undynestate2">Undyne State 2</label> <select id="sav-undynestate2"> </select>
+          <legend langkey="waterfall">Waterfall</legend>
+          <label langkey="kills">Kills</label> <input type="text" id="sav-waterfallkills" />
+          <label langkey="shyrenstate">Shyren State</label> <select id="sav-shyrenstate"> </select>
+          <label langkey="maddummystate">Mad Dummy State</label> <select id="sav-maddummystate"> </select>
+          <label langkey="undynestate1">Undyne State 1</label> <select id="sav-undynestate1"> </select>
+          <label langkey="undynestate2">Undyne State 2</label> <select id="sav-undynestate2"> </select>
         </fieldset>
         <fieldset>
-          <legend data-langable="hotland">Hotland</legend>
-          <label data-langable="kills">Kills</label> <input type="text" id="sav-hotlandkills" />
-          <label data-langable="broguardstate">Bro Guards State</label> <select id="sav-broguardsstate"> </select>
-          <label data-langable="muffetstate">Muffet State</label> <select id="sav-muffetstate"> </select>
-          <label data-langable="mettatonstate">Mettaton State</label> <select id="sav-mettatonstate"> </select>
+          <legend langkey="hotland">Hotland</legend>
+          <label langkey="kills">Kills</label> <input type="text" id="sav-hotlandkills" />
+          <label langkey="broguardstate">Bro Guards State</label> <select id="sav-broguardsstate"> </select>
+          <label langkey="muffetstate">Muffet State</label> <select id="sav-muffetstate"> </select>
+          <label langkey="mettatonstate">Mettaton State</label> <select id="sav-mettatonstate"> </select>
         </fieldset>
       </div>
       <div>
         <fieldset>
-          <legend data-langable="trueending">True Ending</legend>
-          <label data-langable="truelabexited">True lab exited (can get true ending)</label> <input id="sav-exitedtruelab" type="checkbox" />
-          <label data-langable="defeatedasriel">Defeated Asriel (will get true ending)</label> <input id="sav-defeatedasriel" type="checkbox" />
+          <legend langkey="trueending">True Ending</legend>
+          <label langkey="truelabexited">True lab exited (can get true ending)</label> <input id="sav-exitedtruelab" type="checkbox" />
+          <label langkey="defeatedasriel">Defeated Asriel (will get true ending)</label> <input id="sav-defeatedasriel" type="checkbox" />
         </fieldset>
         <fieldset>
-          <legend data-langable="other">Other</legend>
-          <label data-langable="plotvalue">"Plot" Value</label> <select id="sav-plotvalue"> </select>
-          <label data-langable="funvalue">"Fun" Value</label> <input type="text" id="sav-fun" />
+          <legend langkey="other">Other</legend>
+          <label langkey="plotvalue">"Plot" Value</label> <select id="sav-plotvalue"> </select>
+          <label langkey="funvalue">"Fun" Value</label> <input type="text" id="sav-fun" />
         </fieldset>
       </div>
     </form>
     <!-- script -->
+    <script id="lang"></script>
     <script src="lib/FileSaver.min.js"></script>
     <script src="presets/presets.js"></script>
     <script src="presets/ruins-start.js"></script>
@@ -285,11 +282,8 @@
     <script src="presets/Asgore%20(true%20ending).js"></script>
     <script src="presets/Omega%20Flowey.js"></script>
     <script src="presets/True%20Pacifist%20Ending.js"></script>
-    <script src="langswitcher.js"></script>
-    <script src="alllangs.js"></script>
-    <script id="langloader"></script>
+    <script src="lang.js"></script>
     <script src="main.js"></script>
-    <script src="miscapis.js"></script>
     <!-- /script -->
   </body>
 </html>

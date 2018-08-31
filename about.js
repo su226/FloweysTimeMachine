@@ -1,4 +1,5 @@
-var about = {};
+var pageid="about";
+
 var ul=document.getElementById("translaters");
 for (var i in availableLangs){
   var li=document.createElement("li");

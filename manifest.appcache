@@ -12,9 +12,6 @@ res/flowey_laugh.mp3
 res/flowey_evil.png
 res/flowey_nice.png
 res/flowey_wink.png
-res/determinate.png
-res/menuselect.ogg
-res/forkme.png
 res/favicon.ico
 presets/presets.js
 presets/ruins-start.js

@@ -1,0 +1,33 @@
+<!doctype html>
+
+<html lang="en_US">
+  <head>
+    <meta charset='utf-8'>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Language</title>
+  </head>
+  <body>
+    <h1>Language</h1>
+    <script src="lang.js"></script>
+    <script>
+      let button
+      let body=document.getElementsByTagName("body")[0]
+      let br=document.createElement("br")
+      button=document.createElement("input")
+      button.type="button"
+      button.value="Default: "+defaultLang
+      button.onclick=()=>localStorage.setItem("language","")
+      body.appendChild(button)
+      for(let i of availableLangs){
+        button=document.createElement("input")
+        button.type="button"
+        button.value=i
+        button.onclick=()=>localStorage.setItem("language",i)
+        body.appendChild(br)
+        body.appendChild(button)
+      }
+    </script>
+  </body>
+</html>

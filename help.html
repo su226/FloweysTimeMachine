@@ -6,71 +6,68 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="shortcut icon" type="image/ico" href="res/favicon.ico"/>
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <title data-langable="pagetitle">Help</title>
+    <title langkey="pagetitle">Help</title>
   </head>
   <body>
-    <h1 data-langable="contenttitle">Help</h1>
-    <div><span>Language: </span><a id="currentlang" href="#!"></a></div>
-    <label data-langable="mute"> Mute</label><input type="checkbox" id="mute" data-langless />
-    <h2 data-langable="externaltool">External Tool</h2>
-    <span data-langable="canuse">If you wish to temporarily try out a save, you can use the third party tool</span>
+    <h1 langkey="contenttitle">Help</h1>
+
+    <h2 langkey="externaltool">External Tool</h2>
+    <span langkey="canuse">If you wish to temporarily try out a save, you can use the third party tool</span>
     <a href="https://github.com/LEGOlord208/UndertaleSandbox">UndertaleSandbox</a>.
-    <span data-langable="nowarranty">Please note that we are in no way related to them, or any of their actions.</span>
-    <span data-langable="manualinstall">If you wish to learn the manual way of installing, carry on with the tutorial!</span>
-    <h2> 入门 </h2>
-    <p data-langable="findsavefile">
+    <span langkey="nowarranty">Please note that we are in no way related to them, or any of their actions.</span>
+    <span langkey="manualinstall">If you wish to learn the manual way of installing, carry on with the tutorial!</span>
+    <h2 langkey="getstarted"> Get Started </h2>
+    <p langkey="findsavefile">
       First, you must find your Undertale save folder.
     </p>
     <p>
-      <span data-langable="findsavefile">This is usually</span>
+      <span langkey="findsavefile">This is usually</span>
       <code id="save">...</code>,
-      <span data-langable="mightdifferent">, but it might be different for you, who knows. </span>
+      <span langkey="mightdifferent">, but it might be different for you, who knows. </span>
     </p>
     <p>
-      <span data-langable="atleasthave">It should contain at least a file called</span>
+      <span langkey="atleasthave">It should contain at least a file called</span>
       <code>undertale.ini</code>
-      <span data-langable="and">and a file called</span>
+      <span langkey="and">and a file called</span>
       <code>file0</code>,
-      <span data-langable="haventsaved">unless you haven't saved your game yet, or the save was deleted.</span>
+      <span langkey="haventsaved">unless you haven't saved your game yet, or the save was deleted.</span>
     </p>
-    <h2 data-langable="loading">Loading</h2>
-    <p data-langable="canload">
+    <h2 langkey="loading">Loading</h2>
+    <p langkey="canload">
       Once you have found where your existing save data is, you can load it into Flowey's time machine to edit it.
     </p>
-    <p data-langable="userpresetinstead">
+    <p langkey="userpresetinstead">
       You don't have to load an existing save though, you can select a preset instead at the top, or use the default preset which is set by default.
     </p>
-    <h2 data-langable="editing">Editing</h2>
-    <p data-langable="justedit">
+    <h2 langkey="editing">Editing</h2>
+    <p langkey="justedit">
       Just edit the various fields to your liking. Some fields have a [?] next to them, you can hover over that with the mouse to get some information about the field.
     </p>
-    <h2 data-langable="saving">Saving</h2>
+    <h2 langkey="saving">Saving</h2>
     <p>
-      <span data-langable="usesavebutton">Once you have edited the data to your liking, you can save it using the save button.</span>
-      <span data-langable="justoverwrite">Just overwrite your existing</span>
+      <span langkey="usesavebutton">Once you have edited the data to your liking, you can save it using the save button.</span>
+      <span langkey="justoverwrite">Just overwrite your existing</span>
       <code>undertale.ini</code>
-      <span data-langable="and">and</span>
+      <span langkey="and">and</span>
       <code>file0</code>.
     </p>
-    <h2 data-langable="removegepolluction">Remove Geocide Ending Polluction</h2>
+    <h2 langkey="removegepolluction">Remove Geocide Ending Polluction</h2>
     <p>
-      <span data-langable="seeinfo962">If you erased your world, you should see a file called</span>
+      <span langkey="seeinfo962">If you erased your world, you should see a file called</span>
       <code>system_information_962</code>.
     </p>
     <p>
-      <span data-langable="seeinfo963"></span>
+      <span langkey="seeinfo963"></span>
       <code>system_information_963</code>.
     </p>
-    <p data-langable="deleteinfo">
+    <p langkey="deleteinfo">
       Just delete these files using your file manager.
     </p>
-    <p data-langable="deleteforsteamver">
+    <p langkey="deleteforsteamver">
       If you are using the Steam version of the game, these files might be backed up and restored by the game on startup. In that case, you should delete the Steam data for UNDERTALE in addition to the system_ files, but I have no information on how to do this.
     </p>
-    <script src="langswitcher.js"></script>
-    <script src="alllangs.js"></script>
-    <script id="langloader"></script>
-    <script src="miscapis.js"></script>
+    <script id="lang"></script>
+    <script src="lang.js"></script>
     <script src="help.js"></script>
   </body>
 </html>
