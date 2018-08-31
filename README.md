@@ -3,7 +3,7 @@ Undertale存档编辑器
 
 Flowey's Time Machine的汉化+增强版
 
-原版:[https://github.com/crumblingstatue/FloweysTimeMachine](https://github.com/crumblingstatue/FloweysTimeMachine)
+原版:[crumblingstatue/FloweysTimeMachine](https://github.com/crumblingstatue/FloweysTimeMachine)
 
 ## 具体更改
 - 汉化
@@ -17,7 +17,7 @@ Flowey's Time Machine的汉化+增强版
     - (ID为264)
 - 修改??? kill count(???击杀次数)为死亡次数
 - 界面修改
-    - (个人恶趣味,更像UT了)
+    - (中仿UT)
 - 适应移动端
     - (android有UT的移植版)
 - 完整支持多语言
@@ -27,7 +27,7 @@ Flowey's Time Machine的汉化+增强版
 - 汉化物品名,怪物名
     - (地名已完成)
     - (不知道怎么汉化)
-
+- 重写README.md
 ## 其他
 - 第一次用git，差点一夜回到解放前
     - 话说怎么重命名远程分支啊
